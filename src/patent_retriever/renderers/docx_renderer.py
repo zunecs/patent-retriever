@@ -20,9 +20,11 @@ import io
 from pathlib import Path
 
 import docx
-from docx.shared import Pt
+from docx.shared import Inches, Pt
 
 from patent_retriever.domain.models import PatentDocument, RenderOptions
+import re
+
 
 DEFAULT_FONT_NAME = "Times New Roman"
 DEFAULT_FONT_SIZE_PT = 12
@@ -30,6 +32,8 @@ DEFAULT_FONT_SIZE_PT = 12
 CLAIMS_HEADING = "CLAIMS"
 CLAIMS_SUBHEADING = "What is claimed:"
 ABSTRACT_HEADING = "ABSTRACT"
+PARAGRAPH_ID_INDENT_INCHES = 0.6
+_NUMBERED_LINE = re.compile(r"^\[\d{4}\] ")
 
 
 def _header_lines(document: PatentDocument, options: RenderOptions) -> list[str]:
@@ -126,7 +130,10 @@ def render_docx(document: PatentDocument, options: RenderOptions | None = None) 
     normal_style.font.size = Pt(DEFAULT_FONT_SIZE_PT)
 
     for line in render_lines(document, options):
-        word_document.add_paragraph(line)
+        paragraph = word_document.add_paragraph(line)
+        if _NUMBERED_LINE.match(line):
+            paragraph.paragraph_format.left_indent = Inches(PARAGRAPH_ID_INDENT_INCHES)
+            paragraph.paragraph_format.first_line_indent = Inches(-PARAGRAPH_ID_INDENT_INCHES)
 
     buffer = io.BytesIO()
     word_document.save(buffer)
