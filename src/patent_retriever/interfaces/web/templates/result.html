@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% set doc = result.document %}
+{% set headings = ["BACKGROUND", "SUMMARY", "BRIEF DESCRIPTION OF DRAWINGS",
+                   "DETAILED DESCRIPTION", "CLAIMS", "ABSTRACT"] %}
+{% block title %}{{ doc.publication_number }} — Patent Retriever{% endblock %}
+{% block content %}
+
+<h1>{{ doc.title }}</h1>
+
+<dl class="parts">
+  <div><dt>Publication</dt><dd>{{ doc.publication_number }}</dd></div>
+  <div><dt>Source</dt><dd>{{ result.source_name }}</dd></div>
+  <div><dt>Claims</dt><dd>{{ doc.claims | length }}</dd></div>
+  <div><dt>Inventors</dt><dd>{{ doc.inventors | length }}</dd></div>
+</dl>
+
+{% if not result.is_complete %}
+<div class="notice">Missing {{ result.missing_fields | join(", ") }}.</div>
+{% endif %}
+
+<div class="actions">
+  <a href="/download/{{ doc.publication_number }}.docx">Download .docx</a>
+  <a href="/download/{{ doc.publication_number }}.json">Download .json</a>
+</div>
+
+<div class="frame">
+  <div class="sheet">
+  {%- for line in lines %}
+    {%- if not line %}
+    <div class="sheet-gap"></div>
+    {%- elif line in headings %}
+    <p class="sheet-h">{{ line }}</p>
+    {%- elif line[:1] == "[" %}
+    <p class="sheet-p"><span class="sheet-num">{{ line[:6] }}</span>{{ line[7:] }}</p>
+    {%- else %}
+    <p class="sheet-line">{{ line }}</p>
+    {%- endif %}
+  {%- endfor %}
+  </div>
+</div>
+
+{% endblock %}

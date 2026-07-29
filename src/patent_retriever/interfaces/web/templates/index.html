@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Enter a patent number.</h1>
+
+{% if error %}<div class="notice">{{ error }}</div>{% endif %}
+
+<form method="post" action="/retrieve">
+  <div class="primary">
+    <label for="number">Publication number</label>
+    <input type="text" id="number" name="number" value="{{ number or '' }}"
+           placeholder="US20250097171A1" spellcheck="false" autocomplete="off"
+           autocapitalize="characters" required autofocus>
+  </div>
+
+  <div class="secondary">
+    <div>
+      <label for="docket">Docket</label>
+      <input type="text" id="docket" name="docket" value="{{ docket or '' }}"
+             placeholder="optional" autocomplete="off">
+    </div>
+    <div>
+      <label for="client_ref">Reference</label>
+      <input type="text" id="client_ref" name="client_ref" value="{{ client_ref or '' }}"
+             placeholder="optional" autocomplete="off">
+    </div>
+  </div>
+
+  <button type="submit">Retrieve</button>
+</form>
+{% endblock %}

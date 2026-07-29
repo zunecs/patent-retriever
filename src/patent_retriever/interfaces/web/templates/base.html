@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Patent Retriever{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  --paper:  #e7ecef;
+  --sheet:  #ffffff;
+  --ink:    #06090e;
+  --rule:   #96a3a5;
+  --muted:  #35403f;
+  --blue:   #1030b4;
+  --flag:   #8a3a0e;
+  --sans: "IBM Plex Sans", ui-sans-serif, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --halo: 0 0 14px rgba(255,255,255,.95), 0 0 5px rgba(255,255,255,.95);
+  --mx: 50%; --my: 30%;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; min-height: 100vh; color: var(--ink);
+  font-family: var(--sans); font-size: 19px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(80rem 55rem at 8% -10%, rgba(16,48,180,.14), transparent 60%),
+    radial-gradient(70rem 50rem at 110% 20%, rgba(16,130,150,.12), transparent 60%),
+    var(--paper);
+  background-attachment: fixed;
+}
+
+/* grid — full page, no heavy mask */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right,  rgba(16,48,180,.13) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16,48,180,.13) 1px, transparent 1px),
+    linear-gradient(to right,  rgba(16,48,180,.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16,48,180,.06) 1px, transparent 1px);
+  background-size: 160px 160px, 160px 160px, 40px 40px, 40px 40px;
+}
+
+/* cursor light */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 2; pointer-events: none;
+  background: radial-gradient(520px circle at var(--mx) var(--my),
+              rgba(255,255,255,.42), transparent 68%);
+}
+
+#field { position: fixed; inset: 0; z-index: 1; pointer-events: none; display: block; }
+
+.wrap { max-width: 64rem; margin: 0 auto; padding: 0 2rem; }
+.masthead { position: sticky; top: 0; z-index: 4; }
+main { position: relative; z-index: 3; }
+
+.masthead { border-bottom: 2px solid rgba(150,163,165,.55);
+            background: rgba(231,236,239,.3);
+            backdrop-filter: blur(14px) saturate(1.3);
+            -webkit-backdrop-filter: blur(14px) saturate(1.3);
+            margin-bottom: 5rem; }
+.masthead .wrap { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.masthead a { color: inherit; text-decoration: none; font-family: var(--mono);
+              font-size: 1.05rem; font-weight: 500; letter-spacing: .24em;
+              text-shadow: var(--halo); }
+
+/* very light haze - the field stays visible through it */
+main.wrap { padding-bottom: 7rem; }
+main.wrap::before {
+  content: ""; position: absolute; inset: -6rem -7rem -4rem; z-index: -1;
+  pointer-events: none;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  background: radial-gradient(ellipse 80% 64% at 50% 44%,
+              rgba(255,255,255,0), rgba(255,255,255,0) 76%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 64% at 50% 44%, #000 34%, transparent 80%);
+          mask-image: radial-gradient(ellipse 80% 64% at 50% 44%, #000 34%, transparent 80%);
+}
+
+h1, label, .parts dt, .parts dd, .notice, .masthead a { text-shadow: var(--halo); }
+
+h1 { font-size: clamp(2.9rem, 7.5vw, 4.75rem); line-height: 1.01; letter-spacing: -.042em;
+     font-weight: 600; margin: 0 0 3.5rem; }
+
+label { display: block; font-family: var(--mono); font-size: 1rem; font-weight: 500;
+        letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+        margin: 0 0 .75rem; }
+
+input[type=text] {
+  width: 100%; background: transparent; color: var(--ink);
+  font-family: var(--mono); border: 0; border-bottom: 3px solid var(--rule);
+  border-radius: 0; padding: .5rem 0; transition: border-color .18s ease;
+  text-shadow: var(--halo);
+}
+input[type=text]:focus { outline: none; border-bottom-color: var(--blue); }
+.primary input { font-size: clamp(2.4rem, 6.5vw, 3.75rem); letter-spacing: 0; }
+.primary input::placeholder { color: #9aa5a5; }
+.secondary { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3.5rem; }
+.secondary input { font-size: 1.5rem; }
+@media (max-width: 40rem) { .secondary { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+button {
+  margin-top: 4rem; padding: 1.15rem 3.25rem;
+  font-family: var(--mono); font-size: 1.1rem; font-weight: 500; letter-spacing: .18em;
+  text-transform: uppercase; color: #fff; background: var(--ink);
+  border: 0; border-radius: 2px; cursor: pointer;
+  box-shadow: 0 4px 18px rgba(6,9,14,.3);
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+button:hover { background: var(--blue); transform: translateY(-2px);
+               box-shadow: 0 12px 32px rgba(16,48,180,.4); }
+button:active { transform: none; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+
+.notice { padding: 1.1rem 1.4rem; margin-bottom: 3rem; font-size: 1.1rem;
+          border-left: 5px solid var(--flag); background: rgba(255,255,255,.55);
+          color: var(--flag); backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px); }
+
+.parts { display: flex; flex-wrap: wrap; gap: 3.5rem; margin-bottom: 3rem;
+         padding-bottom: 2rem; border-bottom: 3px solid var(--rule); }
+.parts dt { font-family: var(--mono); font-size: .85rem; letter-spacing: .16em;
+            text-transform: uppercase; color: var(--muted); margin-bottom: .5rem; }
+.parts dd { margin: 0; font-family: var(--mono); font-size: 1.6rem; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 4rem; }
+.actions a { padding: 1rem 2.25rem; font-family: var(--mono); font-size: 1.05rem;
+             letter-spacing: .12em; text-transform: uppercase; color: var(--ink);
+             text-decoration: none; background: rgba(255,255,255,.7);
+             backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+             border: 3px solid var(--rule); border-radius: 2px;
+             transition: border-color .2s ease, color .2s ease, transform .2s ease; }
+.actions a:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+
+.frame { position: relative; background: var(--sheet); border: 1px solid var(--rule);
+         box-shadow: 0 2px 4px rgba(6,9,14,.06), 0 26px 70px rgba(6,9,14,.2); }
+.frame::before { content: ""; position: absolute; inset: 10px;
+                 border: 1px solid var(--rule); opacity: .45; pointer-events: none; }
+.sheet { position: relative; max-height: 42rem; overflow-y: auto; padding: 4rem 3.5rem; }
+@media (max-width: 40rem) { .sheet { padding: 2.5rem 1.5rem; } }
+.sheet-line { margin: 0; white-space: pre-wrap; font-size: 1.1rem; line-height: 1.75;
+              font-family: var(--mono); }
+.sheet-h { margin: 0; font-family: var(--mono); font-size: 1.05rem; font-weight: 500;
+           letter-spacing: .2em; color: var(--blue); }
+.sheet-gap { height: 1.5rem; }
+.sheet-p { margin: 0 0 1.1rem; padding-left: 5.5rem; text-indent: -5.5rem;
+           font-size: 1.1rem; line-height: 1.75; }
+.sheet-num { display: inline-block; width: 5.5rem; font-family: var(--mono);
+             font-size: 1.05rem; color: var(--blue); }
+
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+main.wrap > * { animation: rise .5s cubic-bezier(.2,.7,.3,1) both; }
+main.wrap > *:nth-child(2) { animation-delay: .06s; }
+main.wrap > *:nth-child(n+3) { animation-delay: .12s; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  #field, body::after { display: none; }
+}
+</style>
+</head>
+<body>
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="masthead"><div class="wrap"><a href="/">PATENT&nbsp;RETRIEVER</a></div></div>
+<main class="wrap">{% block content %}{% endblock %}</main>
+<script>
+(function () {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  var root = document.documentElement;
+  var canvas = document.getElementById("field");
+  var ctx = canvas.getContext("2d");
+  var dots = [], width = 0, height = 0, raf = null;
+  var pointer = { x: -9999, y: -9999, active: false };
+  var glow = { x: 50, y: 30, tx: 50, ty: 30 };
+  var LINK = 190, PUSH = 240;
+
+  function build() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    var count = Math.min(85, Math.round((width * height) / 17000));
+    dots = [];
+    for (var i = 0; i < count; i++) {
+      var depth = Math.random();
+      dots.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * (0.12 + depth * 0.30),
+        vy: (Math.random() - 0.5) * (0.12 + depth * 0.30),
+        r: 1.6 + depth * 3.2,
+        a: 0.22 + depth * 0.26,
+        d: depth
+      });
+    }
+  }
+
+  function frame() {
+    glow.x += (glow.tx - glow.x) * 0.08;
+    glow.y += (glow.ty - glow.y) * 0.08;
+    root.style.setProperty("--mx", glow.x.toFixed(2) + "%");
+    root.style.setProperty("--my", glow.y.toFixed(2) + "%");
+
+    ctx.clearRect(0, 0, width, height);
+
+    for (var i = 0; i < dots.length; i++) {
+      var p = dots[i];
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < -40) p.x = width + 40;
+      if (p.x > width + 40) p.x = -40;
+      if (p.y < -40) p.y = height + 40;
+      if (p.y > height + 40) p.y = -40;
+
+      var lift = 0;
+      if (pointer.active) {
+        var dx = p.x - pointer.x, dy = p.y - pointer.y;
+        var pd = Math.hypot(dx, dy);
+        if (pd < PUSH && pd > 0.01) {
+          lift = 1 - pd / PUSH;
+          var force = lift * lift * (0.6 + p.d * 1.6);
+          p.x += (dx / pd) * force;
+          p.y += (dy / pd) * force;
+        }
+      }
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r + lift * 3, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(16,48,180," + (p.a + lift * 0.45) + ")";
+      ctx.fill();
+
+      for (var j = i + 1; j < dots.length; j++) {
+        var q = dots[j];
+        var lx = p.x - q.x, ly = p.y - q.y;
+        if (lx > LINK || lx < -LINK || ly > LINK || ly < -LINK) continue;
+        var dist = Math.hypot(lx, ly);
+        if (dist > LINK) continue;
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(q.x, q.y);
+        ctx.strokeStyle = "rgba(16,48,180," + (1 - dist / LINK) * (0.16 + lift * 0.34) + ")";
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+      }
+    }
+
+    raf = requestAnimationFrame(frame);
+  }
+
+  function start() { if (!raf) raf = requestAnimationFrame(frame); }
+  function stop() { if (raf) { cancelAnimationFrame(raf); raf = null; } }
+
+  window.addEventListener("pointermove", function (e) {
+    pointer.x = e.clientX; pointer.y = e.clientY; pointer.active = true;
+    glow.tx = (e.clientX / width) * 100;
+    glow.ty = (e.clientY / height) * 100;
+  }, { passive: true });
+  window.addEventListener("pointerleave", function () { pointer.active = false; });
+  window.addEventListener("resize", build);
+  document.addEventListener("visibilitychange", function () {
+    document.hidden ? stop() : start();
+  });
+
+  build();
+  start();
+})();
+</script>
+</body>
+</html>
