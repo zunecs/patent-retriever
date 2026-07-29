@@ -17,13 +17,13 @@ Word paragraph.
 from __future__ import annotations
 
 import io
+import re
 from pathlib import Path
 
 import docx
 from docx.shared import Inches, Pt
 
 from patent_retriever.domain.models import PatentDocument, RenderOptions
-import re
 
 
 DEFAULT_FONT_NAME = "Times New Roman"
@@ -32,7 +32,9 @@ DEFAULT_FONT_SIZE_PT = 12
 CLAIMS_HEADING = "CLAIMS"
 CLAIMS_SUBHEADING = "What is claimed:"
 ABSTRACT_HEADING = "ABSTRACT"
+
 PARAGRAPH_ID_INDENT_INCHES = 0.6
+
 _NUMBERED_LINE = re.compile(r"^\[\d{4}\] ")
 
 
