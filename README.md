@@ -1,3 +1,5 @@
+[![CI](https://github.com/zunecs/patent-retriever/actions/workflows/ci.yml/badge.svg)](https://github.com/zunecs/patent-retriever/actions/workflows/ci.yml)
+
 # Patent Retriever
 
 Retrieves patent documents from external sources, normalizes them into a single
@@ -5,6 +7,10 @@ internal model, and generates the `.docx` format required by a patent
 translation tool — plus a JSON representation of the same data.
 
 **This application does not perform translation.** It prepares the input.
+
+![The retrieval form](docs/images/form.png)
+
+![A retrieved patent with document preview](docs/images/result.png)
 
 ---
 
@@ -44,8 +50,8 @@ Flask, which is what makes each layer independently testable and each source
 replaceable.
 
 ```
-CLI  ─┐
-      ├─→  RetrievalService  ─→  Sources (Google Patents, EPO OPS)
+CLI   ─┐
+       ├─→  RetrievalService  ─→  Sources (Google Patents, EPO OPS)
 Flask ─┘          │                      │
                   │                      └─→  SectionMapper
                   ├─→  Renderers (.docx, JSON)
