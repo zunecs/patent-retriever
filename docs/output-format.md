@@ -1,134 +1,151 @@
-# Output format specification — Aramco Patent Translation tool input
+# Output format specification
 
-This is the exact structure the generated `.docx` must follow.
-Source: format spec provided by the Law/legal solutions team.
+The exact structure and formatting the generated `.docx` must follow.
 
-Status of this spec: **logical structure is confirmed. Visual formatting
-(font family, size, margins, line spacing, heading bold/centering, page
-numbering) is NOT specified and remains an open question.**
+Source: measured directly from a real sample document in Word, July 2026.
+Values marked *(assumed)* are not yet confirmed.
 
 ---
 
-## 1. Header / metadata block
+## Page setup
 
-Very top of the document. Fixed labels followed by values, separated by
-line breaks. **No paragraph numbering in this block.**
+| Property | Value |
+|---|---|
+| Top margin | 1.2" |
+| Bottom margin | 1" |
+| Left margin | 1" |
+| Right margin | 1" |
+| Gutter | 0", position left |
+| Orientation | Portrait |
+
+## Default (Normal) style
+
+| Property | Value |
+|---|---|
+| Font | Times New Roman |
+| Size | 13 pt |
+| Line spacing | 1.5 lines |
+| Space before | 0 pt |
+| Space after | 6 pt |
+| Body alignment | Justified |
+
+---
+
+## Running page header
+
+Repeats at the top of **every** page. Right-aligned, single-spaced, 0 pt
+before and after.
 
 ```
-PATENT APPLICATION    ATTORNEY DOCKET NO. [Docket Number]    CLIENT REF. NO. [Client Reference]
-APPLICATION FOR UNITED STATES LETTERS PATENT
-
-TITLE:
-
-[Full Title]
-
-INVENTOR:
-
-[Full Inventor Name]
-
-[Full Title]
+PATENT APPLICATION
+ATTORNEY DOCKET NO. [Docket Number]
+CLIENT REF. NO. [Client Reference]
 ```
 
-The title repeats immediately after the inventor line, preserving exact
-capitalization and line breaks.
+The docket number and client reference are internal values. No patent source
+supplies them; they are provided per rendering job.
 
 ---
 
-## 2. BACKGROUND
+## Page 1 — cover
 
-- Heading: `BACKGROUND` — all uppercase, standalone line
-- Placement: immediately follows a blank line after the header/title repetition
-- Numbering: sequential bracketed IDs starting at `[0001]`
-- Format: each paragraph begins with `[XXXX]` (four digits, zero-padded),
-  then a single space, then the text
-- No bullet points or sub-headers inside this section
+Four empty paragraphs, then:
 
----
+```
+APPLICATION
+FOR
+UNITED STATES LETTERS PATENT
+```
 
-## 3. SUMMARY
+18 pt, bold, centred, each on its own line. Then three empty paragraphs:
 
-- Heading: `SUMMARY` — all uppercase, standalone line
-- Placement: preceded by one blank line
-- Numbering: continues sequentially from BACKGROUND (e.g. `[0004]`, `[0005]`)
-- Typically contains independent method, system, and apparatus paragraphs,
-  each starting a new numbered block
+```
+TITLE:<tab><tab>[Full Title]
 
----
+INVENTOR:<tab>[Full Inventor Name]
+```
 
-## 4. BRIEF DESCRIPTION OF DRAWINGS
+Both label lines are 14 pt bold. Multiple inventors are comma-separated
+*(assumed — a sample with several inventors has not been checked)*.
 
-- Heading: `BRIEF DESCRIPTION OF DRAWINGS` — all uppercase, standalone line
-- Placement: preceded by one blank line
-- Numbering: continues sequentially
-- Paragraphs describe figure references (e.g. `FIG. 1 shows...`,
-  `FIGs. 3A-3E show...`). Each reference gets its own `[XXXX]` block.
+A page break follows.
 
 ---
 
-## 5. DETAILED DESCRIPTION
+## Page 2 onward — body
 
-- Heading: `DETAILED DESCRIPTION` — all uppercase, standalone line
-- Placement: preceded by one blank line
-- Numbering: continues sequentially
-- Largest portion of the document
-- References figures using `FIG. X`
-- Uses parenthetical reference numerals for components, e.g. `(100)`, `(101)`
-- No structural sub-headings — all content flows as sequential numbered paragraphs
+The title is repeated, 14 pt bold, centred, followed by one empty paragraph.
 
----
+### Section headings
 
-## 6. CLAIMS
+`BACKGROUND`, `SUMMARY`, `BRIEF DESCRIPTION OF DRAWINGS`, `DETAILED DESCRIPTION`
 
-- Heading: `CLAIMS` — all uppercase, standalone line
-- Sub-heading: `What is claimed:` — appears immediately after a blank line
-  under the heading
-- Numbering: **switches from bracketed IDs to standard numeric listing.**
-  Starts at `1.`, then `2.`, `3.`, etc.
-- Independent claims start with a capital letter and define the core invention
-- Dependent claims reference parent claims using the pattern:
-  `The [subject] of claim [number], ...`
-- Each claim is a single paragraph block, regardless of line breaks used for
-  readability
-- Numbering is continuous and does not reset or use bracketed IDs
+All uppercase, centred, 13 pt, not bold. **No empty paragraph separates a
+heading from its first paragraph.**
 
----
+Sections with no content are omitted entirely, heading included.
 
-## 7. ABSTRACT
+### Numbered paragraphs
 
-- Heading: `ABSTRACT` — all uppercase, standalone line
-- Placement: at the very end of the document body, after CLAIMS
-- Numbering: none (unnumbered block)
-- Single paragraph summarizing the invention, typically 150 words or fewer
-- Concludes with a brief figure reference on its own line, formatted exactly
-  as `Fig. 1.` — capital "Fig", period after the number, no space before the period
+Paragraph IDs are a **genuine Word numbered list**, not literal text.
+
+| Property | Value |
+|---|---|
+| Number format | Custom, `0001, 0002, 0003, ...` |
+| Level text | `[%1]` |
+| Start at | 1 |
+| Number position | 0.44" |
+| Text indent | 1.04" |
+| Follow number with | Tab character |
+
+Numbering runs continuously across all four body sections and does not reset.
+
+Word's built-in numbering formats cannot pad to four digits, so the renderer
+injects a `<w:numFmt w:val="custom" w:format="0001, 0002, 0003, ..."/>`
+definition into `numbering.xml` directly.
 
 ---
 
-## Structural rules
+## CLAIMS
 
-1. **Section splitting** — use the exact heading strings as primary split
-   points: `BACKGROUND`, `SUMMARY`, `BRIEF DESCRIPTION OF DRAWINGS`,
-   `DETAILED DESCRIPTION`, `CLAIMS`, `ABSTRACT`
-2. **Paragraph anchors** — in the body (BACKGROUND through DETAILED
-   DESCRIPTION), paragraph blocks match the regex `\[\d{4}\]\s`
-3. **Claims parsing** — switch to a numeric list parser once `CLAIMS` and
-   `What is claimed:` are detected. Each `N.` prefix is a claim boundary.
-4. **Whitespace** — exactly one blank line between sections. Do not insert
-   or remove paragraph spacing within blocks.
-5. **Case and punctuation** — headings strictly uppercase; paragraph IDs are
-   four-digit zero-padded in brackets; the abstract figure reference uses
-   `Fig.` in title case followed immediately by the number and a period.
+Heading `CLAIMS`, centred, 13 pt. Then:
+
+```
+What is claimed:
+
+1. [claim text]
+2. [claim text]
+```
+
+Claim numbers are **literal text**, not list numbering *(assumed — confirmed
+only that the numbers survive plain-text extraction, which list numbering
+would not)*. Numbering starts at 1 and does not reset. Each claim is a single
+paragraph regardless of internal line breaks.
+
+Dependent claims reference their parent as `The [subject] of claim [number], ...`
 
 ---
 
-## Open questions to resolve with the team
+## ABSTRACT
 
-- Font family, size, margins, line spacing, alignment
-- Are headings bold? Centered?
-- Are `ATTORNEY DOCKET NO.` and `CLIENT REF. NO.` required, or may they be
-  left blank? These are internal values — no patent source provides them.
-- Multiple inventors: one per line, or comma-separated on the `INVENTOR:` line?
-- Non-US patents: does the line `APPLICATION FOR UNITED STATES LETTERS PATENT`
-  change, or stay fixed?
-- If a source patent has no BRIEF DESCRIPTION OF DRAWINGS section, is the
-  heading omitted or emitted empty?
+Heading `ABSTRACT`, centred, **14 pt, bold** — unlike the other section
+headings.
+
+A single paragraph, typically 150 words or fewer, closing the document.
+The last line is a figure reference written exactly:
+
+```
+Fig.1.
+```
+
+Capital F, no space after `Fig.`, trailing period.
+
+---
+
+## Still to confirm
+
+- Whether section headings are bold (currently rendered not bold)
+- Whether claim numbers are literal text or a second Word list
+- Header alignment for documents with a long docket number
+- Multiple inventors: comma-separated on one line, or one per line
+- Non-US patents: does `UNITED STATES LETTERS PATENT` change
