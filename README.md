@@ -1,36 +1,159 @@
 # Patent Retriever
 
-Retrieves patent documents from external sources, normalizes them into a
-single internal model, and generates the `.docx` format required by the
-Patent Translation tool, plus a JSON representation of the same data.
+Retrieves patent documents from external sources, normalizes them into a single
+internal model, and generates the `.docx` format required by a patent
+translation tool — plus a JSON representation of the same data.
 
-**This application does not perform translation.**
+**This application does not perform translation.** It prepares the input.
 
-## Status
+---
 
-In development.
+## Why it exists
 
-## Requirements
+Preparing a patent for translation meant copying title, abstract, claims, and
+description out of a patent database by hand, then reformatting the result to
+match a strict document template. That is slow and error-prone, and the errors
+are invisible until the translation comes back wrong.
 
-- Python 3.11+
+This tool does it in one command.
+
+## What it does
+
+```bash
+patent-retriever fetch US20250097171A1 --docket 18733-1843001 --client-ref SA918489
+```
+
+```
+Retrieved US20250097171A1 from google_patents
+  output/US20250097171A1.docx
+  output/US20250097171A1.json
+```
+
+There is also a web interface for previewing a document before downloading it:
+
+```bash
+python -m patent_retriever.interfaces.web.app
+```
+
+---
+
+## Design
+
+Dependencies point inward. The core knows nothing about HTTP, HTML, Word, or
+Flask, which is what makes each layer independently testable and each source
+replaceable.
+
+```
+CLI  ─┐
+      ├─→  RetrievalService  ─→  Sources (Google Patents, EPO OPS)
+Flask ─┘          │                      │
+                  │                      └─→  SectionMapper
+                  ├─→  Renderers (.docx, JSON)
+                  └─→  Domain (PatentDocument)
+```
+
+| Package | Responsibility |
+|---|---|
+| `domain/` | `PatentDocument`, section mapping, exception hierarchy. No I/O, stdlib only. |
+| `sources/` | One adapter per source, each implementing `fetch(number) -> PatentDocument`. |
+| `services/` | The fallback chain and the policy for what counts as a complete document. |
+| `renderers/` | `PatentDocument` → `.docx` bytes or JSON. Never fetches anything. |
+| `interfaces/` | CLI and Flask. Deliberately thin — delete either and the other still works. |
+
+### Decisions worth explaining
+
+**Adding a source touches two files.** A new adapter in `sources/`, and one line
+in `sources/registry.py`. The service never learns that it exists — sources are
+injected, never imported.
+
+**Completeness is a service concern, not a source concern.** A source returns a
+document or raises. Whether the result is good enough to stop looking is a
+policy decision, and policy belongs in one place.
+
+**The domain model is immutable.** `PatentDocument` is a frozen dataclass holding
+tuples, validated at construction. Invalid documents cannot exist, so no
+downstream code defends against missing titles or empty claim lists.
+
+**Presentation lives in the renderer.** The model stores paragraph numbers as
+integers; the four-digit bracketed form belongs to the `.docx` and would be
+noise in the JSON.
+
+**Four-digit list numbering needed raw XML.** Word cannot zero-pad list numbers
+to four digits through any built-in format, and python-docx has no API for
+numbering definitions, so the renderer injects an ECMA-376 `custom` format
+directly into `numbering.xml`.
+
+---
 
 ## Installation
 
+Requires Python 3.11+.
+
 ```bash
+git clone <repository-url>
+cd patent-retriever
 python -m venv .venv
-source .venv/bin/activate       # Windows: .venv\Scripts\activate
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
 cp .env.example .env
 ```
 
-## Architecture
+## Configuration
 
-- `domain/` — the `PatentDocument` model and section-mapping logic. No I/O.
-- `sources/` — one adapter per patent source, each implementing `fetch(number) -> PatentDocument`.
-- `services/` — orchestrates the source fallback chain.
-- `renderers/` — turns a `PatentDocument` into `.docx` or JSON.
-- `interfaces/` — CLI and Flask entry points.
+All settings come from environment variables; see `.env.example`.
 
-Adding a new source requires only a new module in `sources/`. Nothing else changes.
+| Variable | Default | Purpose |
+|---|---|---|
+| `PATENT_SOURCE_ORDER` | `google_patents` | Comma-separated source priority |
+| `HTTP_TIMEOUT_SECONDS` | `20` | Per-request timeout |
+| `OUTPUT_DIR` | `./output` | Where generated files are written |
+| `EPO_OPS_KEY` / `EPO_OPS_SECRET` | — | EPO OPS credentials |
 
-The required output format is specified in [`docs/output-format.md`](docs/output-format.md).
+## Usage
+
+```bash
+patent-retriever fetch US20250097171A1          # both formats
+patent-retriever fetch US20250097171A1 --json-only
+patent-retriever fetch US20250097171A1 -v       # show which sources were tried
+patent-retriever sources                        # list configured sources
+```
+
+Exit codes: `0` success, `2` malformed patent number, `3` not found in any
+source, `4` configuration error.
+
+## Development
+
+```bash
+python -m pytest -q     # tests
+mypy                    # static typing, strict
+ruff check .            # linting
+ruff format .           # formatting
+```
+
+Tests never touch the network. Source parsers run against saved HTML fixtures in
+`tests/fixtures/`; HTTP error handling is tested with `respx`.
+
+---
+
+## Output format
+
+The generated document follows a strict template specified in
+[`docs/output-format.md`](docs/output-format.md) — measured from a real sample
+rather than guessed. Times New Roman 13 pt, 1.5 spacing, justified body, a
+running page header, and genuine Word list numbering for paragraph IDs.
+
+## Known limitations
+
+- **Google Patents is scraped, not queried through an API.** It has no public
+  API. Scraping is fragile and subject to their terms of service; the source
+  order is configurable so another source can be promoted without code changes.
+- **EPO OPS support is not finished.** It requires registered credentials and is
+  pending.
+- **The output template is US-specific.** Non-US patents render into a document
+  that says `UNITED STATES LETTERS PATENT`.
+- **The web interface caches results in process memory.** Fine for a single-user
+  internal tool; a multi-worker deployment would need a shared cache.
+
+## Licence
+
+MIT — see [LICENSE](LICENSE).
