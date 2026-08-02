@@ -26,7 +26,7 @@ from patent_retriever.renderers.docx_renderer import (
     write_docx,
 )
 
-OPTIONS = RenderOptions(attorney_docket_number="18733-1843001", client_reference="SA918489")
+OPTIONS = RenderOptions(attorney_docket_number="ABC-1234567", client_reference="REF-000123")
 
 
 def kinds(document: PatentDocument) -> list[Kind]:
@@ -54,7 +54,7 @@ def test_title_repeats_after_the_page_break(full_document: PatentDocument) -> No
 
 def test_docket_and_client_ref_are_not_in_the_body(full_document: PatentDocument) -> None:
     text = render_text(full_document, OPTIONS)
-    assert "18733-1843001" not in text
+    assert "ABC-1234567" not in text
     assert "CLIENT REF. NO." not in text
 
 
@@ -151,8 +151,8 @@ def test_running_header_carries_the_reference_numbers(full_document: PatentDocum
         header_name = next(n for n in archive.namelist() if n.startswith("word/header"))
         header = archive.read(header_name).decode()
     assert "PATENT APPLICATION" in header
-    assert "18733-1843001" in header
-    assert "SA918489" in header
+    assert "ABC-1234567" in header
+    assert "REF-000123" in header
 
 
 def test_header_is_right_aligned_and_tight(full_document: PatentDocument) -> None:
@@ -160,8 +160,8 @@ def test_header_is_right_aligned_and_tight(full_document: PatentDocument) -> Non
     header = word_document.sections[0].header
     assert [p.text for p in header.paragraphs] == [
         "PATENT APPLICATION",
-        "ATTORNEY DOCKET NO. 18733-1843001",
-        "CLIENT REF. NO. SA918489",
+        "ATTORNEY DOCKET NO. ABC-1234567",
+        "CLIENT REF. NO. REF-000123",
     ]
     for paragraph in header.paragraphs:
         assert paragraph.alignment == WD_ALIGN_PARAGRAPH.RIGHT

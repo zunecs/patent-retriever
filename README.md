@@ -20,7 +20,7 @@ This tool does it in one command.
 ## What it does
 
 ```bash
-patent-retriever fetch US20250097171A1 --docket 18733-1843001 --client-ref SA918489
+patent-retriever fetch US20250097171A1 --docket ABC-1234567 --client-ref REF-000123
 ```
 
 ```
@@ -90,13 +90,22 @@ directly into `numbering.xml`.
 Requires Python 3.11+.
 
 ```bash
-git clone <repository-url>
+git clone <https://github.com/zunecs/AIEmailAssistant>
 cd patent-retriever
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
-pip install -e ".[dev]"
 cp .env.example .env
 ```
+
+Then pick one:
+
+```bash
+pip install .            # to use the tool
+pip install -e ".[dev]"  # to work on it — includes tests, linting, type checking
+```
+
+With the plain install, re-run `pip install .` after changing any code.
+Tests always read `src/` directly and are unaffected.
 
 ## Configuration
 
