@@ -139,13 +139,3 @@ Fig.1.
 ```
 
 Capital F, no space after `Fig.`, trailing period.
-
----
-
-## Still to confirm
-
-- Whether section headings are bold (currently rendered not bold)
-- Whether claim numbers are literal text or a second Word list
-- Header alignment for documents with a long docket number
-- Multiple inventors: comma-separated on one line, or one per line
-- Non-US patents: does `UNITED STATES LETTERS PATENT` change
