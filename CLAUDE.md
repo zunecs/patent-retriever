@@ -135,7 +135,7 @@ Full spec in `docs/output-format.md`. The parts that surprise people:
 ## Commands
 
 ```bash
-python -m pytest -q                        # 200 tests, no network
+python -m pytest -q                        # 203 tests, no network
 mypy                                       # strict, src only
 ruff check . && ruff format .
 python -m pip install . -q                 # after any code change

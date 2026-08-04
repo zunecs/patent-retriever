@@ -37,7 +37,7 @@ fix that follows them, on `main`.
 | `tests/test_web.py` | One test: an unbuildable source returns 500 with the configuration message. |
 | `README.md` | EPO OPS setup section, four new limitation entries, EP usage example, fixture note in Development. |
 | `.env.example` | Registration steps, both variables marked required, `epo_ops,google_patents` shown as the recommended order. |
-| `CLAUDE.md` | Current state updated (EPO source finished); the OPS findings section extended with the seven behaviours measured this session; test count 147 → 200. |
+| `CLAUDE.md` | Current state updated (EPO source finished); the OPS findings section extended with the behaviours measured this session; test count 147 → 203. |
 
 Nothing under `domain/` was touched. `services/`, `renderers/`, and the CLI are
 unchanged — adding the source touched exactly the two files the architecture
