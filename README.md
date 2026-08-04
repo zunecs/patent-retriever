@@ -197,10 +197,12 @@ running page header, and genuine Word list numbering for paragraph IDs.
   EP3000001 serves English claims but a French-only description. The other
   language is used and a warning is logged naming it, because discarding the
   description would be worse; this tool prepares input for translation.
-- **EPO descriptions usually carry no headings.** OPS text-only full text has no
-  markup for them, so the section mapper has nothing to split on and the whole
-  description lands under `BACKGROUND`. EPO-sourced documents are consequently
-  reported as missing `detailed_description`.
+- **EPO descriptions arrive as one undivided section.** OPS text-only full text
+  has no heading markup, so there is nothing to split on. The source labels the
+  whole body `DETAILED DESCRIPTION`, which is what it is; `BACKGROUND`,
+  `SUMMARY`, and `BRIEF DESCRIPTION OF DRAWINGS` are consequently empty in
+  EPO-sourced documents. Google Patents pages do carry headings and are split
+  across all four.
 - **The output template is US-specific.** Non-US patents render into a document
   that says `UNITED STATES LETTERS PATENT`.
 - **The web interface caches results in process memory.** Fine for a single-user

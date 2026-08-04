@@ -107,7 +107,12 @@ Full spec in `docs/output-format.md`. The parts that surprise people:
   entities, and `<img/>` placeholders for equations. `<2>` and `<o>` are literal
   subscript text, not markup.
 - **OPS text-only full text has no heading markup**, so `SectionMapper` has
-  nothing to split on and EPO documents land wholly in `BACKGROUND`.
+  nothing to split on. `SectionMapper` defaults unheaded content to `BACKGROUND`,
+  which is right for Google Patents but wrong here: with no headings anywhere,
+  the whole body *is* the detailed description. `parse_description` therefore
+  labels a wholly unheaded description `DETAILED DESCRIPTION` itself. The source
+  knows this about its own data, so the source decides it - the shared
+  completeness policy is not loosened to accommodate one adapter.
 - Fault bodies come back as **XML whatever `Accept` asks for**, so status codes
   drive the error mapping, not the body.
 - Fixtures saved in `tests/fixtures/epo_*.json`, captured by

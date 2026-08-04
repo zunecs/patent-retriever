@@ -286,8 +286,8 @@ def parse_description(payload: dict[str, Any], number: str) -> list[SourceSectio
     """Split the description into sections using heading-like paragraphs.
 
     Anything the section mapper recognizes starts a new section; everything else
-    is body text. Many EP descriptions carry no headings at all, in which case one
-    unheaded section comes back and the mapper decides where it belongs.
+    is body text. Most EP descriptions carry no headings at all, which is handled
+    below rather than left to the mapper's default.
     """
     block = _fulltext_block(payload, "description", number)
     if not isinstance(block, dict):
@@ -313,6 +313,14 @@ def parse_description(payload: dict[str, Any], number: str) -> list[SourceSectio
             paragraphs.append(text)
 
     flush()
+
+    # OPS text-only full text carries no heading markup. When nothing was
+    # recognized, the whole body is the detailed description - labelling it as
+    # such is more accurate than letting the mapper default it to BACKGROUND,
+    # and it is a fact about this source, so the source decides it.
+    if len(sections) == 1 and sections[0].heading is None:
+        return [SourceSection(heading="DETAILED DESCRIPTION", paragraphs=sections[0].paragraphs)]
+
     return sections
 
 

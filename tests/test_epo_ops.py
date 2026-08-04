@@ -30,6 +30,7 @@ from patent_retriever.domain.exceptions import (
     PatentNotFoundError,
     SourceUnavailableError,
 )
+from patent_retriever.domain.sections import map_sections
 from patent_retriever.sources.base import PatentSource
 from patent_retriever.sources.epo_ops import (
     AUTH_URL,
@@ -273,6 +274,57 @@ def test_missing_description_returns_no_sections() -> None:
     assert parse_description({"ops:world-patent-data": {}}, EP_MODERN) == []
 
 
+def test_an_unheaded_description_is_labelled_detailed_description() -> None:
+    """OPS carries no heading markup, so an unlabelled body is not BACKGROUND.
+
+    The mapper's default is right for Google Patents, where text before the first
+    heading really is background material. It is wrong here, and which of the two
+    applies is a fact about the source.
+    """
+    for fixture, number in (
+        ("epo_EP0000001_description.json", EP_OLD),
+        ("epo_EP3000001_description.json", EP_MODERN),
+    ):
+        sections = parse_description(load(fixture), number)
+        assert [section.heading for section in sections] == ["DETAILED DESCRIPTION"]
+
+
+def test_unheaded_description_reaches_the_detailed_description_section() -> None:
+    sections = parse_description(load("epo_EP0000001_description.json"), EP_OLD)
+    background, summary, drawings, detailed = map_sections(sections).to_paragraphs()
+    assert not background and not summary and not drawings
+    assert len(detailed) == 35
+    assert [paragraph.number for paragraph in detailed] == list(range(1, 36))
+
+
+def test_recognized_headings_are_kept_rather_than_relabelled() -> None:
+    """The relabelling only fires when nothing at all was recognized."""
+    payload = {
+        "ops:world-patent-data": {
+            "ftxt:fulltext-documents": {
+                "ftxt:fulltext-document": {
+                    "description": {
+                        "@lang": "EN",
+                        "p": [
+                            {"$": "Opening material."},
+                            {"$": "BACKGROUND OF THE INVENTION"},
+                            {"$": "Prior art is inadequate."},
+                            {"$": "BRIEF DESCRIPTION OF THE DRAWINGS"},
+                            {"$": "FIG. 1 shows an apparatus."},
+                        ],
+                    }
+                }
+            }
+        }
+    }
+    sections = parse_description(payload, EP_MODERN)
+    assert [section.heading for section in sections] == [
+        None,
+        "BACKGROUND OF THE INVENTION",
+        "BRIEF DESCRIPTION OF THE DRAWINGS",
+    ]
+
+
 # --------------------------------------------------------------------------
 # HTTP layer: token handling
 # --------------------------------------------------------------------------
@@ -354,7 +406,7 @@ def test_fetch_returns_a_document(source: EpoOpsSource, token_route: Any) -> Non
     assert document.publication_number == EP_MODERN
     assert document.title.startswith("METHOD FOR DEFINING FIBRE TRAJECTORIES")
     assert len(document.claims) == 12
-    assert document.background
+    assert document.detailed_description
 
 
 @respx.mock

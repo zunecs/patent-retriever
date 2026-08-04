@@ -2,7 +2,8 @@
 
 Scope of this session: complete `sources/epo_ops.py`, register it, test it
 against saved fixtures, verify it end to end, and update the documentation.
-Commits `ca4d8ef`, `cda6022`, `157babf` on `main`.
+Commits `ca4d8ef`, `cda6022`, `157babf`, `15566e0`, and the unheaded-description
+fix that follows them, on `main`.
 
 ---
 
@@ -13,7 +14,7 @@ Commits `ca4d8ef`, `cda6022`, `157babf` on `main`.
 | File | Why |
 |---|---|
 | `src/patent_retriever/sources/epo_ops.py` | The EPO OPS adapter. Existed in partial form (untracked, never committed); rewritten to fix four parsing defects found against real responses — see §5. |
-| `tests/test_epo_ops.py` | 48 tests covering reference normalization, every parsing quirk, every error mapping, and token caching. |
+| `tests/test_epo_ops.py` | 51 tests covering reference normalization, every parsing quirk, every error mapping, and token caching. |
 | `tests/fixtures/epo_EP3000001_biblio.json` | Modern EP document: DE/FR/EN titles, two publications for one reference, no abstract. |
 | `tests/fixtures/epo_EP3000001_claims.json` | English claims served third after DE and FR; 21 `claim-text` lines carrying 12 claims. |
 | `tests/fixtures/epo_EP3000001_description.json` | Description served as a single object in French only — no English variant exists. |
@@ -103,6 +104,17 @@ The description is converted to `SourceSection` objects and handed to the
 existing `domain.sections.map_sections` / `classify`. No section-mapping logic is
 duplicated in the source.
 
+One thing the source does decide for itself: **when no heading was recognized
+anywhere in the description, it labels the single resulting section
+`DETAILED DESCRIPTION` rather than leaving the heading `None`.** `SectionMapper`
+defaults unheaded content to `BACKGROUND`, which is correct for Google Patents —
+text before the first heading there really is cross-reference and background
+material. It is wrong for OPS, whose `text-only` full text carries no heading
+markup at all, so the entire body is the detailed description. Which of the two
+applies is a fact about the source, so the adapter decides it and the shared
+completeness policy stays untouched. The relabelling fires only when *nothing*
+was recognized; a description with real headings keeps them.
+
 ### JSON quirks and how each is handled
 
 | Quirk | Handling |
@@ -152,7 +164,7 @@ This mirrors how `test_google_patents.py` is organized. **No test touches the
 network.** Fixtures were captured from live OPS by `scripts/check_epo.py`, which
 is committed so they can be regenerated rather than edited by hand.
 
-### `tests/test_epo_ops.py` — 48 tests
+### `tests/test_epo_ops.py` — 51 tests
 
 **Reference normalization (9)** — `to_epodoc` parametrized over EP/WO kind-code
 removal, the US publication leading-zero rule (with and without a kind code, plus
@@ -172,10 +184,14 @@ numbers in the text; `_split_claims` unit-tested for the continuation rule and
 for the `"10.5 cm"` decimal case; `ParseError` for a missing block and for a
 block whose text is whitespace.
 
-**Description parsing (5)** — `[0001]` markers stripped; the escaped-marker and
+**Description parsing (8)** — `[0001]` markers stripped; the escaped-marker and
 bare-`<img/>` paragraphs producing no empty entries (37 in the response → 35
 paragraphs); `T <2>` subscripts left intact; the French fallback returning
-sections *and* logging the warning; a missing description returning `[]`.
+sections *and* logging the warning; a missing description returning `[]`; both
+EP fixtures relabelled to a single `DETAILED DESCRIPTION` section; that section
+reaching `detailed_description` numbered 1..35 with the other three empty; a
+synthetic description carrying real headings keeping them rather than being
+relabelled.
 
 **Construction and token handling (7)** — credentials required; protocol
 conformance; one auth call shared by three endpoint calls; `expires_in: 0`
@@ -209,7 +225,7 @@ error; a 200 with an unparseable body.
 
 ### Final count
 
-**200 tests, all passing** (147 before this session; +48 EPO, +4 registry, +1 web).
+**203 tests, all passing** (147 before this session; +51 EPO, +4 registry, +1 web).
 
 ---
 
@@ -226,18 +242,15 @@ INFO httpx: HTTP Request: POST https://ops.epo.org/3.2/auth/accesstoken "HTTP/1.
 INFO httpx: HTTP Request: GET https://ops.epo.org/3.2/rest-services/published-data/publication/epodoc/EP0000001/biblio "HTTP/1.1 200 OK"
 INFO httpx: HTTP Request: GET https://ops.epo.org/3.2/rest-services/published-data/publication/epodoc/EP0000001/claims "HTTP/1.1 200 OK"
 INFO httpx: HTTP Request: GET https://ops.epo.org/3.2/rest-services/published-data/publication/epodoc/EP0000001/description "HTTP/1.1 200 OK"
-INFO patent_retriever.services.retrieval: epo_ops returned an incomplete document for EP0000001A1 (missing: detailed_description)
-INFO patent_retriever.services.retrieval: Returning best available document for EP0000001A1 from epo_ops
+INFO patent_retriever.services.retrieval: epo_ops returned a complete document for EP0000001A1
 Retrieved EP0000001A1 from epo_ops
-Warning: missing detailed_description
   output/EP0000001A1.docx
   output/EP0000001A1.json
 exit: 0
 ```
 
-A document is produced. One auth request serves all three endpoints. The
-`detailed_description` warning is expected and explained in §5: the OPS
-description has no headings, so everything lands in `BACKGROUND`.
+A complete document is produced, with no warnings. One auth request serves all
+three endpoints.
 
 ### `PATENT_SOURCE_ORDER=epo_ops,google_patents patent-retriever fetch US20250097171A1 -v`
 
@@ -266,15 +279,19 @@ a complete document. The fallback chain works.
 Checked three ways, not by eye alone:
 
 ```
-output/EP0000001A1.docx: 18 parts, all XML parses, 58 paragraphs, custom numFmt present=True, header='PATENT APPLICATION'
-output/US20250097171A1.docx: 18 parts, all XML parses, 191 paragraphs, custom numFmt present=True, header='PATENT APPLICATION'
+EP0000001A1: 18 parts, all XML parses, 58 paragraphs, numFmt=True, sections=['DETAILED DESCRIPTION', 'CLAIMS', 'ABSTRACT']
+EP3000001A1: 18 parts, all XML parses, 206 paragraphs, numFmt=True, sections=['DETAILED DESCRIPTION', 'CLAIMS']
+US20250097171A1: 18 parts, all XML parses, 191 paragraphs, numFmt=True, sections=['BACKGROUND', 'BRIEF DESCRIPTION OF DRAWINGS', 'DETAILED DESCRIPTION', 'CLAIMS', 'ABSTRACT']
 ```
 
 1. `zipfile.testzip()` returns `None` and every `.xml`/`.rels` part parses under
    `lxml`.
-2. `python-docx` opens both; the injected `<w:numFmt w:format="0001, 0002, 0003, ...">`
-   is present in `word/numbering.xml`; the running header carries
-   `PATENT APPLICATION`.
+2. `python-docx` opens all three; the injected
+   `<w:numFmt w:format="0001, 0002, 0003, ...">` is present in
+   `word/numbering.xml`; the running header carries `PATENT APPLICATION`. The
+   EPO-sourced documents carry a `DETAILED DESCRIPTION` section matching the
+   template, and the Google-sourced one keeps its real four-section split —
+   confirming the relabelling is scoped to the source that needs it.
 3. macOS `textutil -convert txt` — an independent Word reader — renders the file:
 
 ```
@@ -289,25 +306,26 @@ TITLE:		METHOD FOR DEFINING FIBRE TRAJECTORIES ON THE BASIS OF A VECTOR FIELD
 
 The EP0000001 body reads `APPLICATION` / `FOR` / `UNITED STATES LETTERS PATENT`,
 `TITLE:` + two tabs + `Thermal heat pump`, `INVENTOR:` + `BUSSE CLAUS-ADOLF`,
-then `BACKGROUND`, `CLAIMS`, `What is claimed:`, and `ABSTRACT` in template
-order.
+then `DETAILED DESCRIPTION`, `CLAIMS`, `What is claimed:`, and `ABSTRACT` in
+template order.
 
-A third document, `EP3000001A1`, was also fetched live with
-`--docket ABC-1234567 --client-ref REF-000123` to exercise a modern EP
-publication; it produced a 206-paragraph valid `.docx` with the docket and
-client reference in the running header.
+`EP3000001A1` was fetched live with `--docket ABC-1234567 --client-ref REF-000123`
+to exercise a modern EP publication; it produced a 206-paragraph valid `.docx`
+with the docket and client reference in the running header. It is still reported
+as `missing abstract`, which is correct — OPS holds no abstract for that
+publication.
 
 ### Final green check
 
 ```
 $ python -m pytest -q && mypy && ruff check . && ruff format --check .
-........................................................................ [ 36%]
-........................................................................ [ 72%]
-........................................................                 [100%]
-200 passed in 1.42s
+........................................................................ [ 35%]
+........................................................................ [ 70%]
+...........................................................              [100%]
+203 passed in 1.45s
 Success: no issues found in 21 source files
 All checks passed!
-40 files already formatted
+41 files already formatted
 ```
 
 ---
@@ -377,16 +395,35 @@ stale:
 
 Both EP fixtures — and, as far as the probing went, EP full text generally — have
 **no headings at all**. OPS `text-only` full text carries no markup for them, and
-neither document uses upper-case heading paragraphs. `SectionMapper` therefore has
-nothing to split on, its documented policy sends pre-heading content to
-`BACKGROUND`, and the whole description lands there. `detailed_description` comes
-back empty and the retrieval service reports the document as incomplete.
+neither document uses upper-case heading paragraphs. An initial title-case
+heuristic was considered and rejected: there is nothing to detect, because the
+heading paragraphs simply are not there.
 
-This is a genuine limitation, not a defect, and it was left alone deliberately:
-guessing at section boundaries with a heuristic over unheaded prose would be
-unreliable and would put presentation logic in the source. It is documented in
-the README and in CLAUDE.md, and the user sees the warning on every EPO
-retrieval.
+The first cut left the unheaded body for `SectionMapper` to place, which sent all
+of it to `BACKGROUND` under the mapper's documented default. Every EPO retrieval
+was then reported as missing `detailed_description`, and the generated `.docx`
+had a `BACKGROUND` section holding the whole patent — not what the template
+wants.
+
+**Resolved by having the source label its own content.** When
+`parse_description` recognizes no heading anywhere, it returns a single section
+headed `DETAILED DESCRIPTION` instead of `None`. The mapper's `BACKGROUND`
+default is right for Google Patents, where pre-heading text really is
+cross-reference and background material; it is wrong for OPS, where there are no
+headings at all and the whole body is the detailed description. Which case
+applies is knowledge about a specific source, so it lives in that source's
+adapter.
+
+The considered alternative was loosening `find_missing_fields` to accept body
+content in any section. That also clears the warning, but it changes a policy
+shared by every source to accommodate one source's quirk, and it leaves the
+document formatted with everything under `BACKGROUND` — still not matching the
+template. Rejected on both counts.
+
+Result: `EP0000001A1` now retrieves as a **complete** document with no warnings,
+and its `.docx` carries `DETAILED DESCRIPTION` / `CLAIMS` / `ABSTRACT`. The
+Google-sourced `US20250097171A1` is unaffected and still splits across
+`BACKGROUND`, `BRIEF DESCRIPTION OF DRAWINGS`, and `DETAILED DESCRIPTION`.
 
 ### Shell environment
 
@@ -432,6 +469,11 @@ are literal subscript text in `text-only` full text. A general tag-stripper woul
 silently delete them and corrupt the physics in the description. Tested by
 asserting `Q <2>` survives.
 
+**A wholly unheaded description is labelled by the source, not defaulted by the
+mapper.** Covered in §5. The knowledge that "this source never has headings, so
+the body is the detailed description" belongs to the adapter that understands its
+own data, not to a policy shared by every source.
+
 **Claims are fetched before the description.** Both fail identically for a
 country OPS will not serve full text for, but the claims response is the smaller
 one, so failing there wastes less.
@@ -454,9 +496,11 @@ the language back.
 - **No US full text.** OPS serves US bibliographic data but answers
   `CLIENT.InvalidCountryCode` for US claims and description. US patents fail on
   this source by design and rely on Google Patents. Documented in the README.
-- **Everything lands in `BACKGROUND`.** OPS text-only full text has no headings,
-  so EPO-sourced documents are always reported as missing
-  `detailed_description`. See §5.
+- **The description is one undivided section.** OPS text-only full text has no
+  headings, so there is nothing to split on. The source labels the whole body
+  `DETAILED DESCRIPTION`; `BACKGROUND`, `SUMMARY`, and `BRIEF DESCRIPTION OF
+  DRAWINGS` are always empty in EPO-sourced documents. That is accurate and
+  matches the template, but it is coarser than what Google Patents yields.
 - **English is not guaranteed.** Some documents have no English claims or
   description; the source substitutes another language and warns.
 - **EP0000001's English claims are a corrupt OCR dump in OPS itself.** The
