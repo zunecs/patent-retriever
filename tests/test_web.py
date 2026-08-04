@@ -78,6 +78,20 @@ def test_not_found_returns_404(client: FlaskClient, monkeypatch: pytest.MonkeyPa
     assert response.status_code == 404
 
 
+def test_unbuildable_source_returns_500_without_a_stack_trace(
+    client: FlaskClient, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """Missing EPO credentials are a deployment problem, not a bad patent number."""
+
+    def explode(config: object) -> None:
+        raise ValueError("epo_ops is configured but EPO_OPS_KEY is not set.")
+
+    monkeypatch.setattr(web, "build_sources", explode)
+    response = client.post("/retrieve", data={"number": "US20250097171A1"})
+    assert response.status_code == 500
+    assert b"EPO_OPS_KEY is not set" in response.data
+
+
 def test_successful_retrieval_shows_preview_and_links(
     client: FlaskClient, monkeypatch: pytest.MonkeyPatch
 ) -> None:

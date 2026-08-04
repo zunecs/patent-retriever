@@ -86,7 +86,15 @@ def create_app(config: Config | None = None) -> Flask:
             return render_template("index.html", error="Enter a patent number."), 400
 
         try:
-            result = service().retrieve(number)
+            retrieval = service()
+        except ValueError as error:
+            # A configured source could not be built: a deployment mistake, not a
+            # user mistake, so it is reported as a server error and logged.
+            logger.error("Configuration error: %s", error)
+            return render_template("index.html", error=f"Configuration error: {error}"), 500
+
+        try:
+            result = retrieval.retrieve(number)
         except InvalidPatentNumberError as error:
             return render_template("index.html", error=str(error), number=number), 400
         except PatentNotFoundError as error:
