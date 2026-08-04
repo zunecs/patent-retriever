@@ -124,12 +124,35 @@ All settings come from environment variables; see `.env.example`.
 | `OUTPUT_DIR` | `./output` | Where generated files are written |
 | `EPO_OPS_KEY` / `EPO_OPS_SECRET` | — | EPO OPS credentials |
 
+### EPO OPS setup
+
+Google Patents needs no credentials and works out of the box. EPO Open Patent
+Services is an official authenticated API and is the better source for EP and WO
+documents, but it has to be registered for:
+
+1. Create a free account at [developers.epo.org](https://developers.epo.org/).
+2. Under **My Apps**, create an app. OPS issues it a *Consumer Key* and a
+   *Consumer Secret*.
+3. Put both in `.env`:
+
+   ```
+   EPO_OPS_KEY=your-consumer-key
+   EPO_OPS_SECRET=your-consumer-secret
+   PATENT_SOURCE_ORDER=epo_ops,google_patents
+   ```
+
+Both variables are required. If `epo_ops` is in the source order and either is
+missing, the tool exits with code `4` and names the variable rather than failing
+at request time. Authentication is OAuth2 client credentials; the access token is
+cached and reused across the three calls a retrieval makes.
+
 ## Usage
 
 ```bash
 patent-retriever fetch US20250097171A1          # both formats
 patent-retriever fetch US20250097171A1 --json-only
 patent-retriever fetch US20250097171A1 -v       # show which sources were tried
+patent-retriever fetch EP3000001A1              # EP and WO work best via epo_ops
 patent-retriever sources                        # list configured sources
 ```
 
@@ -145,8 +168,10 @@ ruff check .            # linting
 ruff format .           # formatting
 ```
 
-Tests never touch the network. Source parsers run against saved HTML fixtures in
-`tests/fixtures/`; HTTP error handling is tested with `respx`.
+Tests never touch the network. Source parsers run against saved fixtures in
+`tests/fixtures/` — HTML for Google Patents, JSON captured from live OPS by
+`scripts/check_epo.py` for EPO. HTTP error handling and token caching are tested
+with `respx`. Re-run `scripts/check_epo.py` rather than hand-editing a fixture.
 
 ---
 
@@ -162,8 +187,20 @@ running page header, and genuine Word list numbering for paragraph IDs.
 - **Google Patents is scraped, not queried through an API.** It has no public
   API. Scraping is fragile and subject to their terms of service; the source
   order is configurable so another source can be promoted without code changes.
-- **EPO OPS support is not finished.** It requires registered credentials and is
-  pending.
+- **EPO OPS full text covers EP and WO documents, not US ones.** OPS serves
+  bibliographic data for US patents but answers `CLIENT.InvalidCountryCode` for
+  their claims and description. US patents therefore fail on EPO OPS and rely on
+  Google Patents, which is what the fallback chain is for. Putting `epo_ops`
+  first costs one wasted request per US patent and nothing else.
+- **EPO full text is not always in English.** OPS returns claims and description
+  per language, and some EP documents have no English variant of one of them —
+  EP3000001 serves English claims but a French-only description. The other
+  language is used and a warning is logged naming it, because discarding the
+  description would be worse; this tool prepares input for translation.
+- **EPO descriptions usually carry no headings.** OPS text-only full text has no
+  markup for them, so the section mapper has nothing to split on and the whole
+  description lands under `BACKGROUND`. EPO-sourced documents are consequently
+  reported as missing `detailed_description`.
 - **The output template is US-specific.** Non-US patents render into a document
   that says `UNITED STATES LETTERS PATENT`.
 - **The web interface caches results in process memory.** Fine for a single-user

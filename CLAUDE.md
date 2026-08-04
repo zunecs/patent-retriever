@@ -92,7 +92,26 @@ Full spec in `docs/output-format.md`. The parts that surprise people:
   `"@name"`, and any element may be an object or a list. Claims and description
   are returned per language with **German first** for EP — select English
   explicitly.
-- Fixtures saved in `tests/fixtures/epo_EP0000001_*.json`.
+- **Not every EP document has English full text.** `EP3000001` serves English
+  claims and a French-only description. The source uses the other language and
+  logs a warning rather than dropping the description.
+- **`claim-text` entries are lines, not claims.** A claim that wrapped in the
+  source spans several of them; only the first carries the "N. " number.
+- **Parties repeat once per `@data-format`** with different spellings
+  (`BUSSE CLAUS-ADOLF` vs `BUSSE, CLAUS ADOLF, DR.`), so string deduplication
+  cannot collapse them. Take the `epodoc` format alone.
+- **One epodoc reference can return several publications.** `EP0000001` returns
+  the A1 and the B1, whose English titles differ; the kind code from the
+  requested number picks between them.
+- **Description text carries the publication's own `[0001]` markers**, HTML
+  entities, and `<img/>` placeholders for equations. `<2>` and `<o>` are literal
+  subscript text, not markup.
+- **OPS text-only full text has no heading markup**, so `SectionMapper` has
+  nothing to split on and EPO documents land wholly in `BACKGROUND`.
+- Fault bodies come back as **XML whatever `Accept` asks for**, so status codes
+  drive the error mapping, not the body.
+- Fixtures saved in `tests/fixtures/epo_*.json`, captured by
+  `scripts/check_epo.py`. Re-run the script rather than editing a fixture.
 
 ---
 
@@ -111,7 +130,7 @@ Full spec in `docs/output-format.md`. The parts that surprise people:
 ## Commands
 
 ```bash
-python -m pytest -q                        # 147 tests, no network
+python -m pytest -q                        # 200 tests, no network
 mypy                                       # strict, src only
 ruff check . && ruff format .
 python -m pip install . -q                 # after any code change
@@ -134,11 +153,12 @@ python -m patent_retriever.interfaces.web.app
 
 ## Current state
 
-Complete and published: domain, Google Patents source, retrieval service, both
-renderers, CLI, Flask UI, CI, README, MIT licence.
+Complete and published: domain, Google Patents source, EPO OPS source, retrieval
+service, both renderers, CLI, Flask UI, CI, README, MIT licence.
 
-In progress: `sources/epo_ops.py` — written, needs its test file built against
-the saved EP fixtures, and needs verifying that `EP0000001A1` renders end to end
-while `US20250097171A1` falls through to Google.
+`sources/epo_ops.py` is finished, registered, and covered by `tests/test_epo_ops.py`.
+Verified end to end against live OPS: `EP0000001A1` and `EP3000001A1` render from
+`epo_ops`, and `US20250097171A1` fails there with the country message and falls
+through to Google Patents.
 
-Not started: technical documentation `.docx`, screenshots for the README.
+Not started: technical documentation `.docx`.
