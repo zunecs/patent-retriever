@@ -1,5 +1,8 @@
 [![CI](https://github.com/zunecs/patent-retriever/actions/workflows/ci.yml/badge.svg)](https://github.com/zunecs/patent-retriever/actions/workflows/ci.yml)
 
+📄 **[Technical Documentation](docs/Patent_Retriever_Technical_Documentation.pdf)** — 32 pages covering architecture, both data sources, the output format, design decisions, testing, and validation.
+
+
 # Patent Retriever
 
 Retrieves patent documents from external sources, normalizes them into a single
@@ -7,6 +10,7 @@ internal model, and generates the `.docx` format required by a patent
 translation tool — plus a JSON representation of the same data.
 
 **This application does not perform translation.** It prepares the input.
+
 
 ![The retrieval form](docs/images/form.png)
 

@@ -24,3 +24,4 @@ output/
 .idea/
 .vscode/
 ~$*CLAUDE.md
+.claude/
