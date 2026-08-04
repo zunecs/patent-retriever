@@ -1,0 +1,910 @@
+{
+  "ops:world-patent-data": {
+    "@xmlns": {
+      "ops": "http://ops.epo.org",
+      "$": "http://www.epo.org/exchange",
+      "xlink": "http://www.w3.org/1999/xlink"
+    },
+    "exchange-documents": {
+      "exchange-document": {
+        "@system": "ops.epo.org",
+        "@family-id": "94975003",
+        "@country": "US",
+        "@doc-number": "2025097171",
+        "@kind": "A1",
+        "bibliographic-data": {
+          "publication-reference": {
+            "document-id": [
+              {
+                "@document-id-type": "docdb",
+                "country": {
+                  "$": "US"
+                },
+                "doc-number": {
+                  "$": "2025097171"
+                },
+                "kind": {
+                  "$": "A1"
+                },
+                "date": {
+                  "$": "20250320"
+                }
+              },
+              {
+                "@document-id-type": "epodoc",
+                "doc-number": {
+                  "$": "US2025097171"
+                },
+                "date": {
+                  "$": "20250320"
+                }
+              }
+            ]
+          },
+          "classifications-ipcr": {
+            "classification-ipcr": [
+              {
+                "@sequence": "1",
+                "text": {
+                  "$": "H04L  51/    02            A I"
+                }
+              },
+              {
+                "@sequence": "2",
+                "text": {
+                  "$": "H04L  51/    04            A I"
+                }
+              }
+            ]
+          },
+          "patent-classifications": {
+            "patent-classification": [
+              {
+                "@sequence": "1",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "G"
+                },
+                "class": {
+                  "$": "06"
+                },
+                "subclass": {
+                  "$": "F"
+                },
+                "main-group": {
+                  "$": "40"
+                },
+                "subgroup": {
+                  "$": "226"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "US"
+                }
+              },
+              {
+                "@sequence": "2",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "G"
+                },
+                "class": {
+                  "$": "06"
+                },
+                "subclass": {
+                  "$": "F"
+                },
+                "main-group": {
+                  "$": "40"
+                },
+                "subgroup": {
+                  "$": "226"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "EP"
+                }
+              },
+              {
+                "@sequence": "3",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "G"
+                },
+                "class": {
+                  "$": "06"
+                },
+                "subclass": {
+                  "$": "F"
+                },
+                "main-group": {
+                  "$": "40"
+                },
+                "subgroup": {
+                  "$": "30"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "EP"
+                }
+              },
+              {
+                "@sequence": "4",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "G"
+                },
+                "class": {
+                  "$": "06"
+                },
+                "subclass": {
+                  "$": "F"
+                },
+                "main-group": {
+                  "$": "40"
+                },
+                "subgroup": {
+                  "$": "35"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "EP"
+                }
+              },
+              {
+                "@sequence": "5",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "G"
+                },
+                "class": {
+                  "$": "06"
+                },
+                "subclass": {
+                  "$": "F"
+                },
+                "main-group": {
+                  "$": "40"
+                },
+                "subgroup": {
+                  "$": "56"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "EP"
+                }
+              },
+              {
+                "@sequence": "6",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "G"
+                },
+                "class": {
+                  "$": "06"
+                },
+                "subclass": {
+                  "$": "F"
+                },
+                "main-group": {
+                  "$": "8"
+                },
+                "subgroup": {
+                  "$": "35"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "US"
+                }
+              },
+              {
+                "@sequence": "7",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "G"
+                },
+                "class": {
+                  "$": "06"
+                },
+                "subclass": {
+                  "$": "F"
+                },
+                "main-group": {
+                  "$": "8"
+                },
+                "subgroup": {
+                  "$": "35"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "EP"
+                }
+              },
+              {
+                "@sequence": "8",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "G"
+                },
+                "class": {
+                  "$": "06"
+                },
+                "subclass": {
+                  "$": "F"
+                },
+                "main-group": {
+                  "$": "8"
+                },
+                "subgroup": {
+                  "$": "36"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "EP"
+                }
+              },
+              {
+                "@sequence": "9",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "G"
+                },
+                "class": {
+                  "$": "06"
+                },
+                "subclass": {
+                  "$": "N"
+                },
+                "main-group": {
+                  "$": "3"
+                },
+                "subgroup": {
+                  "$": "0895"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "US"
+                }
+              },
+              {
+                "@sequence": "10",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "G"
+                },
+                "class": {
+                  "$": "06"
+                },
+                "subclass": {
+                  "$": "N"
+                },
+                "main-group": {
+                  "$": "3"
+                },
+                "subgroup": {
+                  "$": "0895"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "EP"
+                }
+              },
+              {
+                "@sequence": "11",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "G"
+                },
+                "class": {
+                  "$": "06"
+                },
+                "subclass": {
+                  "$": "N"
+                },
+                "main-group": {
+                  "$": "3"
+                },
+                "subgroup": {
+                  "$": "091"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "US"
+                }
+              },
+              {
+                "@sequence": "12",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "G"
+                },
+                "class": {
+                  "$": "06"
+                },
+                "subclass": {
+                  "$": "N"
+                },
+                "main-group": {
+                  "$": "3"
+                },
+                "subgroup": {
+                  "$": "091"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "EP"
+                }
+              },
+              {
+                "@sequence": "13",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "H"
+                },
+                "class": {
+                  "$": "04"
+                },
+                "subclass": {
+                  "$": "L"
+                },
+                "main-group": {
+                  "$": "51"
+                },
+                "subgroup": {
+                  "$": "02"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "US"
+                }
+              },
+              {
+                "@sequence": "14",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "H"
+                },
+                "class": {
+                  "$": "04"
+                },
+                "subclass": {
+                  "$": "L"
+                },
+                "main-group": {
+                  "$": "51"
+                },
+                "subgroup": {
+                  "$": "02"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "EP"
+                }
+              },
+              {
+                "@sequence": "15",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "H"
+                },
+                "class": {
+                  "$": "04"
+                },
+                "subclass": {
+                  "$": "L"
+                },
+                "main-group": {
+                  "$": "51"
+                },
+                "subgroup": {
+                  "$": "04"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "US"
+                }
+              },
+              {
+                "@sequence": "16",
+                "classification-scheme": {
+                  "@office": "EP",
+                  "@scheme": "CPCI"
+                },
+                "section": {
+                  "$": "H"
+                },
+                "class": {
+                  "$": "04"
+                },
+                "subclass": {
+                  "$": "L"
+                },
+                "main-group": {
+                  "$": "51"
+                },
+                "subgroup": {
+                  "$": "04"
+                },
+                "classification-value": {
+                  "$": "I"
+                },
+                "generating-office": {
+                  "$": "EP"
+                }
+              }
+            ]
+          },
+          "application-reference": {
+            "@doc-id": "627891458",
+            "document-id": [
+              {
+                "@document-id-type": "docdb",
+                "country": {
+                  "$": "US"
+                },
+                "doc-number": {
+                  "$": "202418768363"
+                },
+                "kind": {
+                  "$": "A"
+                }
+              },
+              {
+                "@document-id-type": "epodoc",
+                "doc-number": {
+                  "$": "US202418768363"
+                },
+                "date": {
+                  "$": "20240710"
+                }
+              },
+              {
+                "@document-id-type": "original",
+                "doc-number": {
+                  "$": "18768363"
+                }
+              }
+            ]
+          },
+          "priority-claims": {
+            "priority-claim": [
+              {
+                "@sequence": "1",
+                "@kind": "national",
+                "document-id": [
+                  {
+                    "@document-id-type": "epodoc",
+                    "doc-number": {
+                      "$": "US202363538663P"
+                    },
+                    "date": {
+                      "$": "20230915"
+                    }
+                  },
+                  {
+                    "@document-id-type": "original",
+                    "doc-number": {
+                      "$": "63538663"
+                    }
+                  }
+                ]
+              },
+              {
+                "@sequence": "2",
+                "@kind": "national",
+                "document-id": {
+                  "@document-id-type": "epodoc",
+                  "doc-number": {
+                    "$": "US202418768363"
+                  },
+                  "date": {
+                    "$": "20240710"
+                  }
+                }
+              }
+            ]
+          },
+          "parties": {
+            "applicants": {
+              "applicant": [
+                {
+                  "@sequence": "1",
+                  "@data-format": "epodoc",
+                  "applicant-name": {
+                    "name": {
+                      "$": "ORACLE INT CORP [US]"
+                    }
+                  }
+                },
+                {
+                  "@sequence": "1",
+                  "@data-format": "original",
+                  "applicant-name": {
+                    "name": {
+                      "$": "ORACLE INTERNATIONAL CORPORATION"
+                    }
+                  }
+                }
+              ]
+            },
+            "inventors": {
+              "inventor": [
+                {
+                  "@sequence": "1",
+                  "@data-format": "epodoc",
+                  "inventor-name": {
+                    "name": {
+                      "$": "HU YAZHE [US]"
+                    }
+                  }
+                },
+                {
+                  "@sequence": "2",
+                  "@data-format": "epodoc",
+                  "inventor-name": {
+                    "name": {
+                      "$": "GUO MENGQING [US]"
+                    }
+                  }
+                },
+                {
+                  "@sequence": "3",
+                  "@data-format": "epodoc",
+                  "inventor-name": {
+                    "name": {
+                      "$": "WANG ZHENG [US]"
+                    }
+                  }
+                },
+                {
+                  "@sequence": "4",
+                  "@data-format": "epodoc",
+                  "inventor-name": {
+                    "name": {
+                      "$": "SHENG TAO [US]"
+                    }
+                  }
+                },
+                {
+                  "@sequence": "5",
+                  "@data-format": "epodoc",
+                  "inventor-name": {
+                    "name": {
+                      "$": "QIAN JUN [US]"
+                    }
+                  }
+                },
+                {
+                  "@sequence": "6",
+                  "@data-format": "epodoc",
+                  "inventor-name": {
+                    "name": {
+                      "$": "MAMTANI VINOD [US]"
+                    }
+                  }
+                },
+                {
+                  "@sequence": "1",
+                  "@data-format": "original",
+                  "inventor-name": {
+                    "name": {
+                      "$": "HU, Yazhe"
+                    }
+                  }
+                },
+                {
+                  "@sequence": "2",
+                  "@data-format": "original",
+                  "inventor-name": {
+                    "name": {
+                      "$": "GUO, Mengqing"
+                    }
+                  }
+                },
+                {
+                  "@sequence": "3",
+                  "@data-format": "original",
+                  "inventor-name": {
+                    "name": {
+                      "$": "WANG, Zheng"
+                    }
+                  }
+                },
+                {
+                  "@sequence": "4",
+                  "@data-format": "original",
+                  "inventor-name": {
+                    "name": {
+                      "$": "SHENG, Tao"
+                    }
+                  }
+                },
+                {
+                  "@sequence": "5",
+                  "@data-format": "original",
+                  "inventor-name": {
+                    "name": {
+                      "$": "QIAN, Jun"
+                    }
+                  }
+                },
+                {
+                  "@sequence": "6",
+                  "@data-format": "original",
+                  "inventor-name": {
+                    "name": {
+                      "$": "MAMTANI, Vinod"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "invention-title": {
+            "$": "LLM FINE-TUNING FOR CHATBOT",
+            "@lang": "en"
+          },
+          "references-cited": {
+            "citation": [
+              {
+                "@cited-phase": "national-search-report",
+                "@cited-by": "examiner",
+                "@sequence": "1",
+                "patcit": {
+                  "@dnum-type": "publication number",
+                  "@num": "1",
+                  "document-id": [
+                    {
+                      "@document-id-type": "epodoc",
+                      "doc-number": {
+                        "$": "US2023421373"
+                      }
+                    },
+                    {
+                      "@document-id-type": "docdb",
+                      "country": {
+                        "$": "US"
+                      },
+                      "doc-number": {
+                        "$": "2023421373"
+                      },
+                      "kind": {
+                        "$": "A1"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "@cited-phase": "national-search-report",
+                "@cited-by": "examiner",
+                "@sequence": "2",
+                "patcit": {
+                  "@dnum-type": "publication number",
+                  "@num": "2",
+                  "document-id": [
+                    {
+                      "@document-id-type": "epodoc",
+                      "doc-number": {
+                        "$": "US11749264"
+                      }
+                    },
+                    {
+                      "@document-id-type": "docdb",
+                      "country": {
+                        "$": "US"
+                      },
+                      "doc-number": {
+                        "$": "11749264"
+                      },
+                      "kind": {
+                        "$": "B2"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "@cited-phase": "national-search-report",
+                "@cited-by": "examiner",
+                "@sequence": "3",
+                "patcit": {
+                  "@dnum-type": "publication number",
+                  "@num": "3",
+                  "document-id": [
+                    {
+                      "@document-id-type": "epodoc",
+                      "doc-number": {
+                        "$": "US2024283820"
+                      }
+                    },
+                    {
+                      "@document-id-type": "docdb",
+                      "country": {
+                        "$": "US"
+                      },
+                      "doc-number": {
+                        "$": "2024283820"
+                      },
+                      "kind": {
+                        "$": "A1"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "@cited-phase": "national-search-report",
+                "@cited-by": "examiner",
+                "@sequence": "4",
+                "patcit": {
+                  "@dnum-type": "publication number",
+                  "@num": "4",
+                  "document-id": [
+                    {
+                      "@document-id-type": "epodoc",
+                      "doc-number": {
+                        "$": "US2024095455"
+                      }
+                    },
+                    {
+                      "@document-id-type": "docdb",
+                      "country": {
+                        "$": "US"
+                      },
+                      "doc-number": {
+                        "$": "2024095455"
+                      },
+                      "kind": {
+                        "$": "A1"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "@cited-phase": "national-search-report",
+                "@cited-by": "examiner",
+                "@sequence": "5",
+                "patcit": {
+                  "@dnum-type": "publication number",
+                  "@num": "5",
+                  "document-id": [
+                    {
+                      "@document-id-type": "epodoc",
+                      "doc-number": {
+                        "$": "US2025021842"
+                      }
+                    },
+                    {
+                      "@document-id-type": "docdb",
+                      "country": {
+                        "$": "US"
+                      },
+                      "doc-number": {
+                        "$": "2025021842"
+                      },
+                      "kind": {
+                        "$": "A1"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "@cited-phase": "national-search-report",
+                "@cited-by": "examiner",
+                "@sequence": "6",
+                "patcit": {
+                  "@dnum-type": "publication number",
+                  "@num": "6",
+                  "document-id": [
+                    {
+                      "@document-id-type": "epodoc",
+                      "doc-number": {
+                        "$": "US2023376697"
+                      }
+                    },
+                    {
+                      "@document-id-type": "docdb",
+                      "country": {
+                        "$": "US"
+                      },
+                      "doc-number": {
+                        "$": "2023376697"
+                      },
+                      "kind": {
+                        "$": "A1"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "abstract": {
+          "@lang": "en",
+          "p": {
+            "$": "Systems, methods, and other embodiments automated fine-tuning of chatbot performance for large language models are described herein. In one embodiment, a method accesses a collection of sample conversations between two entities. An individual sample conversation includes one or more rounds of natural language example prompt by a querent and example response by an agent. The method fine-tunes an LLM to generate responses in natural language based on a chatbot loss function that evaluates first responses generated by the LLM to the example prompts by the querent. The method generates an evaluation score for performance of the tuned LLM as a chatbot based on second responses generated by the tuned LLM to test prompts from a test conversation. And, the method automatically signals that the fine-tuning of the tuned LLM is complete in response to the evaluation score satisfying a threshold."
+          }
+        }
+      }
+    }
+  }
+}

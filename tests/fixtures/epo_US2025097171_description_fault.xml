@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<fault xmlns="http://ops.epo.org">
+    <code>CLIENT.InvalidCountryCode</code>
+    <message>At least one reference in the request has a unsupported country code: Request for fulltext for FulltextRetrievalType[format=text-only,locale=&lt;null&gt;,reference=OpsPublicationReference[country=&lt;null&gt;,docNumber=US2025097171,kind=&lt;null&gt;,regExKind=&lt;null&gt;,date=&lt;null&gt;,format=epodoc,sequence=0,status=&lt;null&gt;], system [null]] was deemed invalid.</message>
+</fault>

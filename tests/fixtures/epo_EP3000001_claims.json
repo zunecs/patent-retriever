@@ -1,0 +1,243 @@
+{
+  "ops:world-patent-data": {
+    "@xmlns": {
+      "ops": "http://ops.epo.org",
+      "$": "http://www.epo.org/exchange",
+      "xlink": "http://www.w3.org/1999/xlink"
+    },
+    "ftxt:fulltext-documents": {
+      "ftxt:fulltext-document": {
+        "@system": "ops.epo.org",
+        "@fulltext-format": "text-only",
+        "bibliographic-data": {
+          "publication-reference": {
+            "@data-format": "docdb",
+            "document-id": {
+              "country": {
+                "$": "EP"
+              },
+              "doc-number": {
+                "$": "3000001"
+              },
+              "kind": {
+                "$": "B1"
+              }
+            }
+          }
+        },
+        "claims": [
+          {
+            "@lang": "DE",
+            "claim": {
+              "claim-text": [
+                {
+                  "$": "1. Verfahren zum Definieren von Fasertrajektorien auf einer Drapierungsoberfl\u00e4che zur Erstellung mindestens einer Falte mit einer gegebenen theoretischen Ausrichtung, dadurch gekennzeichnet, dass es umfasst:"
+                },
+                {
+                  "$": "- die Definition eines Maschennetzes (9, 191) der Drapierungsoberfl\u00e4che (9, 109),\n- die Definition von Richtungsdaten, die mindestens einer \u00dcbertragungsart zugewiesen werden,\n- die Definition eines Vektorfeldes (1, 101, 301) indem jeder Masche des Maschennetzes mindestens ein Richtungsvektor (11, 111, 311) zugewiesen wird, den man durch \u00dcbertragung der Richtungsdaten entsprechend der \u00dcbertragungsart erh\u00e4lt,\nwobei die Trajektorie einer Faser ausgehend von dem Vektorfeld definiert wird."
+                },
+                {
+                  "$": "2. Verfahren nach Anspruch 1, dadurch gekennzeichnet, dass die Definition der Richtungsdaten die Definition von Spannungskurven (3, 303) und/oder die Definition von mindestens einem Spannungsgitternetz (2) mit Zuweisung zu jedem Knoten (N) des Spannungsgitternetzes mindestens eines Spannungsvektors (T) umfasst, wobei man den Richtungsvektor (11, 111, 311) einer Masche durch Berechnung der normierten Gewichte (w5, w6, w11, w12) von Spannungsvektoren (T5, T6; T11, T12) der Spannungskurven (3, 303) und/oder durch Berechnung der normierten Gewichte (w1, w2, w3, w4) von Spannungsvektoren (T1, T2, T3, T4) des Spannungsgitternetzes (2), und durch Gewichtung der normierten Gewichte der Spannungsvektoren erh\u00e4lt."
+                },
+                {
+                  "$": "3. Verfahren nach Anspruch 2, dadurch gekennzeichnet, dass es die Definition eines Spannungsgitternetzes (2) umfasst, wobei jede Masche des Spannungsgitternetzes durch vier Knoten (N1, N2, N3, N4), und die Zuweisung zu jedem Knoten des Spannungsgitternetzes mindestens eines Spannungsvektors (T1, T2, T3, T4) definiert wird, wobei der Richtungsvektor (111) einer Masche erhalten wird durch"
+                },
+                {
+                  "$": "- Definition eines projizierten Punktes (P'1) durch normale Projektion eines Analysepunktes (P1) der Masche auf das Spannungsgitternetz,\n- Berechnung der normierten Gewichte am projizierten Punkt der vier Knoten (N1, N2, N3, N4),\n- Gewichtung der vier Spannungsvektoren (T1, T2, T3, T4) durch die normierten Gewichte, um einen Vektor (D1) am projizierten Punkt zu erhalten, und Erhalt des Richtungsvektors (311) durch normale Projektion dieses Vektors (D1) am Analysepunkt."
+                },
+                {
+                  "$": "4. Verfahren nach Anspruch 2 oder 3, dadurch gekennzeichnet, dass es die Definition von mindestens zwei Spannungskurven umfasst, wobei der Richtungsvektor (311) einer Masche erhalten wird durch"
+                },
+                {
+                  "$": "- normale Projektion eines Analysepunktes (P2, P5) der Masche, auf die beiden Spannungskurven (31, 32; 331, 332) zwischen denen der Analysepunkt positioniert ist,\n- Definition an den projizierten Punkten (P'2, P\"2; P'4, P\"4) von an den Spannungskurven anliegenden Spannungsvektoren (T5, T6, T11, T12)\n- Berechnung der normierten Gewichte der projizierten Punkte (P'2, P\"2; P'4, P\"4) am Analysepunkt;\n- und Gewichtung der beiden Spannungsvektoren durch deren jeweilige normierten Gewichte, um den Richtungsvektor der Masche zu erhalten."
+                },
+                {
+                  "$": "5. Verfahren nach Anspruch 4, dadurch gekennzeichnet, dass es die Definition eines Winkelabweichungsgitternetzes (4) umfasst, wobei jede Masche des Winkelabweichungsgitternetzes durch vier Knoten (N') definiert wird, und die Zuweisung zu jedem Knoten des Winkelabweichungsgitternetzes mindestens eines maximalen Winkelabweichungswertes,\nwobei die Definition einer Spannungskurve (303) die Definition von Ausbreitungsrichtungen in verschiedenen Analysepunkten umfasst, wobei die Definition einer Ausbreitungsrichtung in einem Analysepunkt (P3) umfasst:"
+                },
+                {
+                  "$": "- den Erhalt einer ersten Referenzrichtung (TR) am Analysepunkt ausgehend von Richtungsdaten, die einer \u00dcbertragungsart zugewiesen werden,\n- die normale Projektion des Punktes (P3) auf das Winkelabweichungsgitternetz,\n- die Berechnung der normierten Gewichte (w7, w8, w9, w10) am projizierten Punkt (P'3) der vier Knoten (N'1, N'2, N'3, N'4) der Masche des Winkelabweichungsgittemetzes,\n- die Gewichtung der vier maximalen Winkelabweichungswerte (Va, Vb, Vc, Vd) der Masche durch die normierten Gewichte, um einen maximalen Winkelabweichungswert (\u03b1) zu erhalten, der dem Analysepunkt zugewiesen wird,\n- die Neuausrichtung der ersten Referenzrichtung ausgehend von dem maximalen Winkelabweichungswert (\u03b1), um die Ausbreitungsrichtung am Analysepunkt zu erhalten."
+                },
+                {
+                  "$": "6. Verfahren nach Anspruch 5, dadurch gekennzeichnet, dass der Neuausrichtungsschritt der Referenzrichtung umfasst"
+                },
+                {
+                  "$": "- die Definition eines Toleranzsektors um die erste Referenzrichtung (TR) durch Definition der Grenzrichtungen (L1, L2) auf einen Winkel von mehr oder weniger den einen maximalen Winkelabweichungswert (\u03b1), der dem Analysepunkt zugewiesen ist,\n- die Bestimmung einer geod\u00e4tischen Richtung (G) an dem Analysepunkt,\n- die Ausbreitungsrichtung am Ausbreitungspunkt ist gleich der geod\u00e4tischen Richtung, wenn die geod\u00e4tische Richtung (G) in dem Toleranzsektor eingeschlossen ist, und ist gleich der der geod\u00e4tischen Richtung n\u00e4chstgelegenen Grenzrichtung (L1, L2), wenn die geod\u00e4tische Richtung nicht in dem Toleranzsektor eingeschlossen ist."
+                },
+                {
+                  "$": "7. Verfahren nach einem der Anspr\u00fcche 1 bis 6, dadurch gekennzeichnet, dass es die Definition eines \u00dcbertragungsmaschennetzes einer \u00dcbertragungsoberfl\u00e4che entsprechend einer vereinfachten, im Wesentlichen kontinuierlichen, Oberfl\u00e4che der Drapierungsoberfl\u00e4che umfasst, wobei man den Richtungsvektor jeder Masche erh\u00e4lt durch"
+                },
+                {
+                  "$": "- Definition eines projizierten Punktes (P'5, P'6), den man durch normale Projektion eines Analysepunktes (P5, P6) der Masche auf das \u00dcbertragungsmaschennetz (51) erh\u00e4lt,\n- Definition einer zweiten Referenzrichtung (T'R, T\"R) am projizierten Punkt (P'5) ausgehend von Richtungsdaten, die einer \u00dcbertragungsart zugewiesen sind,\n- Definition der Normalen (U1, U2) zu der \u00dcbertragungsmasche,\n- Definition einer Schnittebene (A2, A4), wobei die Schnittebene durch den projizierten Punkt (P'5, P'6), die zweite Referenzrichtung (T'R, T\"R) und die Normale (U1, U2) definiert wird,\n- Definition der Kreuzungslinie (D4, D5) der Schnittebene (A2, A4) mit der Ebene (A3, A5) der Masche, wobei man den Richtungsvektor der Masche ausgehend von der Richtung dieser Kreuzungslinie erh\u00e4lt."
+                },
+                {
+                  "$": "8. Verfahren nach Anspruch 5 oder 6, in Kombination mit dem Anspruch 3, dadurch gekennzeichnet, dass man die erste Referenzrichtung (TR) am Analysepunkt (P3) ausgehend von einem Spannungsgitternetz erh\u00e4lt durch"
+                },
+                {
+                  "$": "- Definition eines durch normale Projektion des Analysepunktes (P3) projizierten Punktes auf dem Spannungsgitternetz,\n- Berechnung der normierten Gewichte am projizierten Punkt der vier Knoten,\n- Gewichtung der vier Spannungsvektoren durch die normierten Gewichte, um einen Vektor (D1) am projizierten Punkt zu erhalten, wobei die erste Referenzrichtung (TR) durch Projektion des Vektors am Analysepunkt erhalten wird."
+                },
+                {
+                  "$": "9. Verfahren nach Anspruch 7, in Kombination mit dem Anspruch 5 oder 6, dadurch gekennzeichnet, dass man die erste Referenzrichtung (TR) am Analysepunkt ausgehend von einer \u00dcbertragungsoberfl\u00e4che erh\u00e4lt durch"
+                },
+                {
+                  "$": "- Definition eines durch normale Projektion des Analysepunktes (P6) der Masche projizierten Punktes (P'6) auf dem \u00dcbertragungsmaschennetz (51),\n- Definition einer zweiten Referenzrichtung (T\"R) am projizierten Punkt (P'6),\n- Definition der Normalen (U2) zu der \u00dcbertragungsmasche,\n- Definition einer Schnittebene (A4), wobei die Schnittebene durch den projizierten Punkt (P'5), die zweite Referenzrichtung (T'R) und die Normale (U2) definiert wird,\n- Definition der Kreuzungslinie (D5) der Schnittebene (A4) mit der Ebene (A5) der Masche, wobei die erste Referenzrichtung (TR) der Richtung dieser Kreuzungslinie entspricht."
+                },
+                {
+                  "$": "10. Verfahren nach Anspruch 7 oder 9, in Kombination mit dem Anspruch 3, dadurch gekennzeichnet, dass man die zweite Referenzrichtung (T'R, T\"R) am projizierten Punkt ausgehend von einem Spannungsgitternetz erh\u00e4lt durch"
+                },
+                {
+                  "$": "- Definition eines zweiten durch normale Projektion des Punktes (P'5) der \u00dcbertragungsmasche projizierten Punktes auf dem Spannungsgitternetz,\n- Berechnung der normierten Gewichte am zweiten projizierten Punkt der Masche des Spannungsgitternetzes der vier Knoten der Masche,\n- Gewichtung der vier Spannungsvektoren durch die normierten Gewichte, um einen Vektor (D1) an dem zweiten projizierten Punkt zu erhalten, wobei man die zweite Referenzrichtung (T'R, T\"R) durch Projektion des Vektors an dem projizierten Punkt der \u00dcbertragungsmasche erh\u00e4lt."
+                },
+                {
+                  "$": "11. Verfahren nach einem der Anspr\u00fcche 1 bis 10, dadurch gekennzeichnet, dass es den Erhalt mindestens zweier Vektorfelder f\u00fcr Ausrichtungen unterschiedlicher Falten umfasst, die man ausgehend von unterschiedlichen Richtungsdaten erh\u00e4lt, wobei das Verfahren weiter eine Scheranalyse durch Vergleich der Richtungsvektoren der beiden Vektorfelder umfasst."
+                },
+                {
+                  "$": "12. Verfahren zur Herstellung von Teilen aus Verbundmaterial durch eine automatische Faserdrapierungsmaschine, dadurch gekennzeichnet, dass die Fasertrajektorien f\u00fcr die Drapierung von Falten durch die Drapierungsmaschine durch das Verfahren nach einem der Anspr\u00fcche 1 bis 11 definiert werden."
+                }
+              ]
+            }
+          },
+          {
+            "@lang": "FR",
+            "claim": {
+              "claim-text": [
+                {
+                  "$": "1. Proc\u00e9d\u00e9 de d\u00e9finition de trajectoires de fibre sur une surface de drapage pour la r\u00e9alisation d'au moins un pli d'orientation th\u00e9orique donn\u00e9e, caract\u00e9ris\u00e9 en ce qu'il comprend :"
+                },
+                {
+                  "$": "- la d\u00e9finition d'un maillage (9, 191) de la surface de drapage (9, 109),\n- la d\u00e9finition de donn\u00e9es de direction associ\u00e9es \u00e0 au moins une m\u00e9thode de transfert,\n- la d\u00e9finition d'un champ vectoriel (1, 101, 301) en associant \u00e0 chaque maille du maillage, au moins un vecteur directeur (11, 111, 311) obtenu par transfert desdites donn\u00e9es de direction selon ladite m\u00e9thode de transfert,\nla trajectoire d'une fibre \u00e9tant d\u00e9finie \u00e0 partir dudit champ vectoriel."
+                },
+                {
+                  "$": "2. Proc\u00e9d\u00e9 selon la revendication 1, caract\u00e9ris\u00e9 en ce que la d\u00e9finition de donn\u00e9es de direction comprend la d\u00e9finition de courbes de contraintes (3, 303), et/ou la d\u00e9finition d'au moins une grille de contraintes (2) avec association \u00e0 chaque noeud (N) de la grille de contraintes d'au moins un vecteur de contrainte (T), le vecteur directeur (11, 111, 311) d'une maille \u00e9tant obtenu par calcul des poids normalis\u00e9s (w<5>, w<6>, w<11>, w<12>) de vecteurs de contrainte (T<5>, T<6> ; T<11>, T<12>) desdites courbes de contraintes (3, 303) et/ou par calcul des poids normalis\u00e9s (w<1>, w<2>, w<3>, w<4>) de vecteurs de contrainte (T<1>, T<2>, T<3>, T<4>) de ladite grille de contraintes (2), et par pond\u00e9ration par lesdits poids normalis\u00e9s desdits vecteurs de contrainte."
+                },
+                {
+                  "$": "3. Proc\u00e9d\u00e9 selon la revendication 2, caract\u00e9ris\u00e9 en ce qu'il comprend la d\u00e9finition d'une grille de contraintes (2), chaque maille de ladite grille de contraintes \u00e9tant d\u00e9finie par quatre noeuds (N<1>, N<2>, N<3>, N<4>), et l'association \u00e0 chaque noeud de la grille de contraintes d'au moins un vecteur de contrainte (T<1>, T<2>, T<3>, T<4>), le vecteur directeur (111) d'une maille \u00e9tant obtenu par"
+                },
+                {
+                  "$": "- d\u00e9finition d'un point projet\u00e9 (P'<1>) par projection normale d'un point d'analyse (P<1>) de la maille sur la grille de contraintes,\n- calcul des poids normalis\u00e9s au point projet\u00e9 des quatre noeuds (N<1>, N<2>, N<3>, N<4>),\n- pond\u00e9ration des quatre vecteurs de contrainte (T<1>, T<2>, T<3>, T<4>) par lesdits poids normalis\u00e9s pour obtenir un vecteur (D<1>) au point projet\u00e9, et obtention du vecteur directeur (311) par projection normale de ce vecteur (D<1>) au point d'analyse."
+                },
+                {
+                  "$": "4. Proc\u00e9d\u00e9 selon la revendication 2 ou 3, caract\u00e9ris\u00e9 en ce qu'il comprend la d\u00e9finition d'au moins deux courbes de contrainte, le vecteur directeur (311) d'une maille \u00e9tant obtenu par"
+                },
+                {
+                  "$": "- projection normale d'un point d'analyse (P<2>, P<5>) de ladite maille, sur les deux courbes de contraintes (31, 32 ; 331, 332) entre lesquelles ledit point d'analyse est positionn\u00e9,\n- d\u00e9finition auxdits points projet\u00e9s (P'<2>, P\"<2> ; P'<4>, P\"<4>) de vecteurs de contrainte (T<5>, T<6>, T<11>, T<12>) tangents auxdites courbes de contraintes\n- calcul des poids normalis\u00e9s des points projet\u00e9s (P'<2>, P\"<2> ; P'<4>, P\"<4>) au point d'analyse;\n- et pond\u00e9ration des deux vecteurs de contrainte par leurs poids normalis\u00e9s respectifs pour obtenir le vecteur directeur de la maille."
+                },
+                {
+                  "$": "5. Proc\u00e9d\u00e9 selon la revendication 4, caract\u00e9ris\u00e9 en ce qu'il comprend la d\u00e9finition d'une grille de d\u00e9viation angulaire (4), chaque maille de ladite grille de d\u00e9viation angulaire \u00e9tant d\u00e9finie par quatre noeuds (N'), et l'association \u00e0 chaque noeud de la grille de d\u00e9viation angulaire d'au moins une valeur de d\u00e9viation angulaire maximale,\nla d\u00e9finition d'une courbe de contraintes (303) comprenant la d\u00e9finition de directions de propagation en diff\u00e9rents points d'analyse, la d\u00e9finition d'une direction de propagation en un point d'analyse (P<3>) comprenant :"
+                },
+                {
+                  "$": "- l'obtention d'une premi\u00e8re direction de r\u00e9f\u00e9rence (T<R>) audit point d'analyse \u00e0 partir de donn\u00e9es de direction associ\u00e9es \u00e0 une m\u00e9thode de transfert,\n- la projection normale dudit point (P<3>) sur la grille de d\u00e9viation angulaire,\n- le calcul des poids normalis\u00e9s (w<7>, w<8>, w<9>, w<10>) au point projet\u00e9 (P'<3>) des quatre noeuds (N'<1>, N'<2>, N'<3>, N'<4>) de la maille de la grille de d\u00e9viation angulaire,\n- la pond\u00e9ration desdites quatre valeurs de d\u00e9viation angulaire maximale (V<a>, V<b>, V<c>, V<d>) de la maille par lesdits poids normalis\u00e9s pour obtenir une valeur de d\u00e9viation angulaire maximale (\u03b1) associ\u00e9e audit point d'analyse,\n- la r\u00e9orientation de ladite de premi\u00e8re direction de r\u00e9f\u00e9rence \u00e0 partir de ladite valeur de d\u00e9viation angulaire maximale (\u03b1) pour obtenir la direction de propagation audit point d'analyse."
+                },
+                {
+                  "$": "6. Proc\u00e9d\u00e9 selon la revendication 5, caract\u00e9ris\u00e9 en ce que ladite \u00e9tape de r\u00e9orientation de la direction de r\u00e9f\u00e9rence comprend"
+                },
+                {
+                  "$": "- la d\u00e9finition d'un secteur de tol\u00e9rance autour de la premi\u00e8re direction de r\u00e9f\u00e9rence (T<R>) en d\u00e9finissant des directions limites (L<1>, L<2>) \u00e0 un angle de plus ou moins la valeur de d\u00e9viation angulaire maximale (\u03b1) associ\u00e9e audit point d'analyse,\n- la d\u00e9termination d'une direction g\u00e9od\u00e9sique (G) audit point d'analyse,\n- la direction de propagation au point de propagation est \u00e9gale \u00e0 la direction g\u00e9od\u00e9sique si la direction g\u00e9od\u00e9sique (G) est incluse dans le secteur de tol\u00e9rance, et est \u00e9gale \u00e0 la direction limite (L<1>, L<2>) la plus proche de la direction g\u00e9od\u00e9sique, si la direction g\u00e9od\u00e9sique n'est pas incluse dans le secteur de tol\u00e9rance."
+                },
+                {
+                  "$": "7. Proc\u00e9d\u00e9 selon l'une des revendications 1 \u00e0 6, caract\u00e9ris\u00e9 en ce qu'il comprend la d\u00e9finition d'un maillage de transfert d'une surface de transfert correspondant \u00e0 une surface simplifi\u00e9e, sensiblement continue, de la surface de drapage, le vecteur directeur de chaque maille \u00e9tant obtenue par"
+                },
+                {
+                  "$": "- d\u00e9finition d'un point projet\u00e9 (P'<5>, P'<6>) obtenu par projection normale d'un point d'analyse (P<5>, P<6>) de ladite maille, sur le maillage de transfert (51),\n- d\u00e9finition d'une deuxi\u00e8me direction de r\u00e9f\u00e9rence (T'<R>, T\"<R>) audit point projet\u00e9 (P'<5>), \u00e0 partir de donn\u00e9es de direction associ\u00e9es \u00e0 une m\u00e9thode de transfert,\n- d\u00e9finition de la normale (U<1>, U<2>) \u00e0 la maille de transfert,\n- d\u00e9finition d'un plan de coupe (A<2>, A<4>) ledit plan de coupe \u00e9tant d\u00e9fini par le point projet\u00e9 (P'<5>, P'<6>), ladite deuxi\u00e8me direction de r\u00e9f\u00e9rence (T'<R>, T\"<R>) et ladite normale (U<1>, U<2>),\n- d\u00e9finition de la ligne d'intersection (D<4>, D<5>) du plan de coupe (A<2>, A<4>) avec le plan (A<3>, A<5>) de la maille, le vecteur directeur de la maille \u00e9tant obtenu \u00e0 partir de la direction de cette ligne d'intersection."
+                },
+                {
+                  "$": "8. Proc\u00e9d\u00e9 selon la revendication 5 ou 6, en combinaison avec la revendication 3, caract\u00e9ris\u00e9 en ce que la premi\u00e8re direction de r\u00e9f\u00e9rence (T<R>) au point d'analyse (P<3>) est obtenue \u00e0 partir d'une grille de contraintes par"
+                },
+                {
+                  "$": "- d\u00e9finition d'un point projet\u00e9 par projection normale dudit point d'analyse (P<3>), sur la grille de contrainte,\n- calcul des poids normalis\u00e9s au point projet\u00e9 des quatre noeuds,\n- pond\u00e9ration des quatre vecteurs de contrainte par lesdits poids normalis\u00e9s pour obtenir un vecteur (D<1>) audit point projet\u00e9, la premi\u00e8re direction de r\u00e9f\u00e9rence (T<R>) \u00e9tant obtenue par projection dudit vecteur au point d'analyse."
+                },
+                {
+                  "$": "9. Proc\u00e9d\u00e9 selon la revendication 7, en combinaison avec la revendication 5 ou 6, caract\u00e9ris\u00e9 en ce que la premi\u00e8re direction de r\u00e9f\u00e9rence (T<R>) au point d'analyse est obtenue \u00e0 partir d'une surface de transfert, par"
+                },
+                {
+                  "$": "- d\u00e9finition d'un point projet\u00e9 (P'<6>) par projection normale du point d'analyse (P<6>) de ladite maille, sur le maillage de transfert (51),\n- d\u00e9finition d'une deuxi\u00e8me direction de r\u00e9f\u00e9rence (T\"<R>) audit point projet\u00e9 (P'<6>),\n- d\u00e9finition de la normale (U<2>) \u00e0 la maille de transfert,\n- d\u00e9finition d'un plan de coupe (A<4>) ledit plan de coupe \u00e9tant d\u00e9fini par le point projet\u00e9 (P'<5>), ladite deuxi\u00e8me direction de r\u00e9f\u00e9rence (T'<R>) et ladite normale (U<2>),\n- d\u00e9finition de la ligne d'intersection (D<5>) du plan de coupe (A<4>) avec le plan (A<5>) de la maille, la premi\u00e8re direction de r\u00e9f\u00e9rence (T<R>) correspondant \u00e0 la direction de cette ligne d'intersection."
+                },
+                {
+                  "$": "10. Proc\u00e9d\u00e9 selon la revendication 7 ou 9, en combinaison avec la revendication 3, caract\u00e9ris\u00e9 en ce que la deuxi\u00e8me direction de r\u00e9f\u00e9rence (T'<R>, T\"<R>) audit point projet\u00e9 est obtenue \u00e0 partir d'une grille de contraintes par"
+                },
+                {
+                  "$": "- d\u00e9finition d'un deuxi\u00e8me point projet\u00e9 par projection normale du point (P'<5>) de la maille de transfert, sur la grille de contrainte,\n- calcul des poids normalis\u00e9s au deuxi\u00e8me point projet\u00e9 de la maille de la grille de contraintes des quatre noeuds de ladite maille,\n- pond\u00e9ration des quatre vecteurs de contrainte par lesdits poids normalis\u00e9s pour obtenir un vecteur (D<1>) audit deuxi\u00e8me point projet\u00e9, la deuxi\u00e8me direction de r\u00e9f\u00e9rence (T'<R>, T\"<R>) \u00e9tant obtenue par projection dudit vecteur au point projet\u00e9 de la maille de transfert."
+                },
+                {
+                  "$": "11. Proc\u00e9d\u00e9 selon l'une des revendications 1 \u00e0 10, caract\u00e9ris\u00e9 en ce qu'il comprend l'obtention d'au moins deux champs vectoriels pour des orientations de plis diff\u00e9rentes, obtenus \u00e0 partir de donn\u00e9es de directions diff\u00e9rentes, le proc\u00e9d\u00e9 comprenant en outre une analyse de cisaillement par comparaison des vecteurs directeurs des deux champs vectoriels."
+                },
+                {
+                  "$": "12. Proc\u00e9d\u00e9 de fabrication de pi\u00e8ces en mat\u00e9riau composite par une machine de drapage de fibres automatique, caract\u00e9ris\u00e9 en ce que les trajectoires de fibre pour le drapage de plis par la machine de drapage sont d\u00e9finies par le proc\u00e9d\u00e9 selon l'une des revendications 1 \u00e0 11."
+                }
+              ]
+            }
+          },
+          {
+            "@lang": "EN",
+            "claim": {
+              "claim-text": [
+                {
+                  "$": "1. Method for defining the trajectories of fiber on a layup surface for producing at least one ply having a given theoretical orientation, characterized in that it includes:"
+                },
+                {
+                  "$": "- the definition of a mesh (9, 191) of the layup surface (9,109),\n- the definition of direction data associated to at least one transfer method,\n- the definition of a vector field (1, 101, 301) by associating to each element of the mesh, at least one direction vector (11, 111, 311) obtained by transfer of said direction data according to said transfer method,\nthe trajectory of a fiber being defined from said vector field."
+                },
+                {
+                  "$": "2. Method according to claim 1, characterized in that the definition of the direction data includes the definition of constraint curves (3, 303), and/or the definition of at least one constraint grid (2) with association of at least one constraint vector (T) to each node (N) of the constraint grid, the direction vector (11, 111, 311) of an element being obtained by the calculation of the normalized weights (w<5>, w<6>, w<11>, w<12>) of the constraint vectors (T<5>, T<6> ; T<11>, T<12>) of said constraint curves (3, 303) and/or by calculation of the normalized weights (w<1>, w<2>, w<3>, w<4>) of the constraint vectors (T<1>, T<2>, T<3>, T<4>) of said constraint grid (2), and by weighting of said constraint vectors by said normalized weights."
+                },
+                {
+                  "$": "3. Method according to claim 2, characterized in that it includes the definition of a constraint grid (2), each element of said constraint grid being defined by four nodes (N<1>, N<2>, N<3>, N<4>), and the association of at least one constraint vector (T<1>, T<2>, T<3>, T<4>) to each node of the constraint grid, the direction vector (111) of an element being obtained by"
+                },
+                {
+                  "$": "- definition of a projected point (P'<1>) by normal projection of an analysis point (P<1>) of the element on the constraint grid,\n- calculation of the normalized weights, at the projected point, of the four nodes (N<1>, N<2>, N<3>, N<4>),\n- weighting of the four constraint vectors (T<1>, T<2>, T<3>, T<4>) by said normalized weights to obtain a vector (D<1>) at the projected point, and obtaining the direction vector (311) by normal projection of this vector (D<1>) at the analysis point."
+                },
+                {
+                  "$": "4. Method according to claim 2 or 3, characterized in that it includes the definition of at least two constraint curves, the direction vector (311) of an element being obtained by"
+                },
+                {
+                  "$": "- normal projection of an analysis point (P<2>, P<5>) of said element, on the two constraint curves (31, 32; 331, 332) between which said analysis point is positioned,\n- definition, at said projected points (P'<2>, P\"<2> ; P'<4>, P\"<4>), of the constraint vectors (T<5>, T<6>, T<11>, T<12>) tangent to said constraint curves\n- calculation of the normalized weights of the projected points (P'<2>, P\"<2> ; P'<4>, P\"<4>) at the analysis point;\n- and weighting of the two constraint vectors by their respective normalized weights to obtain the direction vector of the element."
+                },
+                {
+                  "$": "5. Method according to claim 4, characterized in that it includes the definition of an angular deviation grid (4), each element of said angular deviation grid being defined by four nodes (N'), and the association to each node of the angular deviation grid of at least one maximum angular deviation value, the definition of a constraint curve (303) comprising the definition of propagation directions at different analysis points, the definition of a propagation direction at an analysis point (P<3>) including:"
+                },
+                {
+                  "$": "- obtaining a first reference direction (T<R>) at said analysis point from the direction data associated to a method of transfer,\n- the normal projection of said point (P<3>) on the angular deviation grid,\n- calculation of the normalized weights (w<7>, w<8>, w<9>, w<10>), at the projected point (P'<3>), of the four nodes (N'<1>, N'<2>, N'<3>, N'<4>) of the element of the angular deviation grid,\n- weighting of said four maximum angular deviation values (V<a>, V<b>, V<c>, V<d>) of the element by said normalized weights to obtain a maximum angular deviation value (\u03b1) associated to said analysis point,\n- the reorientation of said first reference direction from said maximum angular deviation value (\u03b1) to obtain the propagation direction at said analysis point."
+                },
+                {
+                  "$": "6. Method according to claim 5, characterized in that said step of reorientation of the reference direction includes"
+                },
+                {
+                  "$": "- the definition of a tolerance sector around the first reference direction (T<R>) by defining direction limits (L<1>, L<2>) at an angle of more or less the maximum angular deviation value (\u03b1) associated to said analysis point,\n- determining a geodesic direction (G) at said analysis point,\n- the propagation direction at the propagation point is equal to the geodesic direction if the geodesic direction (G) is included in the tolerance sector, and is equal to the direction limit (L<1>, L<2>) closest to the geodesic direction, if the geodesic direction is not included in the tolerance sector."
+                },
+                {
+                  "$": "7. Method according to one of the claims 1 to 6, characterized in that it includes the definition of a transfer mesh of a transfer surface corresponding to a simplified surface, substantially continuous, of the layup surface, the direction vector of each element being obtained by"
+                },
+                {
+                  "$": "- definition of a projected point (P'<5>, P'<6>) obtained by normal projection of an analysis point (P<5>, P<6>) of said element, on the transfer mesh (51),\n- definition of a second reference direction (T'<R>, T\"<R>) at said projected point (P'<5>), from direction data associated to a method of transfer,\n- definition of the normal (U<1>, U<2>) to the transfer element,\n- definition of a cutting plane (A<2>, A<4>) said cutting plane being defined by the projected point (P'<5>, P'<6>), said second reference direction (T'<R>, T\"<R>) and said normal (U<1>, U<2>),\n- definition of the line of intersection (D<4>, D<5>) of the cutting plane (A<2>, A<4>) with the plane (A<3>, A<5>) of the element, the direction vector of the element being obtained from the direction of this line of intersection."
+                },
+                {
+                  "$": "8. Method according to claim 5 or 6 in combination with claim 3, characterized in that the first reference direction (T<R>) at the analysis point (P<3>) is obtained from a constraint grid by"
+                },
+                {
+                  "$": "- definition of a projected point by normal projection of said analysis point (P<3>) on the constraint grid,\n- calculation of normalized weights, at the projected point, of the four nodes,\n- weighting of the four constraint vectors by said normalized weights to obtain a vector (D<1>) at said projected point, the first reference direction (T<R>) being obtained by projection of said vector at the analysis point."
+                },
+                {
+                  "$": "9. Method according to claim 7, in combination with claim 5 or 6, characterized in that the first reference direction (T<R>) at the analysis point is obtained from a transfer surface, by"
+                },
+                {
+                  "$": "- definition of a projected point (P'<6>) by normal projection of the analysis point (P<6>) of said element on the transfer mesh (51),\n- definition of a second reference direction (T\"<R>) at said projected point (P'<6>)\n- definition of the normal (U<2>) to the transfer element,\n- definition of a cutting plane (A<4>) said cutting plane being defined by the projected point (P'<5>), said second reference direction (T'<R>) and said normal (U<2>),\n- definition of the line of intersection (D<5>) of the cutting plane (A<4>) with the plane (A<5>) of the element, the first reference direction (T<R>) corresponding to the direction of this line of intersection."
+                },
+                {
+                  "$": "10. Method according to claim 7 or 9, in combination with claim 3, characterized in that the second reference direction (T'<R>, T\"<R>) at said projected point is obtained from a constraint grid by"
+                },
+                {
+                  "$": "- definition of a second projected point by normal projection of the point (P'<5>) of the transfer element, on the constraint grid,\n- calculation of the normalized weights, at the second projected point of the element of the constraint grid, of the four nodes of said element,\n- weighting of the four constraint vectors by said normalized weights to obtain a vector (D<1>) at said second projected point, the second reference direction (T'<R>, T\"<R>) being obtained by projection of said vector at the projected point of the transfer element."
+                },
+                {
+                  "$": "11. Method according to one of claims 1 to 10, characterized in that it includes obtaining at least two vector fields for different plies orientations, obtained from different direction data, the method further comprising a shear analysis by comparison of the direction vectors of the two vector fields."
+                },
+                {
+                  "$": "12. Method for the manufacture of parts made of composite materials by an automatic fiber layup machine, characterized in that the fiber trajectories for the laying up of plies by the layup machine are defined by the method according to one of claims 1 to 11."
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

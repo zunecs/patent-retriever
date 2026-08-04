@@ -1,0 +1,262 @@
+{
+  "ops:world-patent-data": {
+    "@xmlns": {
+      "ops": "http://ops.epo.org",
+      "$": "http://www.epo.org/exchange",
+      "xlink": "http://www.w3.org/1999/xlink"
+    },
+    "ftxt:fulltext-documents": {
+      "ftxt:fulltext-document": {
+        "@system": "ops.epo.org",
+        "@fulltext-format": "text-only",
+        "bibliographic-data": {
+          "publication-reference": {
+            "@data-format": "docdb",
+            "document-id": {
+              "country": {
+                "$": "EP"
+              },
+              "doc-number": {
+                "$": "0000001"
+              },
+              "kind": {
+                "$": "A1"
+              }
+            }
+          }
+        },
+        "description": [
+          {
+            "@lang": "DE",
+            "p": [
+              {
+                "$": "[0001]    Um W\u00e4rme von einem tieferen auf ein h\u00f6heres Temperaturniveau zu heben, mu\u00df ein Kompensationsproze\u00df Anwendung finden, so da\u00df die Gesamtentropie aller beteiligten Stoffe nicht abnimmt. Bei den bisher allgemein \u00fcblichen W\u00e4rmepumpen wird ein Kompensationsproze\u00df mit Arbeitsverbrauch angewandt; der Arbeitsverbrauch beruht auf dem Betrieb eines Kompressors."
+              },
+              {
+                "$": "[0002]    \u00dcberlegungen haben dazu gef\u00fchrt, den Kompensationsproze\u00df auch durch W\u00e4rme anzutreiben, und zwar derart, da\u00df bei einer mittleren Temperatur T<o> W\u00e4rme eingespeist wird und diese sowohl bei einer tieferen Temperatur T als auch bei einer h\u00f6heren Temperatur T<2> wieder abgegeben wird. Eine derartige thermische W\u00e4rmepumpe, die Gegenstand der Erfindung ist, wird somit durch das Temperaturgef\u00e4lle zwischen T und T<1> angetrieben, wobei der thermische Wirkungsgrad sich aus folgender Beziehung errechnen l\u00e4\u00dft:"
+              },
+              {
+                "$": "[0003]    <img class=\"EMIRef\" id=\"70873771-ib0001\" />"
+              },
+              {
+                "$": "wobei Q<o> der aufgenommene W\u00e4rmestrom und Q<2> der Nutzw\u00e4rmestrom bei der Temperatur T<2> ist."
+              },
+              {
+                "$": "[0004]    Derart arbeitende thermische W\u00e4rmepumpen sind von gro\u00dfem Interesse zur Ausnutzung der durch Sonneneinstrahlung hervorgerufenen Temperaturdifferenzen, insbesondere zum Zwecke des Aufheizens von Wasser oder anderen Medien f\u00fcr Heizungszwecke, zur Bereitstellung von Warmwasser u.dgl."
+              },
+              {
+                "$": "[0005]    Die erfindungsgem\u00e4\u00df ausgebildete thermische W\u00e4rmepumpe besteht aus einem W\u00e4rmerohr, in welchem der zwischen der W\u00e4rme\u00fcbertragungszone zur W\u00e4rmezufuhr und der W\u00e4rme\u00fcbertragungszone zur W\u00e4rmeabfuhr befindliche Dampfkanal einen sich \u00fcber seine L\u00e4nge \u00e4ndernden, die Str\u00f6mungsgeschwindigkeit des Dampfes zun\u00e4chst erh\u00f6henden und dann erniedrigenden Querschnitt aufweist und sich im Bereich der erh\u00f6hten Dampfgeschwindigkeit eine weitere W\u00e4rme\u00fcbertragungszone mit W\u00e4rmezufuhr oder -abfuhr befindet."
+              },
+              {
+                "$": "[0006]    Bei einer Ausf\u00fchrungsform des Gegenstands der Erfindung besteht die thermische W\u00e4rmepumpe aus einem W\u00e4rmerohr, in dessen Dampfkanal zwischen dem W\u00e4rmezufuhr- bzw. Verdampferbereich und dem W\u00e4rmeabfuhr- bzw. Nutzkondensatorbereich ein die Dampfgeschwindigkeit \u00e4ndernder Verdr\u00e4ngungsk\u00f6rper angeordnet ist."
+              },
+              {
+                "$": "[0007]    Der vor dem Verdr\u00e4ngungsk\u00f6rper befindliche Bereich ist der Verdampferbereich \"V\", in welchem bei einer mittleren Temperatur T der W\u00e4rmestrom Q<o> zugef\u00fchrt wird. Der Bereich in etwa in der Mitte des Verdr\u00e4ngungsk\u00f6rpers ist der sogenannte Treibkondensatorbereich \"TK\", in welchem bei einer mitt"
+              },
+              {
+                "$": "leren Temperatur T<1'> die unterhalb der Temperatur T<o> liegt, ein Teil des Dampfes kondensiert, wobei der W\u00e4rmestrom Q<1> abgef\u00fchrt wird. Hinter dem Verdr\u00e4ngungsk\u00f6rper befindet sich der Nutzkondensatorbereich \"NK\", in welchem bei einer mittleren Temperatur T<2> der Restdampf kondensiert und der Nutzw\u00e4rmestrom Q<2> abgegeben wird. Das im Treibkondensatorbereich \"TK\" und im Nutzkondensatorbereich \"NK\" anfallende Kondensat wird durch eine geeignete, an sich bekannte Kapillarstruktur, mit welcher die Innenwand des W\u00e4rmerohres in \u00fcblicher Weise ausgekleidet ist, zum Verdampferbereich \"V\" zur\u00fcckgef\u00fchrt."
+              },
+              {
+                "$": "[0008]    Auch kann die Betriebsweise der vorbeschriebenen Ausf\u00fchrungsform der W\u00e4rmepumpe gem\u00e4\u00df der Erfindung derart abge\u00e4ndert werden, da\u00df sie thermodynamisch umgekehrt wird, was dazu f\u00fchrt, da\u00df der Treibkondensatorbereich dann zu einem zweiten Verdampferbereich wird. Dadurch kann eine relativ gro\u00dfe W\u00e4rmemenge von einer tiefen Temperatur zu einer mittleren Temperatur transportiert werden."
+              },
+              {
+                "$": "[0009]    Weitere Merkmale der erfindungsgem\u00e4\u00dfen thermischen W\u00e4rmepumpe gehen aus der nachfolgenden Beschreibung zweier bevorzugter Ausf\u00fchrungsbeispiele sowie den Unteranspr\u00fcchen hervor. Die beiden Figuren 1 und 2 der Zeichnungen zeigen in schematischer Darstellung eine thermische oder Dampfstrahl-W\u00e4rmepumpe mit Unterschallstr\u00f6mung im einen Falle und mit \u00dcberschallstr\u00f6mung im zweiten Falle."
+              },
+              {
+                "$": "[0010]    Die W\u00e4rmepumpe f\u00fcr Unterschallstr\u00f6mung nach Fig. 1 besteht aus einem W\u00e4rmerohr 11, an dessen Innenwand eine Kapillarstruktur 12 angeordnet ist. Im Innenraum des W\u00e4rmerohres 11 befindet sich in gleichm\u00e4\u00dfigem Abstand von der Kapillarstruktur 12 der Verdr\u00e4ngungsk\u00f6rper 13, der in seinem vorderen Bereich 14 eine Form besitzt, da\u00df zwischen ihm und der Kapillarstruktur 12 eine D\u00fcse 15 gebildet ist, in welcher sich der Querschnitt des Dampfkanals 16 verkleinert. Hinter"
+              },
+              {
+                "$": "der D\u00fcse verringert sich der Querschnitt des Dampfkanals 16 zwischen dem Mittelst\u00fcck 17 des Verdr\u00e4ngungsk\u00f6rpers 13 und der Kapillarstruktur 12 infolge der Form des Verdr\u00e4ngungsk\u00f6rpers geringf\u00fcgig. In diesem Bereich wird durch K\u00fchlung ein Teil des Dampfes kondensiert. Der hiermit verbundene Druck- und Temperaturanstieg wird durch die Querschnittsabnahme des Dampfkanals im wesentlichen unterbunden. Der hintere Teil 18 des Verdr\u00e4ngungsk\u00f6rpers 13 ist kegelf\u00f6rmig ausgebildet, so da\u00df sich der Querschnitt des Str\u00f6mungskanals 16 dem \u00d6ffnungswinkel des Kegels entsprechend erweitert und einen Diffusor 19 bildet."
+              },
+              {
+                "$": "[0011]    Vorteilhafterweise ist die Kapillarstruktur 12 im Bereich des Verdr\u00e4ngungsk\u00f6rpers 13 im Hinblick auf die hohen Druckunterschiede l\u00e4ngs der W\u00e4rmepumpe mit einer d\u00fcnnwandigen Abdeckung 20 versehen, die zur Vermeidung eines Abhebens infolge Unterdrucks ausreichend fest mit der Kapillarstruktur bzw. dem Rohrk\u00f6rper des W\u00e4rmerohres 11 verbunden sein mu\u00df. Sie hat den Zweck, das anfallende Kondensat vermittels der Scherwirkung des Dampfstromes auf der Abdeckung zun\u00e4chst in die Nutzkondensatorzone zu treiben, in welcher der Druck h\u00f6her ist als in der Verdampferzone, wo er seinerseits h\u00f6her ist als in der Treibkondensatorzone."
+              },
+              {
+                "$": "[0012]    Die thermische W\u00e4rmepumpe mit \u00dcberschallstr\u00f6mung nach Fig.2 hat grunds\u00e4tzlich den gleichen Aufbau wie diejenige nach Fig. 1. Der wesentliche Unterschied besteht darin, da\u00df der Verdr\u00e4ngungsk\u00f6rper 13' derart geformt ist, da\u00df die D\u00fcse 15' wie auch der Diffusor 19' einen konvergenten und einen divergenten Teil aufweisen, wobei der \u00dcbergang von der Unterschall- zur \u00dcberschallstr\u00f6mung an der engsten Stelle erfolgt."
+              },
+              {
+                "$": "[0013]    Die Wirkungsweise der erfindungsgem\u00e4\u00dfen thermischen W\u00e4rmepumpe ist folgende:"
+              },
+              {
+                "$": "Im Verdampfer 21 wird bei einer mittleren Temperatur T der W\u00e4rmestrom Q<o> zugef\u00fchrt. In der durch den vorderen Teil des Verdr\u00e4ngungsk\u00f6rpers 13 gebildeten D\u00fcse 15 verkleinert sich der Querschnitt des Dampfkanals 16, wodurch der Dampf expandiert. Hierbei k\u00fchlt er sich ab und kondensiert teilweise im anschlie\u00dfenden Treibkondensator 22 bei einer mittleren Temperatur T<1> < T<0>, wobei der W\u00e4rmestrom Q<1> abgef\u00fchrt wird. Die kinetische Energie des kondensierten Dampfes verbleibt im Restdampf, so da\u00df dessen spezifische kinetische Energie ansteigt. Die \u00fcblicherweise in einem Kondensator in Str\u00f6mungsrichtung auftretende Kompression mit entsprechendem Temperaturanstieg wird durch die Expansion des Dampfes im Treibkondensator 22 vermieden, und zwar durch entsprechende Verkleinerung des Dampfkanalquerschnitts. Im anschlie\u00dfenden Diffusor 19 wird der Dampf durch die Vergr\u00f6\u00dferung des Dampfkanalquerschnitts komprimiert, wobei sich dessen kinetische Energie in Druck umwandelt und die Temperatur des Dampfes ansteigt. Im sich an den Diffusor 19 anschlie\u00dfenden Nutzkondensator 23 wird bei einer mittleren Temperatur T<2 >der Restdampf kondensiert, wobei der Nutzw\u00e4rmestrom Q<2> abgegeben wird. Da die spezifische kinetische Energie des Dampfes beim Eintritt in den Diffusor 19 h\u00f6her liegt als beim Austritt aus der D\u00fcse 15, k\u00f6nnen im Nutzkondensator 23 h\u00f6here Temperaturen als im Verdampfer 21 erzielt werden."
+              },
+              {
+                "$": "[0014]    Das im Treibkondensator 22 und im Nutzkondensator 23 anfallende Kondensat wird \u00fcber die Kapillarstruktur 12 an der Innenwand des W\u00e4rmerohres 11 zum Verdampfer 21 zur\u00fcckgef\u00fchrt."
+              },
+              {
+                "$": "[0015]    F\u00fcr eine thermische W\u00e4rmepumpe mit einer W\u00e4rmezufuhr von Qo = 1 kw ist folgende Dimensionierung vorzusehen:"
+              },
+              {
+                "$": "W\u00e4rmetr\u00e4ger: H<2>0"
+              },
+              {
+                "$": "Wandmaterial: Cu"
+              },
+              {
+                "$": "T<0>: 30\u00b0 C --- T<1>: 25\u00b0 C --- T<2>: 35\u00b0 C"
+              },
+              {
+                "$": "[0016]    Dampfkanal-Querschnitt im Verdampfer: 6,7 cm<2> Dampfkanal-Querschnitt am Ausgang D\u00fcse: 1,9 cm<2> Dampfkanal-Querschnitt am Ausgang Treibkondensator: 1,0 cm<2> Machzahl am Ausgang der D\u00fcse: 0,69"
+              },
+              {
+                "$": "[0017]    Machzahl am Ausgang des Treibkondensators: 0,97."
+              },
+              {
+                "$": "[0018]    Die mit Unterschallstr\u00f6mung erreichbaren Temperaturdifferenzen betragen nur wenige Prozent der Absoluttemperatur, wie sich aus den vorstehenden Daten ergibt. Mit der thermischen W\u00e4rmepumpe mit \u00dcberschallstr\u00f6mung lassen sich gr\u00f6\u00dfere Temperaturdifferenzen erzielen."
+              },
+              {
+                "$": "[0019]    Es ist auch eine Ausf\u00fchrungsform der thermischen W\u00e4rmepumpe m\u00f6glich, bei welcher eine Unterschalld\u00fcse nach Fig. 1 verwendet wird, der \u00dcbergang zur \u00dcberschallstr\u00f6mung im Treibkondensator erfolgt und anschlie\u00dfend ein \u00dcberschalldiffusor nach Fig. 2 benutzt wird."
+              },
+              {
+                "$": "[0020]    Das Kondensat wird in bekannter Weise mittels der Kapillarstruktur an der Innenwand des W\u00e4rmerohres zum Verdampfer zur\u00fcckgef\u00fchrt. Die R\u00fcckf\u00fchrung erfolgt im wesentlichen aufgrund der Kapillarkr\u00e4fte, die gegebenenfalls durch die Schwerkraft unterst\u00fctzt werden k\u00f6nnen. Es ist aber auch m\u00f6glich, wie erw\u00e4hnt, zum Antrieb der Fl\u00fcssigkeitsstr\u00f6mung in der Kapillarstruktur zus\u00e4tzlich den h\u00f6heren Druck im Nutzkondensator auszunutzen."
+              },
+              {
+                "$": "[0021]    Weiterhin ist es m\u00f6glich, den abgedeckten Teil der Kapillarstruktur im Inneren des W\u00e4rmerohres durch ein oder mehrere R\u00f6hrchen, Kan\u00e4le od.dgl. zu ersetzen, die gegebenenfalls auch auf der Au\u00dfenseite des W\u00e4rmerohres angeordnet sein"
+              },
+              {
+                "$": "k\u00f6nnen, um die Dampfstr\u00f6mung m\u00f6glichst wenig zu beeintr\u00e4chtigen."
+              },
+              {
+                "$": "[0022]    Zweckm\u00e4\u00dfigerweise wird der Verdr\u00e4ngungsk\u00f6rper im Innenraum des W\u00e4rmerohres auf einem axial angeordneten Tragstab gelagert, der vorzugsweise thermisch isoliert ausgebildet ist oder aus W\u00e4rme schlecht leitendem Material besteht."
+              },
+              {
+                "$": "[0023]    Weiterhin kann es vorteilhaft sein, in der Nutzkondensatorzone und gegebenenfalls auch in der Verdampferzone in etwa kegelf\u00f6rmige Verdr\u00e4ngungsk\u00f6rper anzuordnen, deren Grundfl\u00e4chen den Stirnfl\u00e4chen des W\u00e4rmerohres zugekehrt sind."
+              },
+              {
+                "$": "[0024]    Vorteilhafterweise verwendet man ein zylindrisches W\u00e4rmerohr mit Kapillarstruktur-Auskleidung und Abdeckung, in welchem ein Verdr\u00e4ngungsk\u00f6rper mit der gew\u00fcnschten Querschnittsform angeordnet ist. Man kann selbstverst\u00e4ndlich auch einen Verdr\u00e4ngungsk\u00f6rper verwenden, der zumindest in seinem mittleren Teil zylindrisch ausgebildet ist, so da\u00df dann die Querschnitte des Dampfkanals in den verschiedenen Bereichen durch die W\u00e4nde des W\u00e4rmerohres bestimmt sind. Diese L\u00f6sung ist jedoch weniger vorteilhaft. Die beschriebenen und dargestellten Ausf\u00fchrungsformen haben wesentliche Vorteile, da Verluste durch Grenzschichtabl\u00f6sung im Treibkondensator und Diffusor und Temperaturverluste durch eine gr\u00f6\u00dfere W\u00e4rme\u00fcbertragungsfl\u00e4che im Treibkondensator vermieden werden; \u00fcberdies sind die konstruktive Form und die Herstellbarkeit wesentlich einfacher sowie stabiler."
+              },
+              {
+                "$": "[0025]    Bei einem praktischen Anwendungsbeispiel zum Zwecke optimaler Nutzbarmachung von Solarenergie k\u00f6nnte das W\u00e4rmerohr derart angeordnet sein, da\u00df die der thermischen W\u00e4rmepumpe im Verdampferbereich zugef\u00fchrte W\u00e4rmemenge Q von Sonnenstrahlen stammt; die W\u00e4rmemenge Q wird durch ein K\u00fchlmittel abgef\u00fchrt, beispielsweise in einem den Sonnenstrahlen nicht"
+              },
+              {
+                "$": "ausgesetzten Bereich, und die im Nutzkondensator anfallende W\u00e4rmemenge Q<2> k\u00f6nnte zur Aufheizung eines Nutzmediums benutzt werden."
+              },
+              {
+                "$": "[0026]    Die erfindungsgem\u00e4\u00dfe thermische W\u00e4rmepumpe bietet den Vor- <.> teil geringerer Verluste, einer kleinen und einfachen Konstruktion sowie der Wartungsfreiheit, woraus sich geringe Anschaffungs- und Betriebskosten ergeben."
+              },
+              {
+                "$": "[0027]    Schlie\u00dflich kann die ver\u00e4nderliche Ausgestaltung des Querschnitts des Dampfkanals des W\u00e4rmerohrs auch dadurch erzielt werden, da\u00df der Verdr\u00e4ngungsk\u00f6rper fortgelassen und statt dessen das W\u00e4rmerohr querschnittsm\u00e4\u00dfig entsprechend der erforderlichen Kanalkonfiguration ver\u00e4nderlich ausgebildet wird und somit die gleichen Str\u00f6mungseffekt erzielt werden wie im Falle der beschriebenen Ausf\u00fchrungsbeispiele."
+              }
+            ]
+          },
+          {
+            "@lang": "EN",
+            "p": [
+              {
+                "$": "[0001]    In order to raise heat from a lower to a higher temperature level, a compensation process must be used so that the total entropy of all the substances involved does not decrease. In the hitherto common heat pumps, a compensation process is used with work consumption; the work consumption is based on the operation of a compressor."
+              },
+              {
+                "$": "[0002]    Considerations have led to the compensation process also being driven by heat, namely in such a way that heat is fed in at an intermediate temperature T <o> and this is discharged again both at a lower temperature T and at a higher temperature T <2>. Such a thermal heat pump which is the subject of the invention is thus driven by the temperature gradient between T and T <1> the thermal efficiency being calculated from the following relationship:"
+              },
+              {
+                "$": "&#91;0003&#93;"
+              },
+              {
+                "$": "<img class=\"EMIRef\" id=\"d530e019-2682-42a9-8f74-11d8a030d62b-ib0001\" />"
+              },
+              {
+                "$": "wherein Q <o> is the absorbed heat flow and Q <2> is the useful heat flow at the temperature T <2>."
+              },
+              {
+                "$": "[0004]    Thermal heat pumps operating in this way are of great interest for utilizing the temperature differences caused by solar radiation, in particular for the purpose of heating water or other media for heating purposes, for the provision of hot water and the like."
+              },
+              {
+                "$": "[0005]    The thermal heat pump according to the invention consists of a heat pipe in which the steam channel located between the heat transfer zone for supplying heat and the heat transfer zone for removing heat has a cross section which changes over its length and initially increases and then decreases the flow speed of the steam, and a further heat transfer zone with supplying heat or removing heat is located in the region of the increased steam speed."
+              },
+              {
+                "$": "[0006]    In one embodiment of the subject matter of the invention, the thermal heat pump consists of a heat pipe, in the vapor channel of which a displacement body changing the vapor speed is arranged between the heat supply or evaporator region and the heat dissipation or usable condenser region."
+              },
+              {
+                "$": "[0007]    The region located in front of the displacement body is the evaporator region \"V\", in which the heat flow Q is supplied in <o> at an average temperature T. The region approximately in the middle of the displacer is the so-called driving capacitor region \"TK\", in which it is estimated that a medium is present."
+              },
+              {
+                "$": "After the temperature T <1'> which is below the temperature T <o> a part of the vapor condenses, the heat flow Q <1> being removed. Behind the displacer is the useful condenser region \"NK\", in which the residual vapor condenses at an average temperature T <2> and the useful heat flow Q <2> is discharged. The condensate which arises in the motive condenser region \"TK\" and in the useful condenser region \"NK\" is returned to the evaporator region \"V\" by a suitable capillary structure which is known per se and with which the inner wall of the heat pipe is lined in the customary manner."
+              },
+              {
+                "$": "[0008]    Also, the operation of the above described embodiment of the heat pump according to the invention may be modified to be thermodynamically reversed, which results in the motive condenser section then becoming a second evaporator section. As a result, a relatively large amount of heat can be transported from a low temperature to an intermediate temperature."
+              },
+              {
+                "$": "[0009]    Further features of the thermal heat pump according to the invention are evident from the following description of two preferred exemplary embodiments and from the dependent claims. The two FIGS. 1 and 2 of the drawings show a schematic representation of a thermal or steam jet heat pump with supersonic flow in one case and with supersonic flow in the second case."
+              },
+              {
+                "$": "[0010]    The heat pump for supersonic flow according to FIG. 1 consists of a heat pipe 11 on the inner wall of which a capillary structure 12 is arranged. In the interior of the heat pipe 11 there is situated, at a uniform distance from the capillary structure 12, the displacement body 13, which in its front region 14 has a shape such that a nozzle 15 is formed between it and the capillary structure 12, in which nozzle the cross section of the vapor duct 16 decreases. Behind it, the rear is located behind the rear"
+              },
+              {
+                "$": "In the case of the nozzle, the cross section of the vapor channel 16 between the center 17 of the displacer 13 and the capillary structure 12 is slightly reduced due to the shape of the displacer. In this region, a portion of the vapor is condensed by cooling. The pressure and temperature rise associated therewith is substantially prevented by the reduction in the cross-section of the steam duct. The rear part 18 of the displacement body 13 is of conical design, so that the cross section of the flow channel 16 widens in accordance with the opening angle of the cone and forms a diffuser 19."
+              },
+              {
+                "$": "[0011]    Advantageously, the capillary structure 12 is provided in the region of the displacement body 13 with a thin-walled cover 20 in view of the high pressure differences along the heat pump, which cover must be connected sufficiently firmly to the capillary structure or the tube body of the heat pipe 11 in order to avoid lifting as a result of negative pressure. The purpose of the condenser is to drive the condensate which is produced by the shear action of the vapor flow on the cover first into the useful condenser zone, in which the pressure is higher than in the evaporator zone, where it is in turn higher than in the drive condenser zone."
+              },
+              {
+                "$": "[0012]    The supersonic heat pump of Fig. 2 is basically of the same construction as that of Fig. 1, the essential difference being that the displacer 13' is shaped so that the nozzle 15' and the diffuser 19' have a convergent and divergent part, the transition from the supersonic to the supersonic flow being at the narrowest point."
+              },
+              {
+                "$": "[0013]    The mode of operation of the thermal heat pump according to the invention is as follows:"
+              },
+              {
+                "$": "In the evaporator 21, the heat flow Q is supplied in <o> at an average temperature T. In the nozzle 15 formed by the front part of the displacement body 13, the cross section of the steam channel 16 decreases, as a result of which the steam expands. During this process, it cools down and partially condenses in the subsequent motive condenser 22 at an average temperature T <1> < T <0>, the heat flow Q <1> being dissipated. The kinetic energy of the condensed steam remains in the residual steam, so that its specific kinetic energy increases. The compression which usually occurs in a condenser in the direction of flow and which has a corresponding temperature rise is avoided by the expansion of the steam in the motive condenser 22, namely by a corresponding reduction in the steam duct cross section. In the subsequent diffuser 19, the steam is compressed by the enlargement of the steam channel cross section, wherein its kinetic energy is converted into pressure and the temperature of the steam rises. In the useful condenser 23 adjoining the diffuser 19, the residual vapor is condensed at an average temperature T <2 > and the useful heat flow Q <2> is discharged. Since the specific kinetic energy of the vapor is higher when it enters the diffuser 19 than when it exits the nozzle 15, higher temperatures can be achieved in the useful condenser 23 than in the evaporator 21."
+              },
+              {
+                "$": "[0014]    The condensate which arises in the motive condenser 22 and in the useful condenser 23 is returned to the evaporator 21 via the capillary structure 12 on the inner wall of the heat pipe 11."
+              },
+              {
+                "$": "[0015]    For a thermal heat pump with a heat input of Qo=1 kw, the following dimensioning should be provided:"
+              },
+              {
+                "$": "Heat carrier: H <2>0"
+              },
+              {
+                "$": "Wall material: Cu"
+              },
+              {
+                "$": "T <0>: 30 \u00b0 C --- T <1>: 25 \u00b0 C --- T <2>: 35 \u00b0 C"
+              },
+              {
+                "$": "[0016]    Evaporator vapor channel cross section: 6.7 cm <2> Nozzle exit vapor channel cross section: 1.9 cm <2> Motive condenser vapor channel cross section: 1.0 cm <2> Mach number at the exit of the nozzle: 0,69"
+              },
+              {
+                "$": "[0017]    Mach number at the output of the driving capacitor: 0.97."
+              },
+              {
+                "$": "[0018]    The temperature differences attainable with supersonic flow are only a few percent of the absolute temperature, as is evident from the above data. With the thermal heat pump with supersonic flow, larger temperature differences can be achieved."
+              },
+              {
+                "$": "[0019]    An embodiment of the thermal heat pump is also possible in which a supersonic nozzle according to FIG. 1 is used, the transition to supersonic flow takes place in the motive condenser and subsequently a supersonic diffuser according to FIG. 2 is used."
+              },
+              {
+                "$": "[0020]    The condensate is returned to the evaporator in a known manner by means of the capillary structure on the inner wall of the heat pipe. The return takes place essentially on the basis of the capillary forces, which can be assisted by gravity if appropriate. However, it is also possible, as mentioned, additionally to utilize the higher pressure in the useful condenser for driving the liquid flow in the capillary structure."
+              },
+              {
+                "$": "[0021]    It is also possible to replace the covered part of the capillary structure inside the heat pipe by one or more tubes, channels or the like, which may also be arranged on the outside of the heat pipe"
+              },
+              {
+                "$": "This is to avoid this problem, in order to minimize the damage to the steam flow."
+              },
+              {
+                "$": "[0022]    Expediently, the displacement body is mounted in the interior of the heat pipe on an axially arranged support rod, which is preferably designed to be thermally insulated or consists of material with poor thermal conductivity."
+              },
+              {
+                "$": "[0023]    Furthermore, it can be advantageous to arrange approximately conical displacement bodies in the useful condenser zone and optionally also in the evaporator zone, the base surfaces of which displacement bodies face the end faces of the heat pipe."
+              },
+              {
+                "$": "[0024]    Advantageously, a cylindrical heat pipe with capillary structure lining and cover is used, in which a displacement body with the desired cross-sectional shape is arranged. It is of course also possible to use a displacement body which is of cylindrical configuration at least in its central part, so that the cross sections of the steam duct in the various regions are then determined by the walls of the heat pipe. However, this solution is less advantageous. The embodiments described and illustrated have substantial advantages in that losses due to separation of boundary layers in the driving condenser and diffuser and temperature losses due to a larger heat transfer surface in the driving condenser are avoided; moreover, the structural shape and the mullability are substantially simpler and more stable."
+              },
+              {
+                "$": "[0025]    In a practical example of application for optimum utilization of solar energy, the heat pipe could be arranged in such a way that the quantity of heat Q supplied to the thermal heat pump in the evaporator region originates from solar rays; the quantity of heat Q is dissipated by a coolant, for example in a coolant which is not supplied to the solar rays"
+              },
+              {
+                "$": "The heat quantity Q <2> generated in the useful capacitor could be used to heat a useful medium."
+              },
+              {
+                "$": "[0026]    The thermal heat pump according to the invention offers the advantage of lower losses, a small and simple construction and freedom from maintenance, which results in low purchase and operating costs."
+              },
+              {
+                "$": "[0027]    Finally, the variable cross-sectional configuration of the vapor channel of the heat pipe can also be achieved by omitting the displacement body and instead making the heat pipe variable in cross-sectional configuration according to the required channel configuration and thus achieving the same flow effect as in the case of the described exemplary embodiments."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

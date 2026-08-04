@@ -1,0 +1,803 @@
+{
+  "ops:world-patent-data": {
+    "@xmlns": {
+      "ops": "http://ops.epo.org",
+      "$": "http://www.epo.org/exchange",
+      "xlink": "http://www.w3.org/1999/xlink"
+    },
+    "exchange-documents": {
+      "exchange-document": [
+        {
+          "@system": "ops.epo.org",
+          "@family-id": "48979818",
+          "@country": "EP",
+          "@doc-number": "3000001",
+          "@kind": "A1",
+          "bibliographic-data": {
+            "publication-reference": {
+              "document-id": [
+                {
+                  "@document-id-type": "docdb",
+                  "country": {
+                    "$": "EP"
+                  },
+                  "doc-number": {
+                    "$": "3000001"
+                  },
+                  "kind": {
+                    "$": "A1"
+                  },
+                  "date": {
+                    "$": "20160330"
+                  }
+                },
+                {
+                  "@document-id-type": "epodoc",
+                  "doc-number": {
+                    "$": "EP3000001"
+                  },
+                  "date": {
+                    "$": "20160330"
+                  }
+                }
+              ]
+            },
+            "classifications-ipcr": {
+              "classification-ipcr": [
+                {
+                  "@sequence": "1",
+                  "text": {
+                    "$": "B29C  70/    30            A I"
+                  }
+                },
+                {
+                  "@sequence": "2",
+                  "text": {
+                    "$": "G05B  19/  4097            A I"
+                  }
+                }
+              ]
+            },
+            "patent-classifications": {
+              "patent-classification": [
+                {
+                  "@sequence": "1",
+                  "classification-scheme": {
+                    "@office": "EP",
+                    "@scheme": "CPCI"
+                  },
+                  "section": {
+                    "$": "B"
+                  },
+                  "class": {
+                    "$": "29"
+                  },
+                  "subclass": {
+                    "$": "C"
+                  },
+                  "main-group": {
+                    "$": "70"
+                  },
+                  "subgroup": {
+                    "$": "382"
+                  },
+                  "classification-value": {
+                    "$": "I"
+                  },
+                  "generating-office": {
+                    "$": "US"
+                  }
+                },
+                {
+                  "@sequence": "2",
+                  "classification-scheme": {
+                    "@office": "EP",
+                    "@scheme": "CPCI"
+                  },
+                  "section": {
+                    "$": "G"
+                  },
+                  "class": {
+                    "$": "05"
+                  },
+                  "subclass": {
+                    "$": "B"
+                  },
+                  "main-group": {
+                    "$": "19"
+                  },
+                  "subgroup": {
+                    "$": "4097"
+                  },
+                  "classification-value": {
+                    "$": "I"
+                  },
+                  "generating-office": {
+                    "$": "US"
+                  }
+                },
+                {
+                  "@sequence": "3",
+                  "classification-scheme": {
+                    "@office": "EP",
+                    "@scheme": "CPCI"
+                  },
+                  "section": {
+                    "$": "G"
+                  },
+                  "class": {
+                    "$": "05"
+                  },
+                  "subclass": {
+                    "$": "B"
+                  },
+                  "main-group": {
+                    "$": "19"
+                  },
+                  "subgroup": {
+                    "$": "4097"
+                  },
+                  "classification-value": {
+                    "$": "I"
+                  },
+                  "generating-office": {
+                    "$": "EP"
+                  }
+                },
+                {
+                  "@sequence": "4",
+                  "classification-scheme": {
+                    "@office": "EP",
+                    "@scheme": "CPCI"
+                  },
+                  "section": {
+                    "$": "G"
+                  },
+                  "class": {
+                    "$": "05"
+                  },
+                  "subclass": {
+                    "$": "B"
+                  },
+                  "main-group": {
+                    "$": "2219"
+                  },
+                  "subgroup": {
+                    "$": "45238"
+                  },
+                  "classification-value": {
+                    "$": "I"
+                  },
+                  "generating-office": {
+                    "$": "US"
+                  }
+                },
+                {
+                  "@sequence": "5",
+                  "classification-scheme": {
+                    "@office": "EP",
+                    "@scheme": "CPCI"
+                  },
+                  "section": {
+                    "$": "G"
+                  },
+                  "class": {
+                    "$": "05"
+                  },
+                  "subclass": {
+                    "$": "B"
+                  },
+                  "main-group": {
+                    "$": "2219"
+                  },
+                  "subgroup": {
+                    "$": "45238"
+                  },
+                  "classification-value": {
+                    "$": "I"
+                  },
+                  "generating-office": {
+                    "$": "EP"
+                  }
+                }
+              ]
+            },
+            "application-reference": {
+              "@doc-id": "419208452",
+              "document-id": [
+                {
+                  "@document-id-type": "docdb",
+                  "country": {
+                    "$": "EP"
+                  },
+                  "doc-number": {
+                    "$": "14729697"
+                  },
+                  "kind": {
+                    "$": "A"
+                  }
+                },
+                {
+                  "@document-id-type": "epodoc",
+                  "doc-number": {
+                    "$": "EP20140729697"
+                  },
+                  "date": {
+                    "$": "20140520"
+                  }
+                },
+                {
+                  "@document-id-type": "original",
+                  "doc-number": {
+                    "$": "14729697.4"
+                  }
+                }
+              ]
+            },
+            "priority-claims": {
+              "priority-claim": [
+                {
+                  "@sequence": "1",
+                  "@kind": "national",
+                  "document-id": [
+                    {
+                      "@document-id-type": "epodoc",
+                      "doc-number": {
+                        "$": "FR20130001168"
+                      },
+                      "date": {
+                        "$": "20130522"
+                      }
+                    },
+                    {
+                      "@document-id-type": "original",
+                      "doc-number": {
+                        "$": "1301168"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@sequence": "2",
+                  "@kind": "national",
+                  "document-id": [
+                    {
+                      "@document-id-type": "epodoc",
+                      "doc-number": {
+                        "$": "WO2014FR00110"
+                      },
+                      "date": {
+                        "$": "20140520"
+                      }
+                    },
+                    {
+                      "@document-id-type": "original",
+                      "doc-number": {
+                        "$": "2014000110"
+                      }
+                    },
+                    {
+                      "@document-id-type": "original",
+                      "doc-number": {
+                        "$": "FR2014000110"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "parties": {
+              "applicants": {
+                "applicant": [
+                  {
+                    "@sequence": "1",
+                    "@data-format": "epodoc",
+                    "applicant-name": {
+                      "name": {
+                        "$": "CORIOLIS SOFTWARE [FR]"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "2",
+                    "@data-format": "epodoc",
+                    "applicant-name": {
+                      "name": {
+                        "$": "CORIOLIS COMPOSITES [FR]"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "1",
+                    "@data-format": "original",
+                    "applicant-name": {
+                      "name": {
+                        "$": "CORIOLIS SOFTWARE"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "2",
+                    "@data-format": "original",
+                    "applicant-name": {
+                      "name": {
+                        "$": "Coriolis Composites"
+                      }
+                    }
+                  }
+                ]
+              },
+              "inventors": {
+                "inventor": [
+                  {
+                    "@sequence": "1",
+                    "@data-format": "epodoc",
+                    "inventor-name": {
+                      "name": {
+                        "$": "MUNAUX OLIVIER [FR]"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "2",
+                    "@data-format": "epodoc",
+                    "inventor-name": {
+                      "name": {
+                        "$": "CHALLOIS FR\u00c9D\u00c9RIC [FR]"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "1",
+                    "@data-format": "original",
+                    "inventor-name": {
+                      "name": {
+                        "$": "MUNAUX OLIVIER"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "2",
+                    "@data-format": "original",
+                    "inventor-name": {
+                      "name": {
+                        "$": "CHALLOIS FR\u00c9D\u00c9RIC"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "3",
+                    "@data-format": "original",
+                    "inventor-name": {
+                      "name": {
+                        "$": "MUNAUX Olivier"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "4",
+                    "@data-format": "original",
+                    "inventor-name": {
+                      "name": {
+                        "$": "CHALLOIS Fr\u00e9d\u00e9ric"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "invention-title": [
+              {
+                "$": "VERFAHREN ZUM DEFINIEREN VON FASERTRAJEKTORIEN AUF DER BASIS EINES VEKTORFELDES",
+                "@lang": "de"
+              },
+              {
+                "$": "PROCEDE DE DEFINITION DE TRAJECTOIRES DE FIBRE A PARTIR D'UN CHAMP VECTORIEL",
+                "@lang": "fr"
+              },
+              {
+                "$": "METHOD FOR DEFINING FIBRE TRAJECTORIES ON THE BASIS OF A VECTOR FIELD",
+                "@lang": "en"
+              }
+            ]
+          }
+        },
+        {
+          "@system": "ops.epo.org",
+          "@family-id": "48979818",
+          "@country": "EP",
+          "@doc-number": "3000001",
+          "@kind": "B1",
+          "bibliographic-data": {
+            "publication-reference": {
+              "document-id": [
+                {
+                  "@document-id-type": "docdb",
+                  "country": {
+                    "$": "EP"
+                  },
+                  "doc-number": {
+                    "$": "3000001"
+                  },
+                  "kind": {
+                    "$": "B1"
+                  },
+                  "date": {
+                    "$": "20190814"
+                  }
+                },
+                {
+                  "@document-id-type": "epodoc",
+                  "doc-number": {
+                    "$": "EP3000001"
+                  },
+                  "date": {
+                    "$": "20190814"
+                  }
+                }
+              ]
+            },
+            "classifications-ipcr": {
+              "classification-ipcr": [
+                {
+                  "@sequence": "1",
+                  "text": {
+                    "$": "B29C  70/    30            A I"
+                  }
+                },
+                {
+                  "@sequence": "2",
+                  "text": {
+                    "$": "G05B  19/  4097            A I"
+                  }
+                }
+              ]
+            },
+            "patent-classifications": {
+              "patent-classification": [
+                {
+                  "@sequence": "1",
+                  "classification-scheme": {
+                    "@office": "EP",
+                    "@scheme": "CPCI"
+                  },
+                  "section": {
+                    "$": "B"
+                  },
+                  "class": {
+                    "$": "29"
+                  },
+                  "subclass": {
+                    "$": "C"
+                  },
+                  "main-group": {
+                    "$": "70"
+                  },
+                  "subgroup": {
+                    "$": "382"
+                  },
+                  "classification-value": {
+                    "$": "I"
+                  },
+                  "generating-office": {
+                    "$": "US"
+                  }
+                },
+                {
+                  "@sequence": "2",
+                  "classification-scheme": {
+                    "@office": "EP",
+                    "@scheme": "CPCI"
+                  },
+                  "section": {
+                    "$": "G"
+                  },
+                  "class": {
+                    "$": "05"
+                  },
+                  "subclass": {
+                    "$": "B"
+                  },
+                  "main-group": {
+                    "$": "19"
+                  },
+                  "subgroup": {
+                    "$": "4097"
+                  },
+                  "classification-value": {
+                    "$": "I"
+                  },
+                  "generating-office": {
+                    "$": "US"
+                  }
+                },
+                {
+                  "@sequence": "3",
+                  "classification-scheme": {
+                    "@office": "EP",
+                    "@scheme": "CPCI"
+                  },
+                  "section": {
+                    "$": "G"
+                  },
+                  "class": {
+                    "$": "05"
+                  },
+                  "subclass": {
+                    "$": "B"
+                  },
+                  "main-group": {
+                    "$": "19"
+                  },
+                  "subgroup": {
+                    "$": "4097"
+                  },
+                  "classification-value": {
+                    "$": "I"
+                  },
+                  "generating-office": {
+                    "$": "EP"
+                  }
+                },
+                {
+                  "@sequence": "4",
+                  "classification-scheme": {
+                    "@office": "EP",
+                    "@scheme": "CPCI"
+                  },
+                  "section": {
+                    "$": "G"
+                  },
+                  "class": {
+                    "$": "05"
+                  },
+                  "subclass": {
+                    "$": "B"
+                  },
+                  "main-group": {
+                    "$": "2219"
+                  },
+                  "subgroup": {
+                    "$": "45238"
+                  },
+                  "classification-value": {
+                    "$": "I"
+                  },
+                  "generating-office": {
+                    "$": "US"
+                  }
+                },
+                {
+                  "@sequence": "5",
+                  "classification-scheme": {
+                    "@office": "EP",
+                    "@scheme": "CPCI"
+                  },
+                  "section": {
+                    "$": "G"
+                  },
+                  "class": {
+                    "$": "05"
+                  },
+                  "subclass": {
+                    "$": "B"
+                  },
+                  "main-group": {
+                    "$": "2219"
+                  },
+                  "subgroup": {
+                    "$": "45238"
+                  },
+                  "classification-value": {
+                    "$": "I"
+                  },
+                  "generating-office": {
+                    "$": "EP"
+                  }
+                }
+              ]
+            },
+            "application-reference": {
+              "@doc-id": "419208452",
+              "document-id": [
+                {
+                  "@document-id-type": "docdb",
+                  "country": {
+                    "$": "EP"
+                  },
+                  "doc-number": {
+                    "$": "14729697"
+                  },
+                  "kind": {
+                    "$": "A"
+                  }
+                },
+                {
+                  "@document-id-type": "epodoc",
+                  "doc-number": {
+                    "$": "EP20140729697"
+                  },
+                  "date": {
+                    "$": "20140520"
+                  }
+                },
+                {
+                  "@document-id-type": "original",
+                  "doc-number": {
+                    "$": "14729697.4"
+                  }
+                }
+              ]
+            },
+            "priority-claims": {
+              "priority-claim": [
+                {
+                  "@sequence": "1",
+                  "@kind": "national",
+                  "document-id": [
+                    {
+                      "@document-id-type": "epodoc",
+                      "doc-number": {
+                        "$": "FR20130001168"
+                      },
+                      "date": {
+                        "$": "20130522"
+                      }
+                    },
+                    {
+                      "@document-id-type": "original",
+                      "doc-number": {
+                        "$": "1301168"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@sequence": "2",
+                  "@kind": "national",
+                  "document-id": [
+                    {
+                      "@document-id-type": "epodoc",
+                      "doc-number": {
+                        "$": "WO2014FR00110"
+                      },
+                      "date": {
+                        "$": "20140520"
+                      }
+                    },
+                    {
+                      "@document-id-type": "original",
+                      "doc-number": {
+                        "$": "2014000110"
+                      }
+                    },
+                    {
+                      "@document-id-type": "original",
+                      "doc-number": {
+                        "$": "FR2014000110"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "parties": {
+              "applicants": {
+                "applicant": [
+                  {
+                    "@sequence": "1",
+                    "@data-format": "epodoc",
+                    "applicant-name": {
+                      "name": {
+                        "$": "CORIOLIS SOFTWARE [FR]"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "2",
+                    "@data-format": "epodoc",
+                    "applicant-name": {
+                      "name": {
+                        "$": "CORIOLIS COMPOSITES [FR]"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "1",
+                    "@data-format": "original",
+                    "applicant-name": {
+                      "name": {
+                        "$": "CORIOLIS SOFTWARE"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "2",
+                    "@data-format": "original",
+                    "applicant-name": {
+                      "name": {
+                        "$": "Coriolis Composites"
+                      }
+                    }
+                  }
+                ]
+              },
+              "inventors": {
+                "inventor": [
+                  {
+                    "@sequence": "1",
+                    "@data-format": "epodoc",
+                    "inventor-name": {
+                      "name": {
+                        "$": "MUNAUX OLIVIER [FR]"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "2",
+                    "@data-format": "epodoc",
+                    "inventor-name": {
+                      "name": {
+                        "$": "CHALLOIS FR\u00c9D\u00c9RIC [FR]"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "1",
+                    "@data-format": "original",
+                    "inventor-name": {
+                      "name": {
+                        "$": "MUNAUX OLIVIER"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "2",
+                    "@data-format": "original",
+                    "inventor-name": {
+                      "name": {
+                        "$": "CHALLOIS FR\u00c9D\u00c9RIC"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "3",
+                    "@data-format": "original",
+                    "inventor-name": {
+                      "name": {
+                        "$": "MUNAUX Olivier"
+                      }
+                    }
+                  },
+                  {
+                    "@sequence": "4",
+                    "@data-format": "original",
+                    "inventor-name": {
+                      "name": {
+                        "$": "CHALLOIS Fr\u00e9d\u00e9ric"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "invention-title": [
+              {
+                "$": "VERFAHREN ZUM DEFINIEREN VON FASERTRAJEKTORIEN AUF DER BASIS EINES VEKTORFELDES",
+                "@lang": "de"
+              },
+              {
+                "$": "PROCEDE DE DEFINITION DE TRAJECTOIRES DE FIBRE A PARTIR D'UN CHAMP VECTORIEL",
+                "@lang": "fr"
+              },
+              {
+                "$": "METHOD FOR DEFINING FIBRE TRAJECTORIES ON THE BASIS OF A VECTOR FIELD",
+                "@lang": "en"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

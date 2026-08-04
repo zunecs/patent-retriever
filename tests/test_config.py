@@ -63,5 +63,27 @@ def test_registry_rejects_unknown_source_names() -> None:
         build_sources(Config(source_order=("does_not_exist",)))
 
 
+def test_registry_builds_epo_ops_when_credentials_are_present() -> None:
+    config = Config(source_order=("epo_ops",), epo_ops_key="key", epo_ops_secret="secret")
+    assert build_sources(config)[0].name == "epo_ops"
+
+
+@pytest.mark.parametrize(
+    ("key", "secret", "expected"),
+    [
+        (None, None, "EPO_OPS_KEY and EPO_OPS_SECRET are not set"),
+        ("key", None, "EPO_OPS_SECRET is not set"),
+        (None, "secret", "EPO_OPS_KEY is not set"),
+    ],
+)
+def test_registry_names_the_missing_epo_variables(
+    key: str | None, secret: str | None, expected: str
+) -> None:
+    config = Config(source_order=("epo_ops",), epo_ops_key=key, epo_ops_secret=secret)
+    with pytest.raises(ValueError, match=expected):
+        build_sources(config)
+
+
 def test_available_source_names_is_not_empty() -> None:
     assert "google_patents" in available_source_names()
+    assert "epo_ops" in available_source_names()

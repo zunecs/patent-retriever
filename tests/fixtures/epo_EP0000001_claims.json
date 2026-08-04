@@ -1,0 +1,81 @@
+{
+  "ops:world-patent-data": {
+    "@xmlns": {
+      "ops": "http://ops.epo.org",
+      "$": "http://www.epo.org/exchange",
+      "xlink": "http://www.w3.org/1999/xlink"
+    },
+    "ftxt:fulltext-documents": {
+      "ftxt:fulltext-document": {
+        "@system": "ops.epo.org",
+        "@fulltext-format": "text-only",
+        "bibliographic-data": {
+          "publication-reference": {
+            "@data-format": "docdb",
+            "document-id": {
+              "country": {
+                "$": "EP"
+              },
+              "doc-number": {
+                "$": "0000001"
+              },
+              "kind": {
+                "$": "A1"
+              }
+            }
+          }
+        },
+        "claims": [
+          {
+            "@lang": "DE",
+            "claim": {
+              "claim-text": [
+                {
+                  "$": "1. Thermische W\u00e4rmepumpe, gekennzeichnet durch ein W\u00e4rmerohr, in welchem der zwischen der W\u00e4rme\u00fcbertragungszone zur W\u00e4rmezufuhr und der W\u00e4rme\u00fcbertragungszone zur W\u00e4rmeabfuhr befindliche Dampfkanal einen sich \u00fcber seine L\u00e4nge \u00e4ndernden, die Str\u00f6mungsgeschwindigkeit des Dampfes zun\u00e4chst erh\u00f6henden und dann erniedrigenden Querschnitt aufweist und da\u00df sich im Bereich der erh\u00f6hten Dampfgeschwindigkeit eine weitere W\u00e4rme\u00fcbertragungszone mit W\u00e4rmezufuhr oder -abfuhr befindet."
+                },
+                {
+                  "$": "2. Thermische W\u00e4rmepumpe nach Anspruch 1, dadurch gekennzeichnet, da\u00df im Dampfkanal des W\u00e4rmerohrs zwischen dem Verdampferbereich und dem Nutzkondensatorbereich ein die Dampfgeschwindigkeit \u00e4ndernder Verdr\u00e4ngungsk\u00f6rper angeordnet ist."
+                },
+                {
+                  "$": "3. Thermische W\u00e4rmepumpe nach Anspruch 1 oder 2, dadurch gekennzeichnet, da\u00df sich die Querschnittsfl\u00e4che des Dampfkanals (16) l\u00e4ngs des vorderen Teils (14) des Verdr\u00e4ngungsk\u00f6rpers (13) in Str\u00f6mungsrichtung d\u00fcsenartig verkleinert, l\u00e4ngs des mittleren Teils (17) des Verdr\u00e4ngungsk\u00f6rpers (13) geringf\u00fcgig verkleinert und l\u00e4ngs des hinteren Teils (18) des Verdr\u00e4ngungsk\u00f6rpers (13) sich diffusorartig erweitert, wobei die Querschnitts\u00e4nderungen des Dampfkanals derart bemessen sind, da\u00df die Machzahl der Dampfstr\u00f6mung an jeder Stelle unterhalb 1,0 liegt."
+                },
+                {
+                  "$": "4. Thermische W\u00e4rmepumpe nach Anspruch 1 oder 2, dadurch gekennzeichnet, da\u00df sich die Querschnittsfl\u00e4che des Dampfkanals l\u00e4ngs des vorderen Teils des Verdr\u00e4ngungsk\u00f6rpers in Str\u00f6mungsrichtung d\u00fcsenartig verkleinert, l\u00e4ngs des mittleren Teils des Verdr\u00e4ngungsk\u00f6rpers geringf\u00fcgig vergr\u00f6\u00dfert und l\u00e4ngs des hinteren Teils des Verdr\u00e4ngungsk\u00f6rpers sich diffusorartig erweitert, wobei die Quer"
+                },
+                {
+                  "$": "schnitts\u00e4nderungen des Dampfkanals derart bemessen sind, da\u00df die Machzahl der Dampfstr\u00f6mung an jeder Stelle unterhalb 1,0 liegt."
+                },
+                {
+                  "$": "5. Thermische W\u00e4rmepumpe nach Anspruch 1 oder 2, dadurch gekennzeichnet, da\u00df die D\u00fcse (15) und der Diffusor (19) jeweils aus einem konvergenten und einem divergenten Teil bestehen, wobei die Querschnitts\u00e4nderungen des Dampfkanals (16) derart bemessen sind, da\u00df die Machzahl des in den Bereich der erh\u00f6hten Dampfgeschwindigkeit (TK) eintretenden Dampfes \u00fcber 1,0 liegt."
+                },
+                {
+                  "$": "6. Thermische W\u00e4rmepumpe nach Anspruch 5, dadurch gekennzeichnet, da\u00df die D\u00fcse (15) eine Unterschalld\u00fcse ist, da\u00df die Querschnittsverh\u00e4ltnisse im Dampfkanal (16) derart bemessen sind, da\u00df der \u00dcbergang von der Unterschallzur \u00dcberschallstr\u00f6mung im Bereich der erh\u00f6hten Dampfgeschwindigkeit (TK) erfolgt, und da\u00df der Diffusor (Di) ein \u00dcberschalldiffusor ist."
+                },
+                {
+                  "$": "7. Thermische W\u00e4rmepumpe nach einem oder mehreren der Anspr\u00fcche 1 bis 6, dadurch gekennzeichnet, da\u00df die Kapillarstruktur (12) l\u00e4ngs der Innenwand des W\u00e4rmerohres (11) in etwa \u00fcber die L\u00e4nge des Verdr\u00e4ngungsk\u00f6rpers (13) gegen den Dampfkanal (16) mit einer Abdekkung (20) versehen ist."
+                },
+                {
+                  "$": "8. Thermische W\u00e4rmepumpe nach einem oder mehreren der Anspr\u00fcche 1 bis 7, dadurch gekennzeichnet, da\u00df in etwa im Bereich des Verdr\u00e4ngungsk\u00f6rpers (13) die Kapillarstruktur (12) ganz oder teilweise durch innerhalb oder au\u00dferhalb der Rohrwandung des W\u00e4rmerohrs (11) angeordnete R\u00f6hrchen, Kan\u00e4le od.dgl. ersetzt ist."
+                },
+                {
+                  "$": "9. Thermische W\u00e4rmepumpe nach einem oder mehreren der Anspr\u00fcche 1 bis 8, dadurch gekennzeichnet, da\u00df der Verdr\u00e4ngungsk\u00f6rper (13) auf einem thermisch isolierten axialen Haltestab gelagert ist."
+                },
+                {
+                  "$": "10. Thermische W\u00e4rmepumpe nach einem oder mehreren der Anspr\u00fcche 1 bis 9, dadurch gekennzeichnet, da\u00df im Nutzkondensatorberei (NK) und gegebenenfalls im Verdampferbereich (V) in etwa kegelf\u00f6rmige Verdr\u00e4ngungsk\u00f6rper angeordnet sind, deren Grundfl\u00e4chen den Stirnw\u00e4nden des W\u00e4rmerohres (11) zugekehrt sind."
+                }
+              ]
+            }
+          },
+          {
+            "@lang": "EN",
+            "claim": {
+              "claim-text": {
+                "$": "..BECH......FRGB........NLSE......................\nC\n0000001\nEUROP\ufffdISCHE PATENTANMELDUNG\nA1\n19781220\nEP\n78200013.7\n19780601\nde\nde\nde\n2739689\n19770902\nDE\n19781220\n197801\n19781220\n197801\n2\n2F 28D  15/00   A\n2F 24J   3/04   B\nde\nThermische W\ufffdrmepumpe\nen\nThermal heat pump\nfr\nPompe de chaleur thermique\nEUROP\ufffdISCHE ATOMGEMEINSCHAFT\n(EURATOM)\n00200160\n30 150 - EU\nATOMGEMEINSCHAFT  (EURATOM), EUROP\ufffdISCHE\n(EURATOM), EUROP\ufffdISCHE ATOMGEMEINSCHAFT\nB\ufffdtiment Jean Monnet\nPlateau du Kirchberg\nBo\ufffdte Postale 1907\nL-1019 Luxembourg\nLU\nBusse, Claus Adolf, Dr.\n22, Via Piaggio\nI-21038 Arolo di Leggiuno\n(Varese)\nIT\nWey, Hans-Heinrich, Dipl.-Ing.\net al\n00013062\nc/o Kanzlei Hansmann, Vogeser und Partner\nAlbert Rosshaupter-Strasse 65\n81369 M\ufffdnchen\nDE\nBE\nCH\nFR\nGB\nNL\nSE"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

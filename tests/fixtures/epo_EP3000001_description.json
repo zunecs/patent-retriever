@@ -1,0 +1,576 @@
+{
+  "ops:world-patent-data": {
+    "@xmlns": {
+      "ops": "http://ops.epo.org",
+      "$": "http://www.epo.org/exchange",
+      "xlink": "http://www.w3.org/1999/xlink"
+    },
+    "ftxt:fulltext-documents": {
+      "ftxt:fulltext-document": {
+        "@system": "ops.epo.org",
+        "@fulltext-format": "text-only",
+        "bibliographic-data": {
+          "publication-reference": {
+            "@data-format": "docdb",
+            "document-id": {
+              "country": {
+                "$": "EP"
+              },
+              "doc-number": {
+                "$": "3000001"
+              },
+              "kind": {
+                "$": "B1"
+              }
+            }
+          }
+        },
+        "description": {
+          "@lang": "FR",
+          "p": [
+            {
+              "$": "[0001]    La pr\u00e9sente invention concerne la fabrication de pi\u00e8ces en mat\u00e9riau composite par des machines de drapage de fibres automatiques, et plus particuli\u00e8rement un proc\u00e9d\u00e9 de d\u00e9finition des trajectoires de fibre sur une surface de drapage pour machines de drapage automatique."
+            },
+            {
+              "$": "[0002]    Il est connu de r\u00e9aliser des pi\u00e8ces en mat\u00e9riau composite par des proc\u00e9d\u00e9s dits de placement de fibres, en superposant plusieurs plis de fibres dans des directions diff\u00e9rentes. Dans la pr\u00e9sente, l'expression \u00ab placement de fibres \u00bb d\u00e9signe le placement de m\u00e8ches, dans lequel chaque pli est r\u00e9alis\u00e9 par d\u00e9pose au contact sur un moule de bandes les unes \u00e0 c\u00f4t\u00e9 des autres, chaque bande \u00e9tant form\u00e9e de plusieurs m\u00e8ches ind\u00e9pendantes dispos\u00e9es c\u00f4t\u00e9 \u00e0 c\u00f4te, ainsi que le placement de bandes dans lequel chaque pli est r\u00e9alis\u00e9 par d\u00e9pose au contact sur un moule de bandes les unes \u00e0 c\u00f4t\u00e9 des autres, chaque bande \u00e9tant form\u00e9e d'une seule m\u00e8che, de largeur plus importante que dans le cas de placement de m\u00e8ches. Les m\u00e8ches classiquement utilis\u00e9es sont unidirectionnelles et comprennent une multitude de filaments. Les fibres d\u00e9pos\u00e9es peuvent \u00eatre pr\u00e9-impr\u00e9gn\u00e9es de r\u00e9sine ou non. La technologie de placement de m\u00e8ches, utilisant des m\u00e8ches de plus faible largeur, permet de draper sur des surfaces de drapage de formes complexes. Les pi\u00e8ces sont fabriqu\u00e9es par des machines de placement automatiques, auxquelles il convient de fournir les trajectoires de fibres pour r\u00e9aliser les plis. Dans le cas de placement de m\u00e8ches, ces machines sont classiquement appel\u00e9es machines de placement de fibres ou machines AFP (Automated Fiber Placement), et machines de placement de bandes ou machines ATP (Automated Tape Placement) dans le cas de placement de bandes."
+            },
+            {
+              "$": "[0003]    Les trajectoires de fibre sont classiquement d\u00e9finies par logiciel au moyen d'une rosette, constitu\u00e9e d'un syst\u00e8me d'axes associ\u00e9 \u00e0 une m\u00e9thode de transfert, qui permet de d\u00e9finir une direction de fibre en tout point d'une surface. Il existe aujourd'hui diff\u00e9rentes rosettes, bas\u00e9es sur des m\u00e9thodes de transfert diff\u00e9rentes, qui sont reconnues et utilis\u00e9es dans le secteur a\u00e9ronautique en fonction de la surface de drapage, telles que par exemple la rosette cart\u00e9sienne ou la rosette translation."
+            },
+            {
+              "$": "[0004]    Chaque trajectoire est g\u00e9n\u00e9r\u00e9e en d\u00e9finissant la direction de la trajectoire en diff\u00e9rents points d'analyse de la surface de drapage, appel\u00e9s \u00e9galement points de propagation, par transfert du syst\u00e8me d'axes audit point d'analyse selon la m\u00e9thode de transfert associ\u00e9e. Ces transferts du syst\u00e8me d'axes pour les points de propagation n\u00e9cessitent des temps de calcul qui peuvent s'av\u00e9rer relativement longs, notamment dans le cas de surfaces complexes."
+            },
+            {
+              "$": "[0005]    Les trajectoires obtenues sont ensuite classiquement soumises \u00e0 une analyse de courbure, commun\u00e9ment appel\u00e9e analyse de \u00ab steering \u00bb, et/ou une analyse de d\u00e9viation angulaire. L'analyse de steering en un point d'analyse d'une trajectoire consiste \u00e0 calculer la valeur du rayon de courbure moyen dans le plan tangent \u00e0 la surface au point d'analyse."
+            },
+            {
+              "$": "[0006]    Suivant ces r\u00e9sultats d'analyse, les trajectoires doivent \u00eatre red\u00e9finies manuellement pour adapter les trajectoires aux rayons de courbures minimaux acceptables ou r\u00e9alisables avec une fibre donn\u00e9e, et aux d\u00e9viations angulaires maximales souhait\u00e9es par le concepteur de la pi\u00e8ce. De ce fait, la d\u00e9finition de trajectoires peut s'av\u00e9rer longue et fastidieuse."
+            },
+            {
+              "$": "[0007]    Dans le cas de surfaces de drapage non continues comprenant des renfoncements et/ou bossages, notamment pour la r\u00e9alisation de renforts, le positionnement de renforts pr\u00e9fabriqu\u00e9s, le positionnement de nids d'abeille ou autres, la d\u00e9finition de trajectoires satisfaisantes au niveau de ces discontinuit\u00e9s s'av\u00e8rent compliqu\u00e9e, et n\u00e9cessite de longues op\u00e9rations manuelles."
+            },
+            {
+              "$": "[0008]    US5041179A d\u00e9crit un proc\u00e9d\u00e9 pour contr\u00f4ler la direction d' application d'une bande, de sorte que la bande suive une trajectoire g\u00e9od\u00e9sique. Le but de la pr\u00e9sente invention est de proposer une solution visant \u00e0 pallier au moins l'un des inconv\u00e9nients pr\u00e9cit\u00e9s."
+            },
+            {
+              "$": "[0009]    A cet effet, la pr\u00e9sente invention propose un proc\u00e9d\u00e9 de d\u00e9finition de trajectoires de fibre sur une surface de drapage pour la r\u00e9alisation d'au moins un pli d'orientation th\u00e9orique donn\u00e9e, pour la r\u00e9alisation de pi\u00e8ces en mat\u00e9riau composite par drapage de fibres, caract\u00e9ris\u00e9 en ce qu'il comprend :"
+            },
+            {
+              "$": "la d\u00e9finition d'un maillage \u00e9l\u00e9ments finis de la surface de drapage,"
+            },
+            {
+              "$": "la d\u00e9finition de donn\u00e9es de direction associ\u00e9es \u00e0 au moins une m\u00e9thode de transfert,"
+            },
+            {
+              "$": "la d\u00e9finition d'un champ vectoriel en associant \u00e0 chaque maille du maillage, au moins un vecteur directeur obtenu par transfert desdites donn\u00e9es de direction selon ladite m\u00e9thode de transfert,"
+            },
+            {
+              "$": "la trajectoire d'une fibre \u00e9tant d\u00e9finie \u00e0 partir dudit champ vectoriel."
+            },
+            {
+              "$": "[0010]    Selon l'invention, les trajectoires des fibres sont obtenues \u00e0 partir d'un champ vectoriel g\u00e9n\u00e9r\u00e9 \u00e0 partir des donn\u00e9es de direction et de la m\u00e9thode de transfert. L'utilisation d'un tel champ vectoriel permet d'am\u00e9liorer le temps de calcul des trajectoires, le calcul des trajectoires \u00e0 partir du champ vectoriel s'av\u00e9rant effectivement plus rapide qu'un calcul des trajectoires directement \u00e0 partir des donn\u00e9es de direction et d'une m\u00e9thode de transfert, par exemple \u00e0 partir d'une rosette avec laquelle la courbe est g\u00e9n\u00e9r\u00e9e en effectuant des projections \u00e0 partir de la rosette globale pour obtenir les directions en diff\u00e9rents points d'analyse. Selon l'invention, la direction en un point de propagation est obtenue directement en prenant le vecteur directeur de la maille \u00e0 laquelle appartient le point d'analyse."
+            },
+            {
+              "$": "[0011]    En outre les vecteurs directeurs selon l'invention permettent une pr\u00e9visualisation des r\u00e9sultats, et ainsi une validation de la strat\u00e9gie retenue avant de g\u00e9n\u00e9rer les trajectoires. Le champ vectoriel peut en outre \u00eatre r\u00e9inject\u00e9 en entr\u00e9e d'une nouvelle \u00e9tape de traitement afin modifier les vecteurs directeurs, par exemple pour tenir compte de contraintes de conception et/ou de fabrication."
+            },
+            {
+              "$": "[0012]    Le proc\u00e9d\u00e9 selon l'invention peut \u00eatre mis en oeuvre de mani\u00e8re automatique sous la forme d'un logiciel. Le proc\u00e9d\u00e9 selon l'invention peut \u00eatre utilis\u00e9 pour la r\u00e9alisation de pi\u00e8ces en mat\u00e9riau composite par drapage de fibres, que ce soit par drapage au contact, tel que par placement de m\u00e8ches ou par placement de bandes, ou par drapage sans contact tel que par enroulement filamentaire. Le proc\u00e9d\u00e9 selon l'invention pr\u00e9sente un int\u00e9r\u00eat tout particulier dans le cas de placement de m\u00e8ches sur des surfaces de drapage non planes."
+            },
+            {
+              "$": "[0013]    Selon un mode de r\u00e9alisation, les donn\u00e9es de direction associ\u00e9es \u00e0 une m\u00e9thode de transfert sont constitu\u00e9es d'une rosette classique ou d'une combinaison de rosettes classiques."
+            },
+            {
+              "$": "[0014]    Selon un autre mode de r\u00e9alisation, la d\u00e9finition de donn\u00e9es de direction comprend la d\u00e9finition de courbes de contraintes \u00e0 partir de la d\u00e9finition de la surface de drapage, et/ou la d\u00e9finition d'au moins une grille de contraintes, \u00e0 partir de la d\u00e9finition de la surface de drapage, avec association \u00e0 chaque noeud de la grille de contraintes d'au moins un vecteur de contrainte, les courbes de contraintes et les vecteurs de contrainte \u00e9tant repr\u00e9sentatifs de contraintes g\u00e9om\u00e9triques, de contraintes de rayon de courbure g\u00e9od\u00e9sique, de contraintes de d\u00e9viation angulaire et/ou de contraintes d'efforts, le vecteur directeur d'une maille \u00e9tant obtenu par calcul des poids normalis\u00e9s de vecteurs de contrainte desdites courbes de contraintes et/ou par calcul des poids normalis\u00e9s de vecteurs de contrainte de ladite grille de contraintes, et par pond\u00e9ration par lesdits poids normalis\u00e9s desdits vecteurs de contrainte. Selon ce mode de r\u00e9alisation, la d\u00e9finition des trajectoires est r\u00e9alis\u00e9e \u00e0 partir de donn\u00e9es de directions tenant compte de contraintes de fabrication et/ou de conception, ces contraintes \u00e9tant mod\u00e9lis\u00e9es sous la forme de courbes de contraintes ou de vecteurs de contrainte associ\u00e9s aux noeuds d'une grille de contraintes, la direction en un point d'analyse \u00e9tant d\u00e9finie en appliquant une loi de pond\u00e9ration aux vecteurs de contrainte associ\u00e9s audit point d'analyse et issus desdites courbes de contraintes et/ou d'une grille de contrainte. Le proc\u00e9d\u00e9 selon l'invention permet d'int\u00e9grer d\u00e8s la d\u00e9finition des trajectoires, des contraintes de conception et/ou de fabrication, r\u00e9duisant ainsi le temps de d\u00e9finition des trajectoires."
+            },
+            {
+              "$": "[0015]    Les donn\u00e9es de directions comprennent dans ce cas les courbes de contraintes et/ou la grille de contraintes, la m\u00e9thode de transfert comprenant une m\u00e9thode de pond\u00e9ration de vecteurs de contrainte desdites courbes et/ou de ladite grille."
+            },
+            {
+              "$": "[0016]    Selon un mode de r\u00e9alisation, dans le cas d'une grille de contrainte, le proc\u00e9d\u00e9 comprend la d\u00e9finition d'une grille de contraintes, chaque maille de ladite grille de contraintes \u00e9tant de pr\u00e9f\u00e9rence d\u00e9finie par quatre noeuds, et l'association \u00e0 chaque noeud de la grille de contraintes d'au moins un vecteur de contrainte, le vecteur directeur d'une maille \u00e9tant obtenu par"
+            },
+            {
+              "$": "d\u00e9finition d'un point projet\u00e9 obtenu par projection normale d'un point d'analyse de la maille, par exemple le point central de la maille, sur la grille de contrainte,"
+            },
+            {
+              "$": "calcul des poids normalis\u00e9s au point projet\u00e9 des quatre noeuds,"
+            },
+            {
+              "$": "pond\u00e9ration des quatre vecteurs de contrainte par lesdits poids normalis\u00e9s pour obtenir un vecteur au point projet\u00e9, et obtention du vecteur directeur par projection normale de ce vecteur au point d'analyse."
+            },
+            {
+              "$": "[0017]    Dans ce mode de r\u00e9alisation, les donn\u00e9es de direction comprennent la grille de contraintes, la m\u00e9thode de transfert comprenant des projections normales et une m\u00e9thode de pond\u00e9ration de vecteurs de contrainte desdites courbes de contraintes et/ou de ladite grille de contraintes."
+            },
+            {
+              "$": "[0018]    Selon un mode de r\u00e9alisation, les vecteurs de contrainte de la grille de contraintes sont repr\u00e9sentatifs de contrainte g\u00e9om\u00e9triques de la surface de drapage."
+            },
+            {
+              "$": "[0019]    Selon un mode de r\u00e9alisation, dans le cas de courbes de contraintes,_le proc\u00e9d\u00e9 comprend la d\u00e9finition d'au moins deux courbes de contraintes de pr\u00e9f\u00e9rence sur le maillage de la surface de drapage, le vecteur directeur d'une maille \u00e9tant obtenu par"
+            },
+            {
+              "$": "projection normale d'un point d'analyse de ladite maille, par exemple le point central de la maille, sur les deux courbes de contraintes entre lesquelles ledit point d'analyse est positionn\u00e9,"
+            },
+            {
+              "$": "d\u00e9finition auxdits points projet\u00e9s de vecteurs de contrainte tangents auxdites courbes de contraintes,"
+            },
+            {
+              "$": "calcul des poids normalis\u00e9s des points projet\u00e9s au point d'analyse,"
+            },
+            {
+              "$": "et pond\u00e9ration des deux vecteurs de contrainte par leurs poids normalis\u00e9s respectifs pour obtenir le vecteur directeur de la maille."
+            },
+            {
+              "$": "[0020]    Selon un mode de r\u00e9alisation, les courbes de contraintes sont repr\u00e9sentatives de contraintes g\u00e9om\u00e9triques de la surface de drapage."
+            },
+            {
+              "$": "[0021]    Selon un autre mode de r\u00e9alisation, les courbes de contraintes sont repr\u00e9sentatives de valeurs de d\u00e9viation angulaire maximale, et sont obtenues \u00e0 partir d'une grille dite de d\u00e9viation angulaire, et de directions de r\u00e9f\u00e9rence. Ces directions de r\u00e9f\u00e9rence sont par exemple obtenues \u00e0 partir d'une rosette classique, d'une grille de contraintes ou de courbes de contraintes, la grille de d\u00e9viation angulaire servant \u00e0 r\u00e9orienter ces directions de r\u00e9f\u00e9rence dans des limites de d\u00e9viation angulaire afin de se rapprocher des g\u00e9od\u00e9siques et ainsi de limiter le rayon de courbure des fibres. Dans ce mode de r\u00e9alisation, le proc\u00e9d\u00e9 selon l'invention comprend la d\u00e9finition d'une grille de d\u00e9viation angulaire, chaque maille de ladite grille de d\u00e9viation angulaire \u00e9tant de pr\u00e9f\u00e9rence d\u00e9finie par quatre noeuds, et l'association \u00e0 chaque noeud de la grille de d\u00e9viation angulaire d'au moins une valeur de d\u00e9viation angulaire maximale, la d\u00e9finition d'une courbe de contraintes comprenant la d\u00e9finition de directions de propagation en diff\u00e9rents points d'analyse de la surface de drapage, la d\u00e9finition d'une direction de propagation en un point d'analyse comprenant :"
+            },
+            {
+              "$": "l'obtention d'une premi\u00e8re direction de r\u00e9f\u00e9rence audit point d'analyse du maillage de la surface de drapage \u00e0 partir de donn\u00e9es de direction associ\u00e9es \u00e0 une m\u00e9thode de transfert,"
+            },
+            {
+              "$": "projection normale dudit point sur la grille de d\u00e9viation angulaire,"
+            },
+            {
+              "$": "calcul des poids normalis\u00e9s au point projet\u00e9 des quatre noeuds de la maille de la grille de d\u00e9viation angulaire,"
+            },
+            {
+              "$": "pond\u00e9ration desdites quatre valeurs de d\u00e9viation angulaire maximale de la maille par lesdits poids normalis\u00e9s pour obtenir une valeur de d\u00e9viation angulaire maximale associ\u00e9e audit point d'analyse,"
+            },
+            {
+              "$": "r\u00e9orientation de ladite de premi\u00e8re direction de r\u00e9f\u00e9rence \u00e0 partir de ladite valeur de d\u00e9viation angulaire maximale pour obtenir la direction de propagation audit point d'analyse."
+            },
+            {
+              "$": "[0022]    Selon un mode de r\u00e9alisation, ladite \u00e9tape de r\u00e9orientation de la direction de r\u00e9f\u00e9rence comprend"
+            },
+            {
+              "$": "la d\u00e9finition d'un secteur de tol\u00e9rance autour de la premi\u00e8re direction de r\u00e9f\u00e9rence en d\u00e9finissant des directions limites \u00e0 un angle de plus ou moins la valeur de d\u00e9viation angulaire maximale associ\u00e9e audit point d'analyse,"
+            },
+            {
+              "$": "la d\u00e9termination d'une direction g\u00e9od\u00e9sique audit point d'analyse,"
+            },
+            {
+              "$": "la direction de propagation au point de propagation est \u00e9gale \u00e0 la direction g\u00e9od\u00e9sique si la direction g\u00e9od\u00e9sique est incluse dans le secteur de tol\u00e9rance, et est \u00e9gale \u00e0 la direction limite la plus proche de la direction g\u00e9od\u00e9sique, si la direction g\u00e9od\u00e9sique n'est pas incluse dans le secteur de tol\u00e9rance."
+            },
+            {
+              "$": "[0023]    Selon un mode de r\u00e9alisation, le proc\u00e9d\u00e9 comprend la d\u00e9finition d'un maillage de transfert \u00e9l\u00e9ment finis d'une surface de transfert correspondant \u00e0 une surface simplifi\u00e9e, sensiblement continue, de la surface de drapage, le vecteur directeur de chaque maille \u00e9tant obtenue par"
+            },
+            {
+              "$": "d\u00e9finition d'un point projet\u00e9 obtenu par projection normale d'un point d'analyse de ladite maille, par exemple du point central, sur le maillage de transfert,"
+            },
+            {
+              "$": "d\u00e9finition d'une deuxi\u00e8me direction de r\u00e9f\u00e9rence audit point projet\u00e9, \u00e0 partir de donn\u00e9es de direction associ\u00e9es \u00e0 une m\u00e9thode de transfert ;"
+            },
+            {
+              "$": "d\u00e9finition de la normale \u00e0 la maille de transfert ;"
+            },
+            {
+              "$": "d\u00e9finition d'un plan de coupe ledit plan de coupe \u00e9tant d\u00e9fini par le point projet\u00e9, ladite deuxi\u00e8me direction de r\u00e9f\u00e9rence et ladite normale,"
+            },
+            {
+              "$": "d\u00e9finition de la ligne d'intersection du plan de coupe avec le plan de la maille, le vecteur directeur de la maille \u00e9tant obtenu \u00e0 partir de la direction de cette ligne d'intersection."
+            },
+            {
+              "$": "[0024]    L'utilisation d'une telle surface de transfert simplifi\u00e9e pour le transfert de donn\u00e9es de direction s'av\u00e8re particuli\u00e8rement efficace pour d\u00e9finir des trajectoires acceptables en terme de rayon de courbure et de d\u00e9viation angulaire dans le cas de surfaces de drapage non continues, pr\u00e9sentant des renfoncements et/ou des bossages g\u00e9n\u00e9rant des rampes."
+            },
+            {
+              "$": "[0025]    Dans le cas de l'utilisation d'une grille de d\u00e9viation angulaire en combinaison avec une grille de contraintes, la premi\u00e8re direction de r\u00e9f\u00e9rence au point d'analyse est obtenue \u00e0 partir d'une grille de contraintes par"
+            },
+            {
+              "$": "d\u00e9finition d'un point projet\u00e9 par projection normale dudit point d'analyse, sur la grille de contrainte,"
+            },
+            {
+              "$": "calcul des poids normalis\u00e9s au point projet\u00e9 des quatre noeuds,"
+            },
+            {
+              "$": "pond\u00e9ration des quatre vecteurs de contrainte par lesdits poids normalis\u00e9s pour obtenir un vecteur audit point projet\u00e9, la premi\u00e8re direction de r\u00e9f\u00e9rence \u00e9tant obtenue par projection dudit vecteur au point d'analyse."
+            },
+            {
+              "$": "[0026]    Dans le cas de l'utilisation d'une surface de transfert en combinaison avec une grille de d\u00e9viation angulaire, la premi\u00e8re direction de r\u00e9f\u00e9rence au point d'analyse est obtenue \u00e0 partir d'une surface de transfert, par"
+            },
+            {
+              "$": "d\u00e9finition d'un point projet\u00e9 par projection normale du point d'analyse de ladite maille, sur le maillage de transfert,"
+            },
+            {
+              "$": "d\u00e9finition d'une deuxi\u00e8me direction de r\u00e9f\u00e9rence audit point projet\u00e9,"
+            },
+            {
+              "$": "d\u00e9finition de la normale \u00e0 la maille de transfert,"
+            },
+            {
+              "$": "d\u00e9finition d'un plan de coupe ledit plan de coupe \u00e9tant d\u00e9fini par le point projet\u00e9, ladite deuxi\u00e8me direction de r\u00e9f\u00e9rence et ladite normale,"
+            },
+            {
+              "$": "d\u00e9finition de la ligne d'intersection du plan de coupe avec le plan de la maille, la premi\u00e8re direction de r\u00e9f\u00e9rence correspondant \u00e0 la direction de cette ligne d'intersection."
+            },
+            {
+              "$": "[0027]    Dans le cas de l'utilisation d'une surface de transfert en combinaison avec une grille de contraintes et \u00e9ventuellement une grille de d\u00e9viation angulaire, la deuxi\u00e8me direction de r\u00e9f\u00e9rence audit point projet\u00e9 est obtenue \u00e0 partir d'une grille de contraintes par"
+            },
+            {
+              "$": "d\u00e9finition d'un deuxi\u00e8me point projet\u00e9 par projection normale du point projet\u00e9 de la maille de transfert, sur la grille de contrainte,"
+            },
+            {
+              "$": "calcul des poids normalis\u00e9s au deuxi\u00e8me point projet\u00e9 de la maille de la grille de contraintes des quatre noeuds de ladite maille,"
+            },
+            {
+              "$": "pond\u00e9ration des quatre vecteurs de contrainte par lesdits poids normalis\u00e9s pour obtenir un vecteur audit deuxi\u00e8me point projet\u00e9, la deuxi\u00e8me direction de r\u00e9f\u00e9rence \u00e9tant obtenue par projection dudit vecteur au point projet\u00e9 de la maille de transfert."
+            },
+            {
+              "$": "[0028]    Dans le cas de l'utilisation d'une grille de d\u00e9viation angulaire en combinaison avec des courbes de contraintes, obtenues par exemple \u00e0 partir de contraintes g\u00e9om\u00e9triques, la premi\u00e8re direction de r\u00e9f\u00e9rence au point d'analyse est obtenue \u00e0 partir d'une grille de contraintes par"
+            },
+            {
+              "$": "projection normale du point d'analyse sur les deux courbes de contraintes entre lesquelles ledit point d'analyse est positionn\u00e9,"
+            },
+            {
+              "$": "d\u00e9finition auxdits points projet\u00e9s de vecteurs de contrainte tangents auxdites courbes de contraintes,"
+            },
+            {
+              "$": "calcul des poids normalis\u00e9s des points projet\u00e9s au point d'analyse;"
+            },
+            {
+              "$": "et pond\u00e9ration des deux vecteurs de contrainte par leurs poids normalis\u00e9s respectifs pour obtenir un vecteur qui correspond \u00e0 ladite premi\u00e8re direction de r\u00e9f\u00e9rence."
+            },
+            {
+              "$": "[0029]    Dans le cas de l'utilisation d'une surface de transfert en combinaison avec des courbes de contraintes, obtenues par exemple \u00e0 partir de contraintes g\u00e9om\u00e9triques, et \u00e9ventuellement une grille de d\u00e9viation angulaire, la deuxi\u00e8me direction de r\u00e9f\u00e9rence audit point projet\u00e9 est obtenue \u00e0 partir d'une grille de contraintes par"
+            },
+            {
+              "$": "d\u00e9finition de seconds points projet\u00e9s par projection normale dudit point projet\u00e9 de la maille de transfert sur les deux courbes de contraintes entre lesquelles ledit point projet\u00e9 est positionn\u00e9,"
+            },
+            {
+              "$": "d\u00e9finition auxdits seconds points projet\u00e9s de vecteurs de contrainte tangents auxdites courbes de contraintes,"
+            },
+            {
+              "$": "calcul des poids normalis\u00e9s des seconds points projet\u00e9s des courbes de contraintes au point projet\u00e9 ;"
+            },
+            {
+              "$": "pond\u00e9ration des deux vecteurs de contrainte par leurs poids normalis\u00e9s respectifs pour obtenir un vecteur, la deuxi\u00e8me direction de r\u00e9f\u00e9rence correspondant audit vecteur."
+            },
+            {
+              "$": "[0030]    Suivant la surface de drapage, des courbes de contraintes et/ou une grille de contraintes d\u00e9finies pour une orientation de pli peuvent \u00eatre utilis\u00e9es pour les autres orientations. Dans ce cas, une fois les directions de fibres d\u00e9finies pour une premi\u00e8re orientation de pli, par exemple 0\u00b0, les directions des fibres pour les autres orientations de plis, par exemple, 90\u00b0, +/- 45\u00b0, sont obtenues par simple rotation, par exemple par simple rotation des vecteurs directeurs du champ vectoriel obtenu pour la premi\u00e8re direction."
+            },
+            {
+              "$": "[0031]    Des courbes de contraintes et/ou une grille de contraintes diff\u00e9rentes peuvent \u00eatre d\u00e9finies suivant les diff\u00e9rentes orientations de plis. Dans ce cas, l'utilisation de champ vectoriel permet d'effectuer ais\u00e9ment des analyses de cisaillement afin de v\u00e9rifier que les angles entre les fibres de plis d'orientation diff\u00e9rentes sont acceptables, et ainsi valider les champs vectoriels obtenus."
+            },
+            {
+              "$": "[0032]    Selon un mode de r\u00e9alisation, le proc\u00e9d\u00e9 comprend l'obtention d'au moins deux champs vectoriels pour des orientations de plis diff\u00e9rentes, obtenus \u00e0 partir de donn\u00e9es de directions diff\u00e9rentes, sp\u00e9cifiques \u00e0 chaque orientation, le proc\u00e9d\u00e9 comprenant en outre une analyse de cisaillement par comparaison des vecteurs directeurs des deux champs vectoriels."
+            },
+            {
+              "$": "[0033]    La pr\u00e9sente invention a \u00e9galement pour objet un proc\u00e9d\u00e9 de fabrication de pi\u00e8ces en mat\u00e9riau composite par une machine de drapage de fibres automatique, caract\u00e9ris\u00e9 en ce que les trajectoires de fibres pour le drapage de plis par la machine de drapage sont d\u00e9finies par le proc\u00e9d\u00e9 de d\u00e9finition de trajectoire d\u00e9crit pr\u00e9c\u00e9demment."
+            },
+            {
+              "$": "[0034]    La pr\u00e9sente invention a \u00e9galement pour objet un programme d'ordinateur comportant un ensemble d'instructions aptes \u00e0 mettre en oeuvre le proc\u00e9d\u00e9 de d\u00e9finition de trajectoire tel que d\u00e9crit pr\u00e9c\u00e9demment, lorsque ledit programme est ex\u00e9cut\u00e9 sur un ordinateur."
+            },
+            {
+              "$": "[0035]    L'invention sera mieux comprise, et d'autres buts, d\u00e9tails, caract\u00e9ristiques et avantages appara\u00eetront plus clairement au cours de la description explicative d\u00e9taill\u00e9e qui va suivre de plusieurs modes de r\u00e9alisation particuliers actuellement pr\u00e9f\u00e9r\u00e9s de l'invention, en r\u00e9f\u00e9rence aux dessins sch\u00e9matiques annex\u00e9s, sur lesquels :"
+            },
+            {
+              "$": "la figure 1 est un sch\u00e9ma g\u00e9n\u00e9ral illustrant diff\u00e9rents modes de r\u00e9alisation du proc\u00e9d\u00e9 selon l'invention ;"
+            },
+            {
+              "$": "la figure 2 est une vue en perspective d'un exemple de surface de drapage utilis\u00e9e pour illustrer le proc\u00e9d\u00e9 selon l'invention ;"
+            },
+            {
+              "$": "la figure 3 est un sch\u00e9ma illustrant un proc\u00e9d\u00e9 de d\u00e9finition de trajectoires, selon premier mode de r\u00e9alisation de l'invention, utilisant un champ vectoriel obtenu \u00e0 partir d'une rosette classique ;"
+            },
+            {
+              "$": "la figure 4 est une vue en perspective du champ vectoriel obtenu selon le proc\u00e9d\u00e9 de la figure 3 ;"
+            },
+            {
+              "$": "la figure 5 est une vue agrandie partielle de la figure 4 ;"
+            },
+            {
+              "$": "la figure 6A est une vue en perspective de trajectoires de fibre pour un pli \u00e0 0\u00b0, obtenues \u00e0 partir du champ vectoriel de la figure 4 , et la figure 6B est une analyse de rayon courbure desdites trajectoires ;"
+            },
+            {
+              "$": "la figure 7A est une vue en perspective des trajectoires de fibres pour un pli \u00e0 90\u00b0, obtenues \u00e0 partir du champ vectoriel de la figure 4 , et la figure 7B est une analyse de rayon de courbure desdites trajectoires ;"
+            },
+            {
+              "$": "la figure 8 est un sch\u00e9ma illustrant un proc\u00e9d\u00e9 de d\u00e9finition de trajectoires, selon deuxi\u00e8me mode de r\u00e9alisation de l'invention, utilisant un champ vectoriel obtenu \u00e0 partir d'une grille de vecteurs de contrainte ;"
+            },
+            {
+              "$": "la figure 9 est une vue sch\u00e9matique en perspective de la grille de contraintes d\u00e9finie \u00e0 partir de la surface de drapage ;"
+            },
+            {
+              "$": "la figure 10 est un sch\u00e9ma illustrant la m\u00e9thode de d\u00e9finition du vecteur directeur d'une maille \u00e0 partir d'un point projet\u00e9 sur la grille de contraintes ;"
+            },
+            {
+              "$": "la figure 11 est une vue en perspective du champ vectoriel obtenu selon le proc\u00e9d\u00e9 de la figure 8 , avec la grille de contraintes de la figure 9 , et la figure 12 est une vue agrandie partielle de la figure 11 ;"
+            },
+            {
+              "$": "la figure 13A est une vue en perspective des trajectoires de fibres pour un pli \u00e0 0\u00b0 obtenues \u00e0 partir du champ vectoriel de la figure 11 , la figure 13B \u00e9tant une analyse de rayon courbure desdites trajectoires ;"
+            },
+            {
+              "$": "la figure 14A est une vue en perspective des trajectoires de fibres pour un pli \u00e0 90\u00b0 obtenues \u00e0 partir du champ vectoriel de la figure 11 , et la figure 14B est une analyse de rayon de courbure desdites trajectoires ;"
+            },
+            {
+              "$": "la figure 15 est un sch\u00e9ma illustrant un proc\u00e9d\u00e9 de d\u00e9finition de trajectoires, selon troisi\u00e8me mode de r\u00e9alisation de l'invention, utilisant un champ vectoriel obtenu \u00e0 partir de courbes de contraintes ;"
+            },
+            {
+              "$": "la figure 16 est un sch\u00e9ma illustrant la m\u00e9thode de d\u00e9finition d'un vecteur directeur du champ vectoriel \u00e0 partir de courbes de contraintes ;"
+            },
+            {
+              "$": "la figure 17 est un sch\u00e9ma illustrant un proc\u00e9d\u00e9 de d\u00e9finition de trajectoires, selon quatri\u00e8me mode de r\u00e9alisation de l'invention, utilisant un champ vectoriel obtenu \u00e0 partir de courbes de contraintes, lesdites courbes de contraintes \u00e9tant obtenues \u00e0 partir d'une grille de d\u00e9viation angulaire ;"
+            },
+            {
+              "$": "la figure 18 est une vue sch\u00e9matique en perspective de la grille de d\u00e9viation angulaire d\u00e9finie \u00e0 partir de la surface de drapage ;"
+            },
+            {
+              "$": "la figure 19 est un sch\u00e9ma illustrant la m\u00e9thode pour g\u00e9n\u00e9rer les courbes de contraintes \u00e0 partir de la grille de d\u00e9viation angulaire de la figure 18 ;"
+            },
+            {
+              "$": "la figure 20 est une vue de courbes de contraintes g\u00e9n\u00e9r\u00e9es \u00e0 partir de la grille de d\u00e9viation angulaire de la figure 18 et d'une rosette classique ;"
+            },
+            {
+              "$": "la figure 21 est un sch\u00e9ma illustrant la m\u00e9thode pour d\u00e9finir le vecteur directeur d'une maille \u00e0 partir des courbes de d\u00e9viation angulaire ;"
+            },
+            {
+              "$": "la figure 22 est une vue partielle du champ de vecteur obtenu \u00e0 partir de la grille de d\u00e9viation angulaire ;"
+            },
+            {
+              "$": "la figure 23 est une analyse de rayon de courbure de trajectoires obtenues \u00e0 partir du champ vectoriel de la figure 22 pour un pli \u00e0 90\u00b0;"
+            },
+            {
+              "$": "la figure 24 est un sch\u00e9ma illustrant un proc\u00e9d\u00e9 de d\u00e9finition de trajectoires, selon un cinqui\u00e8me mode de r\u00e9alisation de l'invention, utilisant un champ vectoriel obtenu \u00e0 partir d'une surface de transfert ;"
+            },
+            {
+              "$": "la figure 25 est un sch\u00e9ma illustrant la m\u00e9thode de d\u00e9finition d'un vecteur directeur du champ vectoriel \u00e0 partir d'une surface de transfert ;"
+            },
+            {
+              "$": "la figure 26A est une vue en perspective de trajectoires de fibre obtenues avec une surface de transfert ;"
+            },
+            {
+              "$": "la figure 26B est une vue agrandie partielle de la figure 26A ;"
+            },
+            {
+              "$": "la figure 27 est une vue analogue \u00e0 celle de la figure 26B , les trajectoires \u00e9tant obtenues sans utilisation de la surface de transfert ;"
+            },
+            {
+              "$": "la figure 28 est un sch\u00e9ma de principe d'un proc\u00e9d\u00e9 de d\u00e9finition de trajectoires, selon un autre mode de r\u00e9alisation de l'invention, utilisant un champ vectoriel obtenu \u00e0 partir d'une grille de d\u00e9viation angulaire et d'une surface de transfert ;"
+            },
+            {
+              "$": "la figure 29 est un sch\u00e9ma illustrant la m\u00e9thode de d\u00e9finition d'une direction de r\u00e9f\u00e9rence pour la d\u00e9finition d'une direction de propagation pour le proc\u00e9d\u00e9 de la figure 28 ; et,"
+            },
+            {
+              "$": "la figure 30 est un sch\u00e9ma illustrant une \u00e9tape d'analyse de cisaillement \u00e0 partir de plusieurs champs vectoriels."
+            },
+            {
+              "$": "[0036]    Selon l'invention, les trajectoires de fibres sont d\u00e9finies \u00e0 partir d'un champ vectoriel constitu\u00e9 d'un maillage de la surface de drapage dans lequel un vecteur directeur est associ\u00e9 \u00e0 chaque maille. Tel que repr\u00e9sent\u00e9 sur la figure 1 , ce champ vectoriel peut \u00eatre g\u00e9n\u00e9r\u00e9 \u00e0 partir de rosettes classiques, de courbes de contraintes et/ou d'une grille de contraintes, \u00e9ventuellement en combinaison avec l'utilisation d'une surface de transfert et/ou de courbes de contraintes obtenues \u00e0 partir d'une grille de d\u00e9viation angulaire."
+            },
+            {
+              "$": "[0037]    La figure 2 illustre une surface de drapage 9 utilis\u00e9e \u00e0 titre d'exemple pour illustrer diff\u00e9rents modes de r\u00e9alisation du proc\u00e9d\u00e9 de d\u00e9finition de trajectoires de fibre selon l'invention. Cette surface de drapage est une surface \u00e0 double courbure, et est d\u00e9finie par un maillage 91 \u00e9l\u00e9ments finis."
+            },
+            {
+              "$": "[0038]    Selon un premier mode de r\u00e9alisation, sch\u00e9matis\u00e9 \u00e0 la figure 3 , le champ vectoriel est obtenu \u00e0 partir d'une rosette classique, telle qu'une rosette cart\u00e9sienne, comprenant un rep\u00e8re de r\u00e9f\u00e9rence d\u00e9fini par trois vecteurs orthogonaux X, Y, Z et une m\u00e9thode de transfert cart\u00e9sien. Dans le cas de la surface de drapage de la figure 2 , le vecteur X de la rosette dite globale est align\u00e9 avec l'axe principal A<1> ou axe de r\u00e9volution de la surface de drapage."
+            },
+            {
+              "$": "[0039]    Le champ vectoriel est obtenu par transfert cart\u00e9sien du vecteur X de la rosette globale sur chaque maille 92 du maillage, le transfert cart\u00e9sien du vecteur X sur la maille consistant en une projection normale du vecteur X sur le plan de la maille concern\u00e9e, le vecteur projet\u00e9 de la rosette dite projet\u00e9e constituant le vecteur directeur 11 de la maille. Les figures 4 et 5 illustrent le champ vectoriel 1 r\u00e9sultant."
+            },
+            {
+              "$": "[0040]    Des trajectoires 81 de fibre pour une orientation de pli \u00e0 0\u00b0 peuvent ensuite \u00eatre g\u00e9n\u00e9r\u00e9es \u00e0 partir de ce champ vectoriel 1, tel qu'illustr\u00e9 \u00e0 la figure 6A . Chaque trajectoire est g\u00e9n\u00e9r\u00e9e en d\u00e9finissant la direction de la trajectoire en diff\u00e9rents points d'analyse, appel\u00e9s \u00e9galement points de propagation, la direction en un point de propagation est celle du vecteur directeur de la maille \u00e0 laquelle appartient ledit point de propagation."
+            },
+            {
+              "$": "[0041]    Une analyse de rayon de courbure peut ensuite \u00eatre effectu\u00e9e sur ces trajectoires ainsi obtenues. La figure 6B illustre le rayon de courbure minimum de chaque trajectoire. Cette analyse de rayon de courbure montre des rayons de courbure importants, incompatibles par exemple avec le placement de m\u00e8ches d'un quart de pouce de largeur, pour les lesquelles un rayon de courbure minimal d'environ 2 m\u00e8tres est classiquement pr\u00e9conis\u00e9."
+            },
+            {
+              "$": "[0042]    Une analyse de rayon de courbure et/ou de d\u00e9viation angulaire peut \u00eatre effectu\u00e9e directement \u00e0 partir du champ vectoriel, sans g\u00e9n\u00e9rer de trajectoires, cette analyse pouvant par exemple \u00eatre visualis\u00e9e sur le champ vectoriel en attribuant aux vecteurs des couleurs diff\u00e9rentes en fonction des valeurs de rayon de courbure ou de d\u00e9viation angulaire."
+            },
+            {
+              "$": "[0043]    Des trajectoires de fibre pour d'autres orientations de pli, telles que 90\u00b0, +45\u00b0 ou -45\u00b0, peuvent \u00eatre g\u00e9n\u00e9r\u00e9es \u00e0 partir du m\u00eame champ vectoriel 1, en effectuant une rotation correspondante des vecteurs directeurs. La figure 7A illustre des trajectoires de fibre pour une orientation de pli \u00e0 90\u00b0, obtenues en effectuant une rotation de 90\u00b0 des vecteurs directeurs du champ vectoriel 1. La figure 7B illustre le rayon de courbure minimum de chaque trajectoire."
+            },
+            {
+              "$": "[0044]    La figure 8 illustre un second mode de r\u00e9alisation dans lequel le champ vectoriel est obtenu \u00e0 partir d'une grille de contrainte, afin de prendre en compte des contraintes de conception et/ou de fabrication dans la d\u00e9finition des trajectoires, et ainsi obtenir des trajectoires avec des rayons de courbure acceptables."
+            },
+            {
+              "$": "[0045]    En r\u00e9f\u00e9rence \u00e0 la figure 9 , on d\u00e9finit dans un premier temps une grille de contraintes 2, appel\u00e9e \u00e9galement grille de vecteurs de contrainte. Dans cet exemple, la grille de contraintes est d\u00e9finie en fonction de contraintes g\u00e9om\u00e9triques de la surface de drapage, les contraintes g\u00e9om\u00e9triques \u00e9tant ici les suivantes :"
+            },
+            {
+              "$": "les fibres de plis \u00e0 0\u00b0 doivent suivre les g\u00e9n\u00e9ratrices 92 des rayons de raccordement entre la partie centrale globalement tronconique de la surface de drapage et les parties planes de part et d'autre de ladite partie tronconique, et"
+            },
+            {
+              "$": "les fibres de plis \u00e0 0\u00b0 doivent \u00eatre align\u00e9es avec les bords ext\u00e9rieurs 93 des parties planes."
+            },
+            {
+              "$": "[0046]    Un maillage 21 est d\u00e9fini \u00e0 partir de ces contraintes g\u00e9om\u00e9triques, chaque maille du maillage \u00e9tant form\u00e9e d'au moins quatre noeuds, puis un vecteur de contrainte T est assign\u00e9 \u00e0 chaque noeud N dudit maillage pour former la grille de contraintes 2."
+            },
+            {
+              "$": "[0047]    Pour former le champ vectoriel, le vecteur directeur de chaque maille du maillage est d\u00e9fini de la mani\u00e8re suivante."
+            },
+            {
+              "$": "[0048]    Tel qu'illustr\u00e9 \u00e0 la figure 9 , on effectue une projection normale du point central P<1> de la maille, au point le plus proche, sur la grille de contrainte."
+            },
+            {
+              "$": "[0049]    En r\u00e9f\u00e9rence \u00e0 la figure 10 , on effectue ensuite un calcul des poids normalis\u00e9s w<1>, w<2>, w<3>, w<4> au point projet\u00e9 P'<1> des quatre noeuds N<1>, N<2>, N<3>, N<4> qui sont associ\u00e9s audit point projet\u00e9, \u00e0 savoir les quatre noeuds qui d\u00e9finissent la maille \u00e0 laquelle ledit point projet\u00e9 appartient. Ces poids normalis\u00e9s, \u00e9galement appel\u00e9s coordonn\u00e9es barycentriques du point projet\u00e9, sont calcul\u00e9s selon une m\u00e9thode connue en soi, en fonction de la distance entre ledit point projet\u00e9 et lesdits noeuds. On d\u00e9termine ensuite le vecteur D<1> au point projet\u00e9 par pond\u00e9ration des quatre vecteurs T<1>, T<2>, T<3>, T<4> par leurs poids normalis\u00e9s respectifs w<1>, w<2>, w<3>, w<4> : D 1 = \u2016 T 1 \u00d7 w 1 + T 2 \u00d7 w 2 + T 3 \u00d7 w 3 + T 4 \u00d7 w 4 \u2016"
+            },
+            {
+              "$": "<img class=\"EMIRef\" id=\"594607671-ib0001\" />"
+            },
+            {
+              "$": "[0050]    Le vecteur directeur de la maille est ensuite obtenu par un transfert par projection normale de ce vecteur D<1> au point central P<1> de la maille."
+            },
+            {
+              "$": "[0051]    Les figures 11 et 12 illustrent le champ vectoriel 101 r\u00e9sultant, dans lequel un vecteur directeur 111 est associ\u00e9 \u00e0 chaque maille."
+            },
+            {
+              "$": "[0052]    Les figures 13A et 13B illustrent respectivement les trajectoires 181 pour un pli \u00e0 0\u00b0, obtenues \u00e0 partir de ce champ vectoriel, et les r\u00e9sultats de l'analyse de rayon de courbure correspondante. Les figures 14A et 14B illustrent respectivement les trajectoires 182 pour un pli \u00e0 90\u00b0, obtenues \u00e0 partir de ce champ vectoriel, apr\u00e8s une rotation de 90\u00b0 des vecteurs directeurs, et les r\u00e9sultats de l'analyse de rayon de courbure correspondante. Des comparaisons des figures 6B et 7B avec respectivement les figures 13B et 14B montrent que les trajectoires obtenues avec la grille de contraintes pr\u00e9sentent des rayons de courbure minimaux plus importants que ceux des trajectoires r\u00e9sultant d'une rosette cart\u00e9sienne."
+            },
+            {
+              "$": "[0053]    La figure 15 illustre un troisi\u00e8me mode de r\u00e9alisation dans lequel le champ vectoriel est obtenu \u00e0 partir de courbes de contraintes. Les contraintes g\u00e9om\u00e9triques repr\u00e9sent\u00e9es sous la forme de la grille de contraintes 2 dans le mode de r\u00e9alisation pr\u00e9c\u00e9dent sont ici repr\u00e9sent\u00e9es sous la forme de courbes de contraintes."
+            },
+            {
+              "$": "[0054]    En r\u00e9f\u00e9rence \u00e0 la figure 16 , les courbes de contraintes, d\u00e9sign\u00e9es globalement sous la r\u00e9f\u00e9rence 3, comprennent :"
+            },
+            {
+              "$": "deux courbes de contraintes 31, 32 lin\u00e9aires correspondant aux bords ext\u00e9rieurs 93 de la surface de drapage, et"
+            },
+            {
+              "$": "deux courbes de contraintes 33, 34 incurv\u00e9es correspondant \u00e0 des g\u00e9n\u00e9ratrices de rayons de raccordement entre la partie centrale et les parties lat\u00e9rales de la surface de drapage."
+            },
+            {
+              "$": "[0055]    Pour former le champ vectoriel, le vecteur directeur de chaque maille du maillage est d\u00e9fini de la mani\u00e8re suivante."
+            },
+            {
+              "$": "[0056]    Consid\u00e9rant le point central P<2> d'une maille sur la figure 16 , on effectue une projection normale dudit point central P<2> sur les deux courbes de contraintes 31, 33 les plus proches, entre lesquelles ledit point central est positionn\u00e9. On d\u00e9finit ensuite auxdits points projet\u00e9s P'<2> P\"<2> les deux vecteurs T<5>, T<6> tangents aux courbes. On calcule les poids normalis\u00e9s w<5>, w<6>, au point central P<2> des deux points projet\u00e9s, ces poids normalis\u00e9s \u00e9tant fonction des distances d<5> et d<6> entre le point central et les points projet\u00e9s : w 5 = 1 \u2212 d 5 / d 5 + d 6"
+            },
+            {
+              "$": "<img class=\"EMIRef\" id=\"594607671-ib0002\" />"
+            },
+            {
+              "$": "w 6 = 1 \u2212 d 6 / d 5 + d 6"
+            },
+            {
+              "$": "<img class=\"EMIRef\" id=\"594607671-ib0003\" />"
+            },
+            {
+              "$": "On d\u00e9finit ensuite le vecteur D<2>, qui correspond au vecteur directeur de la maille, en pond\u00e9rant les deux vecteurs tangents T<5>, T<6> par leurs poids normalis\u00e9s respectifs w<5>, w<6> : D 2 = \u2016 T 5 \u00d7 w 5 + T 6 \u00d7 w 6 \u2016"
+            },
+            {
+              "$": "<img class=\"EMIRef\" id=\"594607671-ib0004\" />"
+            },
+            {
+              "$": "Le vecteur D<2> de la maille correspond au vecteur directeur D<2> ainsi obtenu. Le champ vectoriel obtenu \u00e0 partir de ces courbes de contraintes 3 est similaire de celui 101 obtenu pr\u00e9c\u00e9demment au moyen de la grille de contraintes."
+            },
+            {
+              "$": "[0057]    La figure 17 illustre un quatri\u00e8me mode de r\u00e9alisation dans lequel le champ vectoriel est obtenu \u00e0 partir de courbes de contraintes qui sont d\u00e9finies \u00e0 partir d'une grille de d\u00e9viation angulaire."
+            },
+            {
+              "$": "[0058]    En r\u00e9f\u00e9rence \u00e0 la figure 18 , on d\u00e9finit dans un premier temps une grille de d\u00e9viation angulaire 4, dans laquelle chaque maille est d\u00e9finie par quatre noeuds N', et on assigne \u00e0 chaque noeud de la grille une valeur de d\u00e9viation angulaire maximale. Un exemple de valeurs de d\u00e9viation assign\u00e9es aux diff\u00e9rents noeuds est donn\u00e9 \u00e0 la figure 18 ."
+            },
+            {
+              "$": "[0059]    Des courbes de contraintes sont g\u00e9n\u00e9r\u00e9es sur la surface de drapage en d\u00e9finissant pour chaque courbe de contraintes des directions de propagation en diff\u00e9rents points d'analyse appel\u00e9s \u00e9galement points de propagation. La direction de propagation en un point de propagation P<3> est d\u00e9finie de la mani\u00e8re suivante."
+            },
+            {
+              "$": "[0060]    En r\u00e9f\u00e9rence \u00e0 la figure 19 , on d\u00e9finit une direction de r\u00e9f\u00e9rence audit point de propagation P<3>, cette direction de r\u00e9f\u00e9rence T<R> \u00e9tant dans ce mode de r\u00e9alisation une direction obtenue par une rosette cart\u00e9sienne, par transfert par projection normale du vecteur X de la rosette globale sur le plan de la maille de la surface de drapage \u00e0 laquelle appartient ledit point de propagation P<3>."
+            },
+            {
+              "$": "[0061]    On effectue ensuite une projection normale dudit point P<3> sur la grille de d\u00e9viation angulaire, le point projet\u00e9 P'<3> appartenant par exemple \u00e0 la maille de la grille d\u00e9finie par les quatre noeuds N'<1>, N'<2>, N'<3>, N'<4>. On effectue un calcul des poids normalis\u00e9s w<7>, w<8>, w<9>, w<10> au point projet\u00e9 P'<3> des quatre noeuds. Ces poids normalis\u00e9s, \u00e9galement appel\u00e9s coordonn\u00e9es barycentriques du point projet\u00e9, sont calcul\u00e9s selon une m\u00e9thode connue en soi, en fonction de la distance entre ledit point projet\u00e9 et lesdits noeuds. On effectue une pond\u00e9ration des quatre valeurs de d\u00e9viation angulaire maximale V<a>, V<b>, V<c>, V<d> par lesdits poids normalis\u00e9s pour obtenir une valeur de d\u00e9viation angulaire maximale \u03b1 autoris\u00e9e associ\u00e9e audit point projet\u00e9 : \u03b1 = w 7 \u00d7 V a + w 8 \u00d7 V b + w 9 \u00d7 V c + w 10 \u00d7 V d"
+            },
+            {
+              "$": "<img class=\"EMIRef\" id=\"594607671-ib0005\" />"
+            },
+            {
+              "$": "[0062]    On d\u00e9termine ensuite un secteur de tol\u00e9rance autour de la direction de r\u00e9f\u00e9rence T<R> en d\u00e9finissant des directions limites L<1> et L<2> \u00e0 un angle de +\u03b1 et -\u03b1 autour de la direction de r\u00e9f\u00e9rence. On d\u00e9termine par ailleurs une direction g\u00e9od\u00e9sique G correspondant \u00e0 la direction de propagation audit point de propagation P<3> d'une courbe g\u00e9od\u00e9sique."
+            },
+            {
+              "$": "[0063]    On effectue ensuite une r\u00e9orientation de la direction de r\u00e9f\u00e9rence dans les limites de la valeur de d\u00e9viation angulaire autoris\u00e9e. Si la direction g\u00e9od\u00e9sique G est incluse dans le secteur de tol\u00e9rance, alors la direction de propagation au point de propagation est d\u00e9finie comme \u00e9tant la direction g\u00e9od\u00e9sique. Si la direction g\u00e9od\u00e9sique n'est pas incluse dans le secteur de tol\u00e9rance, alors la direction de propagation au point de propagation est d\u00e9finie comme \u00e9tant la direction limite L<1> ou L<2> la plus proche de la direction g\u00e9od\u00e9sique."
+            },
+            {
+              "$": "[0064]    La figure 20 illustre un exemple de courbes de contraintes, d\u00e9sign\u00e9es sous la r\u00e9f\u00e9rence g\u00e9n\u00e9rale 303, obtenues pour des plis \u00e0 90\u00b0, \u00e0 partir d'une rosette cart\u00e9sienne et de la grille de d\u00e9viation angulaire, avec les valeurs de d\u00e9viation angulaire indiqu\u00e9es sur la figure 18 ."
+            },
+            {
+              "$": "[0065]    L'obtention d'un champ vectoriel est r\u00e9alis\u00e9e selon la m\u00e9thode d\u00e9crite pr\u00e9c\u00e9demment avec les courbes de contraintes 3 de la figure 16 . Le vecteur directeur de chaque maille du maillage est d\u00e9fini de la mani\u00e8re suivante. En r\u00e9f\u00e9rence \u00e0 la figure 21 , on effectue une projection normale du point central P<4> de la maille sur les deux courbes de contraintes 331, 332 les plus proches. On d\u00e9finit ensuite auxdits points projet\u00e9s P'<4>, P\"<4> les deux vecteurs T<11>, T<12> tangents aux courbes. On calcule les poids normalis\u00e9s W<11>, W<12>, au point central P' des deux points projet\u00e9s, ces poids normalis\u00e9s \u00e9tant fonction des distances entre le point central et les points projet\u00e9s. On d\u00e9finit ensuite le vecteur D<3>, de la maille, en pond\u00e9rant les deux vecteurs tangents T<11>, T<12> par leurs poids normalis\u00e9s respectifs W<11>, W<12> : D 3 = \u2016 w 11 \u00d7 T 11 + w 12 \u00d7 T 12 \u2016"
+            },
+            {
+              "$": "<img class=\"EMIRef\" id=\"594607671-ib0006\" />"
+            },
+            {
+              "$": "Le vecteur directeur de la maille correspond audit vecteur D<3>, de pr\u00e9f\u00e9rence apr\u00e8s une rotation de 90\u00b0 dudit vecteur D<3> pour avoir un champ vectoriel concernant par d\u00e9faut les plis \u00e0 0\u00b0."
+            },
+            {
+              "$": "[0066]    Le champ vectoriel 301 obtenu \u00e0 partir de ces courbes de contraintes est illustr\u00e9 \u00e0 la figure 22 , le champ vectoriel comprenant un vecteur directeur 311 associ\u00e9 \u00e0 chaque maille. Les r\u00e9sultats de l'analyse de rayon de courbure de trajectoires de fibres, obtenues \u00e0 partir de ce champ vectoriel, ou correspondant aux courbes de contraintes 303 de la figure 20 sont illustr\u00e9s \u00e0 la figure 23 . Ces r\u00e9sultats montrent une augmentation significative de rayons de courbure minimaux de trajectoires par rapport \u00e0 ceux de trajectoires pr\u00e9sent\u00e9s \u00e0 la figure 7B et obtenus simplement au moyen d'une rosette cart\u00e9sienne."
+            },
+            {
+              "$": "[0067]    Selon un autre mode de r\u00e9alisation, le champ vectoriel est obtenu \u00e0 partir d'une grille de vecteurs de contrainte et d'une grille de d\u00e9viation angulaire. Dans ce cas, pour la g\u00e9n\u00e9ration des courbes de contraintes selon la m\u00e9thode explicit\u00e9e ci-dessus en r\u00e9f\u00e9rence \u00e0 la figure 19 , la d\u00e9finition de la direction de r\u00e9f\u00e9rence T<R> est r\u00e9alis\u00e9e, non pas \u00e0 partir de la rosette cart\u00e9sienne, mais \u00e0 partir de la grille de vecteurs de contrainte, par projection normale du point P<3> sur la grille de contraintes et d\u00e9finition d'un vecteur D<1> selon la m\u00e9thode de pond\u00e9ration explicit\u00e9e pr\u00e9c\u00e9demment en r\u00e9f\u00e9rence \u00e0 la figure 10 . La direction de r\u00e9f\u00e9rence T<R> de la maille est ensuite obtenue par un transfert par projection normale de ce vecteur D<1> au point P<3>."
+            },
+            {
+              "$": "[0068]    La figure 24 illustre un cinqui\u00e8me mode de r\u00e9alisation dans lequel le champ vectoriel est obtenu en utilisant une surface de transfert pour le transfert d'une rosette cart\u00e9sienne. Ce type de champ vectoriel est appropri\u00e9 pour la d\u00e9finition de trajectoires sur une surface de drapage non continue, telle que la surface de drapage 109 qu'illustr\u00e9e \u00e0 la figure 26A . Cette surface de drapage est de forme g\u00e9n\u00e9rale tronconique et comprend un renfoncement 194 central, formant des rampes 195."
+            },
+            {
+              "$": "[0069]    On d\u00e9finit une surface dite de transfert continue qui correspond \u00e0 une surface simplifi\u00e9e de la surface de drapage. Dans le pr\u00e9sent cas, la surface de transfert correspond \u00e0 la surface de drapage sans son renfoncement central. Cette surface de transfert est d\u00e9finie par un maillage dit de transfert."
+            },
+            {
+              "$": "[0070]    Pour former le champ vectoriel, le vecteur directeur de chaque maille du maillage 191 de la surface de drapage est d\u00e9fini de la mani\u00e8re suivante, en r\u00e9f\u00e9rence \u00e0 la figure 25 :"
+            },
+            {
+              "$": "d\u00e9finition d'un point projet\u00e9 P'<5> obtenu par projection normale du point central P<5> de ladite maille sur le maillage de transfert 51,"
+            },
+            {
+              "$": "d\u00e9finition d'une direction de r\u00e9f\u00e9rence T'<R> audit point projet\u00e9 P'<5>, ladite direction de r\u00e9f\u00e9rence provenant ici d'une rosette cart\u00e9sienne et \u00e9tant obtenue par transfert de l'axe X de la rosette sur le plan de la maille de transfert \u00e0 laquelle appartient ledit point projet\u00e9 P'<5> ;"
+            },
+            {
+              "$": "d\u00e9finition de la normale U<1> \u00e0 la maille de transfert ;"
+            },
+            {
+              "$": "d\u00e9finition d'un plan de coupe A<2>, ledit plan de coupe \u00e9tant d\u00e9fini par le point projet\u00e9 P'<5>, ladite direction de r\u00e9f\u00e9rence T'<R> et ladite normale U<1>, et"
+            },
+            {
+              "$": "d\u00e9finition de la ligne d'intersection D<4> du plan de coupe A<2> avec le plan A<3> de la maille \u00e0 laquelle appartient le point central, le vecteur directeur de la maille correspondant \u00e0 la direction de cette ligne d'intersection."
+            },
+            {
+              "$": "[0071]    Les figures 26A et 26B illustrent des trajectoires 481 de plis \u00e0 90\u00b0, obtenues avec un tel champ vectoriel, apr\u00e8s rotation de 90\u00b0 des vecteurs directeurs. La figure 31 illustre les trajectoires 581 obtenues avec un champ vectoriel d\u00e9fini \u00e0 partir d'un transfert de rosette directement sur la surface de drapage, sans utilisation de la surface de transfert."
+            },
+            {
+              "$": "[0072]    Selon un autre mode de r\u00e9alisation, le champ vectoriel est obtenu \u00e0 partir d'une grille de vecteurs de contrainte et d'une surface de transfert. Dans ce cas, pour la d\u00e9finition du plan de coupe A<2> selon la m\u00e9thode explicit\u00e9e ci-dessus en r\u00e9f\u00e9rence \u00e0 la figure 25 , la d\u00e9finition de la direction de r\u00e9f\u00e9rence T'<R> est r\u00e9alis\u00e9e, non pas \u00e0 partir de la rosette cart\u00e9sienne, mais \u00e0 partir de la grille de vecteurs de contrainte, par projection normale du point P'<5> sur la grille de contraintes et d\u00e9finition d'un vecteur D<1> selon la m\u00e9thode de pond\u00e9ration explicit\u00e9e pr\u00e9c\u00e9demment en r\u00e9f\u00e9rence \u00e0 la figure 10 . Le vecteur de r\u00e9f\u00e9rence T'<R> de la maille est ensuite obtenu par un transfert par projection normale de ce vecteur D<1> au point P'<5.>"
+            },
+            {
+              "$": "[0073]    Selon un autre mode de r\u00e9alisation illustr\u00e9 \u00e0 la figure 28 , le champ vectoriel est obtenu \u00e0 partir d'une grille de d\u00e9viation angulaire et d'une surface de transfert. Dans ce cas, pour la g\u00e9n\u00e9ration des courbes de contraintes selon la m\u00e9thode explicit\u00e9e ci-dessus en r\u00e9f\u00e9rence \u00e0 la figure 19 , la d\u00e9finition de la direction de r\u00e9f\u00e9rence T<R> pour chaque point de propagation P<6> est r\u00e9alis\u00e9e de la mani\u00e8re suivante, en r\u00e9f\u00e9rence \u00e0 la figure 29 :"
+            },
+            {
+              "$": "d\u00e9finition d'un point projet\u00e9 P'<6> obtenu par projection normale du point de propagation P<6> sur le maillage de transfert 5,"
+            },
+            {
+              "$": "d\u00e9finition d'une direction de r\u00e9f\u00e9rence T\"<R> audit point projet\u00e9 P'<5>, ladite direction de r\u00e9f\u00e9rence provenant ici d'une rosette cart\u00e9sienne et \u00e9tant obtenue par transfert de l'axe X de la rosette sur le plan de la maille de transfert \u00e0 laquelle appartient ledit point projet\u00e9 P'<6>;"
+            },
+            {
+              "$": "d\u00e9finition de la normale U<2> \u00e0 la maille de transfert ;"
+            },
+            {
+              "$": "d\u00e9finition d'un plan de coupe A<4>, ledit plan de coupe \u00e9tant d\u00e9fini par le point projet\u00e9 P'<6>, la direction de r\u00e9f\u00e9rence T\"<R> et la normale U<2>,"
+            },
+            {
+              "$": "d\u00e9finition de la ligne d'intersection D<5> entre le plan de coupe A<4> et le plan A<5> de la maille, la direction de r\u00e9f\u00e9rence T<R> correspondant \u00e0 la direction de cette ligne d'intersection."
+            },
+            {
+              "$": "[0074]    La direction de propagation au point P<6> est ensuite obtenue tel que d\u00e9crit pr\u00e9c\u00e9demment en r\u00e9f\u00e9rence \u00e0 la figure 19 , en utilisant la valeur de d\u00e9viation angulaire maximale obtenue \u00e0 partir de la grille de d\u00e9viation angulaire."
+            },
+            {
+              "$": "[0075]    Selon autre mode de r\u00e9alisation, le champ vectoriel est obtenu \u00e0 partir d'une grille de vecteurs de contrainte, d'une grille de d\u00e9viation angulaire et d'une surface de transfert. Dans ce cas, pour la d\u00e9finition du plan de coupe A<4> ci-dessus, la d\u00e9finition de la direction de r\u00e9f\u00e9rence T\"<R> est effectu\u00e9e, non pas \u00e0 partir de la rosette cart\u00e9sienne, mais \u00e0 partir de la grille de vecteurs de contrainte, par projection normale du point P'<6> sur la grille de contraintes et d\u00e9finition d'un vecteur D<1> selon la m\u00e9thode de pond\u00e9ration explicit\u00e9e pr\u00e9c\u00e9demment en r\u00e9f\u00e9rence \u00e0 la figure 10 . Le vecteur de r\u00e9f\u00e9rence T\"<R> de la maille est ensuite obtenu par un transfert par projection normale de ce vecteur D<1> au point P'<6>."
+            },
+            {
+              "$": "[0076]    Selon d'autres modes de r\u00e9alisation, tel qu'illustr\u00e9 \u00e0 la figure 1 , le champ vectoriel est obtenu \u00e0 partir d'un maillage \u00e9l\u00e9ments finis FEM, comprenant des donn\u00e9es de direction associ\u00e9es \u00e0 chaque maille, tel qu'un maillage FEM provenant d'un logiciel de conception, par exemple le logiciel commercialis\u00e9 sous la d\u00e9nomination commerciale NASTRAN, avec au moins un angle associ\u00e9 \u00e0 chaque maille, et une rosette associ\u00e9e audit maillage. Ce maillage FEM peut \u00eatre utilis\u00e9 directement en entr\u00e9e du proc\u00e9d\u00e9 selon l'invention, ou de pr\u00e9f\u00e9rence \u00eatre transform\u00e9 sous forme de grille de vecteurs ou de courbes de contraintes."
+            },
+            {
+              "$": "[0077]    Par ailleurs, un champ vectoriel obtenu selon l'invention peut \u00eatre r\u00e9introduit en entr\u00e9e du proc\u00e9d\u00e9 selon l'invention pour obtenir un nouveau champ vectoriel."
+            },
+            {
+              "$": "[0078]    En fonction du type de surface de drapage, des champs vectoriels diff\u00e9rents peuvent \u00eatre utilis\u00e9s pour la d\u00e9finition de trajectoires de plis d'orientations diff\u00e9rentes. A titre d'exemple, en r\u00e9f\u00e9rence \u00e0 la figure 28 , trois champs vectoriels diff\u00e9rents sont d\u00e9finis :"
+            },
+            {
+              "$": "champ vectoriel pour les plis \u00e0 0\u00b0"
+            },
+            {
+              "$": "champ vectoriel pour des plis \u00e0 90\u00b0"
+            },
+            {
+              "$": "champ vectoriel pour des plis \u00e0 +/- 45\u00b0"
+            },
+            {
+              "$": "[0079]    L'utilisation de champ vectoriel permet d'effectuer rapidement des analyses de cisaillement, afin de v\u00e9rifier que l'angle entre les trajectoires d'orientation diff\u00e9rentes rentre bien dans une plage de valeur acceptable. Avantageusement, comme pr\u00e9c\u00e9demment, les vecteurs directeurs des champs vectoriels sont tous d\u00e9finis pour une orientation \u00e0 0\u00b0. Dans le cas du champ vectoriel pour les plis \u00e0 90\u00b0, une rotation de 90\u00b0 des vecteurs directeurs est effectu\u00e9e pour g\u00e9n\u00e9rer des trajectoires \u00e0 90\u00b0. De m\u00eame, dans le cas du champ vecteurs pour les plis \u00e0 +/- 45\u00b0, une rotation de plus ou moins 45\u00b0 des vecteurs directeurs est effectu\u00e9e pour g\u00e9n\u00e9rer les trajectoires \u00e0 +45\u00b0 ou -45\u00b0. Ces diff\u00e9rents champs vectoriels, avec des vecteurs directeurs d\u00e9finis pour une orientation \u00e0 0\u00b0, permet une comparaison rapide et ais\u00e9e des vecteurs directeurs pour l'analyse de cisaillement."
+            },
+            {
+              "$": "[0080]    Bien que l'invention ait \u00e9t\u00e9 d\u00e9crite en liaison avec diff\u00e9rents modes de r\u00e9alisation particuliers, il est bien \u00e9vident qu'elle n'y est nullement limit\u00e9e et qu'elle comprend tous les \u00e9quivalents techniques des moyens d\u00e9crits ainsi que leurs combinaisons si celles-ci entrent dans le cadre de l'invention."
+            }
+          ]
+        }
+      }
+    }
+  }
+}
